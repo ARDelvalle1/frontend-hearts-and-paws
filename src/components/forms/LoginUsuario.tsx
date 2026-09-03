@@ -108,12 +108,12 @@ export default function LoginUsuario() {
       </div>
 
       <label className="block mb-4">
-        <span className="block mb-1 font-semibold text-gray-700 dark:text-gray-300">Email:</span>
+        <span className="block mb-1.5 font-semibold text-xs text-[#54433a] uppercase tracking-wider">Email</span>
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-3 py-2 border border-gray-300 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white rounded focus:outline-none focus:ring-2 focus:ring-pink-500"
+          className="w-full px-5 py-2.5 border border-[#6c2f00]/20 bg-[#fff8f5] text-[#6c2f00] placeholder:text-[#54433a]/60 font-body-editorial text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] transition-all"
           placeholder="ejemplo@correo.com"
           disabled={loading}
           required
@@ -121,12 +121,12 @@ export default function LoginUsuario() {
       </label>
 
       <label className="relative block mb-6">
-        <span className="block mb-1 font-semibold text-gray-700 dark:text-gray-300">Contraseña:</span>
+        <span className="block mb-1.5 font-semibold text-xs text-[#54433a] uppercase tracking-wider">Contraseña</span>
         <input
           type={showPassword ? "text" : "password"}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full px-3 py-2 pr-10 border border-gray-300 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white rounded focus:outline-none focus:ring-2 focus:ring-pink-500"
+          className="w-full px-5 py-2.5 pr-12 border border-[#6c2f00]/20 bg-[#fff8f5] text-[#6c2f00] placeholder:text-[#54433a]/60 font-body-editorial text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] transition-all"
           placeholder="Tu contraseña"
           disabled={loading}
           required
@@ -134,29 +134,30 @@ export default function LoginUsuario() {
         <button
           type="button"
           onClick={() => setShowPassword((prev) => !prev)}
-          className="absolute text-gray-500 right-3 top-9"
+          className="absolute text-[#6c2f00] hover:text-[#ff6b6b] right-4 top-8 transition-colors p-1 cursor-pointer"
           tabIndex={-1}
         >
-          {showPassword ? <FaEyeSlash /> : <FaEye />}
+          {showPassword ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
         </button>
       </label>
 
       <button
         type="submit"
         disabled={loading}
-        className={`w-full bg-[#FA8072] text-white py-3 rounded font-semibold hover:bg-[#e87366] transition ${
+        className={`w-full bg-[#ff6b6b] hover:bg-[#ae2f34] text-white font-body-editorial font-semibold py-3.5 px-6 rounded-full text-base transition-all duration-300 shadow-md flex items-center justify-center gap-2 cursor-pointer ${
           loading ? "opacity-60 cursor-not-allowed" : ""
         }`}
       >
+        <span className="material-symbols-outlined text-xl">login</span>
         {loading ? "Ingresando..." : "Entrar"}
       </button>
 
-      <div className="mt-6 text-center text-sm text-gray-600 dark:text-gray-300">
+      <div className="mt-6 text-center text-xs text-[#54433a] font-body-editorial">
         ¿No tenés una cuenta?{" "}
         <button
           type="button"
           onClick={() => router.push("/register")}
-          className="text-[#FA8072] font-semibold hover:underline"
+          className="text-[#6c2f00] font-bold hover:text-[#ff6b6b] transition-colors ml-1 underline underline-offset-2 cursor-pointer"
         >
           Registrate acá
         </button>
@@ -164,16 +165,20 @@ export default function LoginUsuario() {
     </form>
 
     {loading && (
-  <div className="fixed inset-0 z-50 bg-white/80 backdrop-blur-sm flex items-center justify-center pointer-events-auto">
-    <div className="flex flex-col items-center gap-4">
-      <div className="text-center text-[#FA8072] font-semibold text-lg animate-pulse">
-        Iniciando sesión...<br />
-        Redirigiendo a tu perfil, por favor aguardá.
+      <div className="fixed inset-0 z-50 bg-white/90 backdrop-blur-xs flex items-center justify-center pointer-events-auto">
+        <div className="flex flex-col items-center gap-4 bg-[#fff8f5] border border-[#6c2f00]/15 p-8 rounded-3xl shadow-2xl max-w-xs text-center font-body-editorial">
+          <div className="w-10 h-10 border-4 border-[#ff6b6b] border-t-transparent rounded-full animate-spin" />
+          <div>
+            <p className="font-display-editorial font-bold text-lg text-[#6c2f00]">
+              Iniciando sesión...
+            </p>
+            <p className="text-xs text-[#54433a] mt-1">
+              Redirigiéndote a tu perfil, por favor aguardá.
+            </p>
+          </div>
+        </div>
       </div>
-      <div className="w-6 h-6 border-4 border-pink-600 border-t-transparent rounded-full animate-spin" />
-    </div>
-  </div>
-)}
+    )}
 
 
   </>
