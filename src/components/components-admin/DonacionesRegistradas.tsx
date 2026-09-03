@@ -2,6 +2,7 @@
 
 import { getCasosDonacion } from "@/services/adminconexion";
 import { useEffect, useState } from "react";
+import Footer from "../Footer";
 
 type CasoDonacion = {
   id: string;
@@ -31,12 +32,12 @@ export default function DonacionesRegistradas() {
   useEffect(() => {
     async function fetchCasosDonacion() {
       try {
+        setLoading(true);
         const res = await getCasosDonacion();
 
         if (!res || !res.ok) throw new Error("Error al cargar los casos de donación");
 
         const data: CasoDonacion[] = await res.json();
-        console.log("Casos de Donación:", data);
 
         const conIngreso = data.filter((caso) => (caso.donacion?.estadoDonacion || 0) > 0);
         const sinIngreso = data.filter((caso) => (caso.donacion?.estadoDonacion || 0) === 0);
@@ -54,89 +55,169 @@ export default function DonacionesRegistradas() {
     fetchCasosDonacion();
   }, []);
 
-  if (loading) return <p className="text-[#FA8072] p-6">Cargando datos...</p>;
-  if (error) return <p className="text-red-500 p-6">{error}</p>;
-
-  const renderCasoCard = (caso: CasoDonacion) => (
-    <div
-      key={caso.id}
-      className="bg-white dark:bg-zinc-900 rounded-xl shadow p-4 border border-[#ffcfc7] dark:border-zinc-700 flex flex-col mb-4 transition hover:shadow-md"
-    >
-      <div className="flex items-start gap-4">
-        <img
-          src={caso.mascota?.imagenes?.[0]?.url || "/default-pet.jpg"}
-          alt={caso.mascota?.nombre || "Mascota"}
-          className="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded shadow-sm"
-        />
-        <div className="flex-1">
-          <h2 className="text-md font-bold text-[#FA8072] line-clamp-2 leading-tight mb-1">
-            {caso.titulo}
-          </h2>
-          <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-2 mb-2">
-            {caso.descripcion}
-          </p>
-          <div className="space-y-1">
-            <p className="text-xs text-gray-600 dark:text-gray-400">
-              🐾 <strong>Mascota:</strong> {caso.mascota?.nombre} ({caso.mascota?.edad} años)
-            </p>
-            <p className="text-xs text-gray-600 dark:text-gray-400">
-              🏠 <strong>ONG:</strong> {caso.ong?.nombre || "Desconocida"}
-            </p>
-            {caso.donacion && (
-              <p className="text-xs text-green-700 dark:text-green-400 font-medium">
-                💰 Recaudado: ${caso.donacion.estadoDonacion} / ${caso.donacion.metaDonacion}
-              </p>
-            )}
-          </div>
-        </div>
-      </div>
-      <div className="mt-3 pt-3 border-t border-pink-100 dark:border-zinc-700">
-        <p className="text-xs text-gray-500 dark:text-gray-400 text-right">
-          {new Date(caso.creado_en).toLocaleDateString("es-AR", {
-            day: "2-digit",
-            month: "short",
-            year: "numeric",
-          })}
-        </p>
-      </div>
-    </div>
+  const totalRecaudado = casosConIngreso.reduce(
+    (acc, item) => acc + (item.donacion?.estadoDonacion || 0),
+    0
   );
 
-  return (
-    <div className="p-6 bg-[#fff5f2] dark:bg-black min-h-screen">
-      <h1 className="text-3xl font-bold text-[#FA8072] mb-8 text-center">
-        Panel de Donaciones
-      </h1>
+  const renderCasoCard = (caso: CasoDonacion) => {
+    const estado = caso.donacion?.estadoDonacion || 0;
+    const meta = caso.donacion?.metaDonacion || 1;
+    const porcentaje = Math.min(100, Math.round((estado / meta) * 100));
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Columna 1: Con Ingresos */}
-        <div className="border-2 border-green-200 dark:border-green-800 bg-white/50 dark:bg-zinc-900/50 rounded-2xl p-6">
-          <h2 className="text-xl font-bold text-green-700 dark:text-green-500 mb-6 flex items-center gap-2">
-            ✅ Donaciones con ingresos registrados
-          </h2>
-          {casosConIngreso.length === 0 ? (
-            <p className="text-gray-500 italic">No hay casos con ingresos todavía.</p>
-          ) : (
-            <div className="flex flex-col">
-              {casosConIngreso.map(renderCasoCard)}
+    return (
+      <div
+        key={caso.id}
+        className="bg-white border border-[#6c2f00]/15 rounded-2xl p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between mb-4 font-body-editorial"
+      >
+        <div className="flex items-start gap-4 mb-3">
+          <img
+            src={caso.mascota?.imagenes?.[0]?.url || "/default-pet.jpg"}
+            alt={caso.mascota?.nombre || "Mascota"}
+            className="w-18 h-18 sm:w-20 sm:h-20 object-cover rounded-2xl border-2 border-[#6c2f00]/20 shadow-xs shrink-0"
+          />
+          <div className="flex-1 min-w-0">
+            <h2 className="font-display-editorial text-lg font-bold text-[#6c2f00] truncate mb-1">
+              {caso.titulo}
+            </h2>
+            <p className="text-xs text-[#54433a] line-clamp-2 leading-relaxed mb-2">
+              {caso.descripcion}
+            </p>
+            <div className="space-y-1 text-xs text-[#54433a]">
+              <p className="flex items-center gap-1">
+                <span className="material-symbols-outlined text-sm text-[#ff6b6b]">pets</span>
+                <strong>{caso.mascota?.nombre}</strong> ({caso.mascota?.edad} {caso.mascota?.edad === 1 ? 'año' : 'años'})
+              </p>
+              <p className="flex items-center gap-1 text-[#6c2f00]">
+                <span className="material-symbols-outlined text-sm">domain</span>
+                {caso.ong?.nombre || "Organización no asignada"}
+              </p>
             </div>
-          )}
+          </div>
         </div>
 
-        {/* Columna 2: Sin Ingresos */}
-        <div className="border-2 border-orange-200 dark:border-orange-800 bg-white/50 dark:bg-zinc-900/50 rounded-2xl p-6">
-          <h2 className="text-xl font-bold text-orange-600 dark:text-orange-500 mb-6 flex items-center gap-2">
-            ⏳ Recaudaciones aún sin ingresos
-          </h2>
-          {casosSinIngreso.length === 0 ? (
-            <p className="text-gray-500 italic">No hay recaudaciones sin ingresos.</p>
-          ) : (
-            <div className="flex flex-col">
-              {casosSinIngreso.map(renderCasoCard)}
+        {caso.donacion && (
+          <div className="pt-3 border-t border-[#6c2f00]/10 bg-[#fff8f5] p-3 rounded-xl border border-[#6c2f00]/10">
+            <div className="flex justify-between items-center text-xs font-semibold text-[#6c2f00] mb-1">
+              <span>Recaudado: ${estado.toLocaleString("es-AR")}</span>
+              <span className="text-[#54433a]">Meta: ${meta.toLocaleString("es-AR")}</span>
             </div>
-          )}
+            <div className="w-full bg-[#fff1ea] h-2.5 rounded-full overflow-hidden border border-[#6c2f00]/10">
+              <div
+                className="h-full bg-[#ff6b6b] rounded-full transition-all duration-500"
+                style={{ width: `${porcentaje}%` }}
+              />
+            </div>
+            <div className="text-[10px] text-[#54433a] text-right mt-1 font-semibold">
+              {porcentaje}% alcanzado
+            </div>
+          </div>
+        )}
+
+        <div className="mt-2 text-[10px] text-[#54433a] text-right">
+          Publicado el {new Date(caso.creado_en).toLocaleDateString("es-AR")}
         </div>
       </div>
+    );
+  };
+
+  return (
+    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#ff6b6b] selection:text-white">
+      <div className="flex-grow max-w-[1280px] mx-auto px-6 md:px-12 py-12 w-full">
+        {/* Encabezado Hero Editorial */}
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] border border-[#6c2f00]/15 text-[#6c2f00] font-body-editorial text-xs font-semibold mb-4">
+            <span className="material-symbols-outlined text-base text-[#6c2f00]">payments</span>
+            Recaudación de Fondos
+          </div>
+          <h1 className="font-display-editorial text-4xl sm:text-5xl md:text-6xl text-[#6c2f00] font-bold tracking-tight mb-4 leading-[1.1]">
+            Panel de Donaciones
+          </h1>
+          <p className="font-body-editorial text-base sm:text-lg text-[#54433a] leading-relaxed">
+            Seguimiento de campañas de recaudación y aportes económicos destinados a ONGs y rescates.
+          </p>
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-8 items-start">
+          {/* Sidebar de Métricas */}
+          <aside className="w-full md:w-64 shrink-0 space-y-4 sticky top-6 font-body-editorial">
+            <div className="bg-white border border-[#6c2f00]/15 rounded-2xl p-5 shadow-xs text-center">
+              <p className="font-body-editorial text-xs font-bold uppercase tracking-wider text-[#54433a] mb-1 flex items-center justify-center gap-1.5">
+                <span className="material-symbols-outlined text-lg text-[#6c2f00]">monetization_on</span>
+                Total Recaudado
+              </p>
+              <p className="font-display-editorial text-3xl font-bold text-[#6c2f00]">
+                ${totalRecaudado.toLocaleString("es-AR")}
+              </p>
+            </div>
+
+            <div className="bg-white border border-[#6c2f00]/15 rounded-2xl p-5 shadow-xs text-center">
+              <p className="font-body-editorial text-xs font-bold uppercase tracking-wider text-[#54433a] mb-1 flex items-center justify-center gap-1.5">
+                <span className="material-symbols-outlined text-lg text-[#ff6b6b]">check_circle</span>
+                Con Ingresos
+              </p>
+              <p className="font-display-editorial text-2xl font-bold text-[#6c2f00]">
+                {casosConIngreso.length} casos
+              </p>
+            </div>
+
+            <div className="bg-[#white] border border-[#6c2f00]/15 rounded-2xl p-5 shadow-xs text-center">
+              <p className="font-body-editorial text-xs font-bold uppercase tracking-wider text-[#54433a] mb-1 flex items-center justify-center gap-1.5">
+                <span className="material-symbols-outlined text-lg text-[#54433a]">hourglass_empty</span>
+                Sin Ingresos
+              </p>
+              <p className="font-display-editorial text-2xl font-bold text-[#6c2f00]">
+                {casosSinIngreso.length} casos
+              </p>
+            </div>
+          </aside>
+
+          {/* Main Content: 2 Columnas */}
+          <main className="flex-1 w-full">
+            {loading ? (
+              <div className="bg-white border border-[#6c2f00]/15 rounded-3xl p-12 text-center shadow-xs">
+                <div className="w-10 h-10 border-4 border-[#ff6b6b] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+                <p className="font-display-editorial text-lg text-[#6c2f00] font-bold">Cargando campañas de donación...</p>
+              </div>
+            ) : error ? (
+              <div className="bg-white border border-[#6c2f00]/15 rounded-3xl p-12 text-center shadow-xs">
+                <span className="material-symbols-outlined text-5xl text-[#ff6b6b] mb-3">error</span>
+                <p className="text-sm text-red-500 font-semibold">{error}</p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Columna 1: Con Ingresos */}
+                <div className="bg-white border border-[#6c2f00]/15 rounded-3xl p-6 shadow-xs">
+                  <h2 className="font-display-editorial text-xl font-bold text-[#6c2f00] mb-6 flex items-center gap-2 pb-3 border-b border-[#6c2f00]/10">
+                    <span className="material-symbols-outlined text-xl text-[#6c2f00]">verified</span>
+                    Con Ingresos Registrados
+                  </h2>
+                  {casosConIngreso.length === 0 ? (
+                    <p className="text-xs text-[#54433a] italic text-center py-6">No hay campañas con ingresos aún.</p>
+                  ) : (
+                    casosConIngreso.map(renderCasoCard)
+                  )}
+                </div>
+
+                {/* Columna 2: Sin Ingresos */}
+                <div className="bg-white border border-[#6c2f00]/15 rounded-3xl p-6 shadow-xs">
+                  <h2 className="font-display-editorial text-xl font-bold text-[#6c2f00] mb-6 flex items-center gap-2 pb-3 border-b border-[#6c2f00]/10">
+                    <span className="material-symbols-outlined text-xl text-[#ff6b6b]">hourglass_empty</span>
+                    Sin Ingresos Registrados
+                  </h2>
+                  {casosSinIngreso.length === 0 ? (
+                    <p className="text-xs text-[#54433a] italic text-center py-6">No hay recaudaciones sin ingresos.</p>
+                  ) : (
+                    casosSinIngreso.map(renderCasoCard)
+                  )}
+                </div>
+              </div>
+            )}
+          </main>
+        </div>
+      </div>
+
+      <Footer />
     </div>
   );
 }
