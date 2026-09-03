@@ -95,11 +95,17 @@ export default function LoginUsuario() {
   <>
     <form
       onSubmit={handleLogin}
-      className="max-w-md p-6 mx-auto bg-white dark:bg-zinc-900 border border-[#ffbba5] dark:border-zinc-800 shadow-md rounded-xl"
+      className="w-full bg-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-[#6c2f00]/15 relative font-body-editorial"
     >
-      <h2 className="mb-6 text-3xl font-bold text-center text-[#FA8072]">
-        Iniciar sesión
-      </h2>
+      <div className="text-center mb-8">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] border border-[#6c2f00]/15 text-[#6c2f00] text-xs font-semibold mb-4 mx-auto">
+          <span className="material-symbols-outlined text-base">person</span>
+          Cuenta de Usuario
+        </div>
+        <h2 className="font-display-editorial text-3xl font-bold text-[#6c2f00] tracking-tight">
+          Iniciar sesión
+        </h2>
+      </div>
 
       <label className="block mb-4">
         <span className="block mb-1 font-semibold text-gray-700 dark:text-gray-300">Email:</span>

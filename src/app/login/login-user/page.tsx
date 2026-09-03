@@ -2,11 +2,9 @@ import LoginUsuario from "@/components/forms/LoginUsuario";
 
 export default function LoginUsuarioPage() {
   return (
-    <div className="fixed inset-0 bg-[#fff5f2] dark:bg-black overflow-hidden">
-      <div className="w-full h-full flex items-center justify-center px-6">
-        <div style={{ minWidth: "320px", maxWidth: "448px", width: "100%" }}>
-          <LoginUsuario />
-        </div>
+    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex items-center justify-center p-4 selection:bg-[#ff6b6b] selection:text-white">
+      <div className="w-full max-w-md">
+        <LoginUsuario />
       </div>
     </div>
   );
