@@ -100,12 +100,11 @@ export default function Home() {
         <section className="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpiJoWoSrqvFR7bQPrSWSWM5uoxBuZmi5kHPSt1aqWTpZ4KitaSj-wfRxk0pNuyudmmk-UuXtuk-8HL_6z5Ugw4qu1wdQY_dMCAbYrkxuKzwNvg3j7c7ocHgqneVSad5JG3aXJboM-CD4J4WPeFPnZCp6xkcbFYqTyhsPqQxtmF23lN27orN6BO-jZkkRdmuElCGge6kAaVXu9NLmR3UDBhyZEF97Psm-SiFzUvC4i9tyEP9rtn_Yw"
-              alt="Perro golden retriever corriendo en un campo soleado"
+              src="/portada.jpg"
+              alt="Imagen de portada Hearts & Paws"
               fill
               className="object-cover object-center scale-105 transition-transform duration-1000"
               priority
-              unoptimized
             />
           </div>
           {/* Degradado inferior que funde con #fff8f5 */}
