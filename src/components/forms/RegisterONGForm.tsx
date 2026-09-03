@@ -163,9 +163,11 @@ export function RegisterONGForm() {
   ];
 
   return (
-    <div className="py-10 max-w-2xl mx-auto">
+    <div>
       <FormBase
         title="Registro de ONG"
+        badgeText="Organización No Gubernamental"
+        iconName="domain"
         fields={campos}
         formData={formData}
         errors={errors}
@@ -175,13 +177,26 @@ export function RegisterONGForm() {
         showPasswordToggle
         showPassword={showPassword}
         setShowPassword={setShowPassword}
+        footerContent={
+          <div className="mt-6 text-center text-xs text-[#54433a] font-body-editorial">
+            ¿Ya tenés una cuenta de ONG?{" "}
+            <button
+              type="button"
+              onClick={() => router.push("/login/login-ong")}
+              className="text-[#6c2f00] font-bold hover:text-[#ff6b6b] transition-colors ml-1 underline underline-offset-2 cursor-pointer"
+            >
+              Iniciá sesión acá
+            </button>
+          </div>
+        }
       >
         {/* Imagen perfil */}
-        <div className="mt-6">
-          <label className="block text-sm font-medium text-gray-800 mb-2">
+        <div className="mt-4">
+          <label className="block text-xs font-semibold text-[#54433a] uppercase tracking-wider mb-1.5 ml-1">
             Imagen de perfil
           </label>
-          <label className="inline-block cursor-pointer file:sr-only bg-[#FA8072] hover:bg-[#e87366] text-white py-2 px-4 rounded">
+          <label className="inline-flex items-center gap-2 cursor-pointer bg-[#fff1ea] border border-[#6c2f00]/20 hover:bg-[#6c2f00] text-[#6c2f00] hover:text-white py-2.5 px-5 rounded-full font-body-editorial font-semibold text-xs transition-colors shadow-xs">
+            <span className="material-symbols-outlined text-base">upload</span>
             Seleccionar imagen
             <input
               type="file"
@@ -200,22 +215,22 @@ export function RegisterONGForm() {
             />
           </label>
           {previewUrl && (
-            <div className="mt-2">
+            <div className="mt-3">
               <img
                 src={previewUrl}
                 alt="Vista previa de imagen de perfil"
-                className="max-w-xs max-h-40 rounded-md object-contain border border-gray-300"
+                className="max-w-xs max-h-40 rounded-2xl object-contain border border-[#6c2f00]/20 shadow-xs"
               />
             </div>
           )}
           {errors.imagenPerfil && (
-            <p className="text-red-600 text-sm mt-1">{errors.imagenPerfil}</p>
+            <p className="text-red-500 text-xs mt-1 ml-3 font-semibold">{errors.imagenPerfil}</p>
           )}
         </div>
 
         {/* Archivo de verificación */}
-        <div className="mt-6">
-          <label className="block text-sm font-medium text-gray-800 mb-2">
+        <div className="mt-4">
+          <label className="block text-xs font-semibold text-[#54433a] uppercase tracking-wider mb-1.5 ml-1">
             Archivo de verificación (PDF)
           </label>
           <input
@@ -231,10 +246,10 @@ export function RegisterONGForm() {
                 return copia;
               });
             }}
-            className="w-full text-sm text-gray-700 dark:text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-[#FA8072] file:text-white hover:file:bg-pink-700"
+            className="w-full text-xs text-[#54433a] font-body-editorial file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-[#fff1ea] file:text-[#6c2f00] file:font-semibold hover:file:bg-[#6c2f00] hover:file:text-white file:transition-colors file:cursor-pointer"
           />
           {errors.archivoVerificacion && (
-            <p className="text-red-600 text-sm mt-1">{errors.archivoVerificacion}</p>
+            <p className="text-red-500 text-xs mt-1 ml-3 font-semibold">{errors.archivoVerificacion}</p>
           )}
         </div>
       </FormBase>
