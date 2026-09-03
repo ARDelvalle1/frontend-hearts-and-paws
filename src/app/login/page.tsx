@@ -14,14 +14,17 @@ export default function LoginSelector() {
   }, []);
 
   return (
-    <div
-      className="fixed inset-0 bg-[#fff5f2] dark:bg-black overflow-hidden flex items-center justify-center"
-      style={{ padding: '1rem' }}
-    >
-      <div className="max-w-xl w-full bg-white dark:bg-zinc-900 p-8 rounded-xl shadow-lg border border-[#ffbba5] dark:border-zinc-800 box-border">
-        <h1 className="text-3xl font-bold text-[#FA8072] text-center mb-8">
-          ¿Cómo querés iniciar sesión?
-        </h1>
+    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex items-center justify-center p-4 selection:bg-[#ff6b6b] selection:text-white">
+      <div className="max-w-xl w-full bg-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-[#6c2f00]/15 relative">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] border border-[#6c2f00]/15 text-[#6c2f00] text-xs font-semibold mb-4">
+            <span className="material-symbols-outlined text-base">lock</span>
+            Acceso a Hearts&amp;Paws
+          </div>
+          <h1 className="font-display-editorial text-3xl sm:text-4xl text-[#6c2f00] font-bold tracking-tight">
+            ¿Cómo querés iniciar sesión?
+          </h1>
+        </div>
 
         <div className="flex flex-col gap-6">
           <button
