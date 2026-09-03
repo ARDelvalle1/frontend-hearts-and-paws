@@ -126,10 +126,12 @@ export default function RegisterUserForm() {
   };
 
   return (
-    <div className="py-10">
+    <div>
       <Toaster position="top-center" />
       <FormBase
-        title="Registro de Usuario"
+        title="Crear cuenta de Usuario"
+        badgeText="Registro de Usuario"
+        iconName="person_add"
         fields={campos}
         formData={formData}
         errors={errors}
@@ -139,6 +141,18 @@ export default function RegisterUserForm() {
         showPasswordToggle={true}
         showPassword={showPassword}
         setShowPassword={setShowPassword}
+        footerContent={
+          <div className="mt-6 text-center text-xs text-[#54433a] font-body-editorial">
+            ¿Ya tenés una cuenta?{" "}
+            <button
+              type="button"
+              onClick={() => router.push("/login/login-user")}
+              className="text-[#6c2f00] font-bold hover:text-[#ff6b6b] transition-colors ml-1 underline underline-offset-2 cursor-pointer"
+            >
+              Iniciá sesión acá
+            </button>
+          </div>
+        }
       />
     </div>
   );
