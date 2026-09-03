@@ -26,31 +26,34 @@ export default function LoginSelector() {
           </h1>
         </div>
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4">
           <button
             onClick={() => router.push('/login/login')}
-            className="bg-[#FA8072] hover:bg-[#e87366] text-white font-semibold py-4 px-6 rounded-md text-lg transition w-full"
+            className="bg-[#ff6b6b] hover:bg-[#ae2f34] text-white font-body-editorial font-semibold py-3.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 w-full shadow-xs flex items-center justify-center gap-2.5 cursor-pointer"
           >
+            <span className="material-symbols-outlined text-xl">login</span>
             Iniciar sesión con Google
           </button>
 
           <button
             onClick={() => router.push('/login/login-ong')}
-            className="bg-[#ffece8] dark:bg-zinc-800 hover:bg-[#ffcfc7] dark:hover:bg-zinc-700 text-[#FA8072] font-semibold py-4 px-6 rounded-md text-lg transition w-full border border-[#FA8072]"
+            className="border border-[#6c2f00]/20 text-[#6c2f00] bg-[#fff8f5] hover:bg-[#fff1ea] font-body-editorial font-semibold py-3.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 w-full shadow-xs flex items-center justify-center gap-2.5 cursor-pointer"
           >
+            <span className="material-symbols-outlined text-xl text-[#6c2f00]">domain</span>
             Iniciar sesión como ONG
           </button>
 
           <button
             onClick={() => router.push('/login/login-user')}
-            className="bg-[#ffece8] dark:bg-zinc-800 hover:bg-[#ffcfc7] dark:hover:bg-zinc-700 text-[#FA8072] font-semibold py-4 px-6 rounded-md text-lg transition w-full border border-[#FA8072]"
+            className="border border-[#6c2f00]/20 text-[#6c2f00] bg-[#fff8f5] hover:bg-[#fff1ea] font-body-editorial font-semibold py-3.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 w-full shadow-xs flex items-center justify-center gap-2.5 cursor-pointer"
           >
+            <span className="material-symbols-outlined text-xl text-[#6c2f00]">person</span>
             Iniciar sesión como Usuario
           </button>
         </div>
 
-        <p className="text-center text-gray-600 dark:text-gray-300 mt-6 text-sm">
-          Elegí la opción que se corresponda con tu cuenta.
+        <p className="text-center text-[#54433a] mt-8 text-xs font-body-editorial">
+          Elegí la opción que corresponda al tipo de cuenta registrada.
         </p>
       </div>
     </div>
