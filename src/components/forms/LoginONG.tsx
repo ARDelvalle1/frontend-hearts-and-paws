@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useOngAuth } from "../../context/OngAuthContext";
 import toast from "react-hot-toast";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function LoginOng() {
   const { login } = useOngAuth();
@@ -75,10 +76,11 @@ export default function LoginOng() {
   };
 
   return (
-    <form
-      onSubmit={handleLogin}
-      className="w-full bg-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-[#6c2f00]/15 relative font-body-editorial"
-    >
+    <>
+      <form
+        onSubmit={handleLogin}
+        className="w-full bg-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-[#6c2f00]/15 relative font-body-editorial"
+      >
       <div className="text-center mb-8">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] border border-[#6c2f00]/15 text-[#6c2f00] text-xs font-semibold mb-4 mx-auto">
           <span className="material-symbols-outlined text-base">domain</span>
@@ -90,25 +92,25 @@ export default function LoginOng() {
       </div>
 
       <label className="block mb-4">
-        <span className="block font-semibold mb-1 text-gray-700 dark:text-gray-300">Email:</span>
+        <span className="block mb-1.5 font-semibold text-xs text-[#54433a] uppercase tracking-wider">Email</span>
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="border border-gray-300 rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-pink-500"
+          className="w-full px-5 py-2.5 border border-[#6c2f00]/20 bg-[#fff8f5] text-[#6c2f00] placeholder:text-[#54433a]/60 font-body-editorial text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] transition-all"
           placeholder="ejemplo@correo.com"
           disabled={loading}
           required
         />
       </label>
 
-      <label className="block mb-6 relative">
-        <span className="block font-semibold mb-1 text-gray-700 dark:text-gray-300">Contraseña:</span>
+      <label className="relative block mb-6">
+        <span className="block mb-1.5 font-semibold text-xs text-[#54433a] uppercase tracking-wider">Contraseña</span>
         <input
           type={showPassword ? "text" : "password"}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="border border-gray-300 rounded px-3 py-2 w-full pr-10 focus:outline-none focus:ring-2 focus:ring-pink-500"
+          className="w-full px-5 py-2.5 pr-12 border border-[#6c2f00]/20 bg-[#fff8f5] text-[#6c2f00] placeholder:text-[#54433a]/60 font-body-editorial text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] transition-all"
           placeholder="Tu contraseña"
           disabled={loading}
           required
@@ -116,70 +118,52 @@ export default function LoginOng() {
         <button
           type="button"
           onClick={() => setShowPassword((prev) => !prev)}
-          className="absolute right-3 top-[38px] text-gray-600 dark:text-gray-300 hover:text-[#FA8072]"
+          className="absolute text-[#6c2f00] hover:text-[#ff6b6b] right-4 top-8 transition-colors p-1 cursor-pointer"
           tabIndex={-1}
           aria-label={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
         >
-          {showPassword ? (
-            // ojo cerrado
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.875 18.825A10.05 10.05 0 0112 19c-5 0-9-4-9-9a8.966 8.966 0 012.292-5.708m.618 6.076a4.48 4.48 0 006.444 6.444m1.568-1.568A9.968 9.968 0 0121 10c0-1.61-.406-3.137-1.125-4.475M3 3l18 18"
-              />
-            </svg>
-          ) : (
-            // ojo abierto
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-              />
-            </svg>
-          )}
+          {showPassword ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
         </button>
       </label>
 
       <button
         type="submit"
         disabled={loading}
-        className={`w-full bg-[#FA8072] text-white py-3 rounded font-semibold hover:bg-[#e87366] transition ${
+        className={`w-full bg-[#ff6b6b] hover:bg-[#ae2f34] text-white font-body-editorial font-semibold py-3.5 px-6 rounded-full text-base transition-all duration-300 shadow-md flex items-center justify-center gap-2 cursor-pointer ${
           loading ? "opacity-60 cursor-not-allowed" : ""
         }`}
       >
+        <span className="material-symbols-outlined text-xl">domain</span>
         {loading ? "Ingresando..." : "Entrar"}
       </button>
-      <div className="mt-6 text-center text-sm text-gray-600 dark:text-gray-300">
+
+      <div className="mt-6 text-center text-xs text-[#54433a] font-body-editorial">
         ¿No tenés una cuenta?{" "}
         <button
           type="button"
           onClick={() => router.push("/register")}
-          className="text-[#FA8072] font-semibold hover:underline"
+          className="text-[#6c2f00] font-bold hover:text-[#ff6b6b] transition-colors ml-1 underline underline-offset-2 cursor-pointer"
         >
           Registrate acá
         </button>
       </div>
     </form>
+
+    {loading && (
+      <div className="fixed inset-0 z-50 bg-white/90 backdrop-blur-xs flex items-center justify-center pointer-events-auto">
+        <div className="flex flex-col items-center gap-4 bg-[#fff8f5] border border-[#6c2f00]/15 p-8 rounded-3xl shadow-2xl max-w-xs text-center font-body-editorial">
+          <div className="w-10 h-10 border-4 border-[#ff6b6b] border-t-transparent rounded-full animate-spin" />
+          <div>
+            <p className="font-display-editorial font-bold text-lg text-[#6c2f00]">
+              Iniciando sesión...
+            </p>
+            <p className="text-xs text-[#54433a] mt-1">
+              Redirigiéndote al panel de ONG, por favor aguardá.
+            </p>
+          </div>
+        </div>
+      </div>
+    )}
+  </>
   );
 }
