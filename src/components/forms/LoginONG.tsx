@@ -77,11 +77,17 @@ export default function LoginOng() {
   return (
     <form
       onSubmit={handleLogin}
-      className="max-w-md mx-auto p-6 bg-white dark:bg-zinc-900 rounded-xl shadow-md border border-[#ffbba5] dark:border-zinc-800"
+      className="w-full bg-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-[#6c2f00]/15 relative font-body-editorial"
     >
-      <h2 className="text-3xl font-bold mb-6 text-[#FA8072] text-center">
-        Iniciar sesión como ONG
-      </h2>
+      <div className="text-center mb-8">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] border border-[#6c2f00]/15 text-[#6c2f00] text-xs font-semibold mb-4 mx-auto">
+          <span className="material-symbols-outlined text-base">domain</span>
+          Organización No Gubernamental
+        </div>
+        <h2 className="font-display-editorial text-3xl font-bold text-[#6c2f00] tracking-tight">
+          Iniciar sesión como ONG
+        </h2>
+      </div>
 
       <label className="block mb-4">
         <span className="block font-semibold mb-1 text-gray-700 dark:text-gray-300">Email:</span>
