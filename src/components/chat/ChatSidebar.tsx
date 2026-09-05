@@ -173,21 +173,24 @@ export default function ChatSidebar({ esOng, userId, onSelectChat }: ChatSidebar
   };
 
   return (
-    <aside className="w-120 border-r border-gray-200 p-4 flex flex-col bg-white shadow-sm">
+    <aside className="w-full md:w-72 border-b md:border-b-0 md:border-r border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 p-4 flex flex-col bg-[#fff8f5]/60 dark:bg-[#1a0f08]/60 h-full flex-shrink-0">
       <button
         onClick={handleToggleDropdown}
-        className="mb-4 bg-[#FA8072] hover:bg-[#e87366] text-white py-2 px-4 rounded-lg transition-colors"
+        className="mb-3 w-full bg-[#ff6b6b] hover:bg-[#ae2f34] text-white font-semibold py-2.5 px-4 rounded-full transition-all duration-300 shadow-sm flex items-center justify-center gap-2 text-sm"
       >
-        {mostrarDropdown ? "Cerrar lista" : "Iniciar nuevo chat"}
+        <span className="material-symbols-outlined text-base">
+          {mostrarDropdown ? "close" : "add_comment"}
+        </span>
+        <span>{mostrarDropdown ? "Cerrar lista" : "Iniciar nuevo chat"}</span>
       </button>
 
       {mostrarDropdown && (
         <div
           ref={dropdownRef}
-          className="mb-4 max-h-60 overflow-y-auto border border-[#ffbba5] rounded-lg shadow-sm bg-white"
+          className="mb-3 max-h-56 overflow-y-auto border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl shadow-lg bg-[#fff1ea] dark:bg-[#28180d] divide-y divide-[#6c2f00]/10 dark:divide-[#ffdbc9]/10"
         >
           {destinatarios.length === 0 ? (
-            <p className="p-4 text-center text-gray-500 text-sm">
+            <p className="p-4 text-center text-[#54433a] dark:text-[#dac2b6] text-sm">
               No hay destinatarios disponibles
             </p>
           ) : (
@@ -195,13 +198,15 @@ export default function ChatSidebar({ esOng, userId, onSelectChat }: ChatSidebar
               {destinatarios.map((dest) => (
                 <li
                   key={dest.id}
-                  className="flex items-center justify-between px-4 py-3 hover:bg-[#fff5f2] cursor-pointer transition-colors"
+                  className="flex items-center justify-between px-4 py-2.5 hover:bg-[#ffe3d2] dark:hover:bg-[#3f2c20] cursor-pointer transition-colors"
                   onClick={() => handleSeleccionarDestinatario(dest.id)}
                 >
-                  <span className="text-sm font-medium text-gray-800">{dest.nombre}</span>
+                  <span className="text-sm font-medium text-[#28180d] dark:text-[#ffede4]">
+                    {dest.nombre}
+                  </span>
                   <span
-                    className={`ml-2 w-3 h-3 rounded-full ${
-                      dest.conectado ? "bg-green-500" : "bg-[#fff5f2]0"
+                    className={`ml-2 w-2.5 h-2.5 rounded-full ${
+                      dest.conectado ? "bg-emerald-500" : "bg-gray-300 dark:bg-gray-600"
                     }`}
                     title={dest.conectado ? "Conectado" : "Desconectado"}
                   />
@@ -212,22 +217,35 @@ export default function ChatSidebar({ esOng, userId, onSelectChat }: ChatSidebar
         </div>
       )}
 
-      <input
-        type="text"
-        value={filtro}
-        onChange={(e) => setFiltro(e.target.value)}
-        placeholder="Buscar por nombre..."
-        className="mb-4 px-3 py-2 text-sm border border-[#ffbba5] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
-      />
+      <div className="relative mb-3">
+        <span className="material-symbols-outlined absolute left-3 top-2.5 text-base text-[#54433a] dark:text-[#dac2b6] pointer-events-none">
+          search
+        </span>
+        <input
+          type="text"
+          value={filtro}
+          onChange={(e) => setFiltro(e.target.value)}
+          placeholder="Buscar por nombre..."
+          className="w-full pl-9 pr-3 py-2 text-sm bg-white dark:bg-[#28180d] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#28180d] dark:text-[#ffede4] placeholder-[#54433a]/60 dark:placeholder-[#dac2b6]/60 focus:outline-none focus:border-[#ff6b6b] transition-all"
+        />
+      </div>
 
       {loading ? (
-        <div className="text-sm text-gray-500">Cargando chats...</div>
+        <div className="text-sm text-[#54433a] dark:text-[#dac2b6] flex items-center gap-2 py-4 justify-center">
+          <span className="material-symbols-outlined text-base animate-spin">progress_activity</span>
+          <span>Cargando chats...</span>
+        </div>
       ) : error ? (
-        <div className="text-sm text-red-600">⚠️ {error}</div>
+        <div className="text-xs text-red-600 dark:text-red-400 p-2 bg-red-50 dark:bg-red-950/30 rounded-lg">
+          ⚠️ {error}
+        </div>
       ) : chats.length === 0 ? (
-        <div className="text-sm text-gray-500">No tienes chats activos</div>
+        <div className="text-center py-6 text-sm text-[#54433a] dark:text-[#dac2b6]">
+          <span className="material-symbols-outlined text-3xl opacity-40 block mb-1">chat_bubble_outline</span>
+          No tienes chats activos
+        </div>
       ) : (
-        <ul className="flex-grow overflow-auto max-h-[calc(100vh-20rem)] space-y-3 pr-1">
+        <ul className="flex-grow overflow-y-auto space-y-2 pr-1">
           {chats
             .filter((chat) => {
               const nombre =
@@ -247,16 +265,18 @@ export default function ChatSidebar({ esOng, userId, onSelectChat }: ChatSidebar
               return (
                 <li
                   key={chat.id}
-                  className="flex items-center gap-4 p-4 bg-gray-50 border border-gray-200 rounded-xl cursor-pointer hover:shadow-md hover:-translate-y-0.5 transition-all"
+                  className="flex items-center gap-3 p-3 bg-white/70 dark:bg-[#3f2c20]/60 hover:bg-[#ffe3d2] dark:hover:bg-[#3f2c20] border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 rounded-xl cursor-pointer transition-all duration-200"
                   onClick={() => onSelectChat(chat.id)}
                 >
-                  <div className="w-10 h-10 rounded-full bg-[#ffece8] flex items-center justify-center text-[#FA8072] font-bold text-sm flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-[#ffeade] dark:bg-[#6c2f00]/40 text-[#6c2f00] dark:text-[#ffdbc9] font-bold text-sm flex items-center justify-center flex-shrink-0 border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15">
                     {inicial}
                   </div>
 
-                  <div className="flex flex-col overflow-hidden">
-                    <strong className="truncate text-sm text-gray-900">{otroNombre}</strong>
-                    <p className="text-xs text-gray-600 truncate">
+                  <div className="flex flex-col min-w-0 flex-1">
+                    <strong className="truncate text-sm text-[#28180d] dark:text-[#ffede4] font-semibold">
+                      {otroNombre}
+                    </strong>
+                    <p className="text-xs text-[#54433a] dark:text-[#dac2b6] truncate mt-0.5">
                       {chat.ultimoMensaje?.contenido || "Sin mensajes aún"}
                     </p>
                   </div>

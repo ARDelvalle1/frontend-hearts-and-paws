@@ -48,11 +48,11 @@ export default function ChatWindow({ chatId, autorId, autorNombre }: ChatWindowP
   const mensajesTotales = [...mensajesIniciales, ...mensajes];
 
   return (
-    <div className="flex flex-col w-[1400px] h-[700px] mx-auto p-4 bg-gray-50 rounded-lg shadow-inner border border-gray-200">
+    <div className="flex flex-col flex-1 h-full w-full bg-white/40 dark:bg-black/20 p-4 overflow-hidden">
       {/* Mensajes */}
       <div
         ref={chatRef}
-        className="flex-grow overflow-y-auto px-4 py-4 mb-3 bg-white rounded-md shadow space-y-3"
+        className="flex-grow overflow-y-auto px-4 py-4 mb-3 space-y-3 flex flex-col"
       >
         {mensajesTotales.map((msg) => {
           const esAutor = msg.autor?.id === autorId;
@@ -63,14 +63,29 @@ export default function ChatWindow({ chatId, autorId, autorNombre }: ChatWindowP
           return (
             <div
               key={msg.id}
-              className={`max-w-full break-words rounded-lg px-4 py-3 text-sm
-                ${esAutor ? 'bg-[#ffcfc7] self-end text-right' : 'bg-gray-200 self-start text-left'}
-                shadow-sm
-              `}
+              className={`max-w-[85%] sm:max-w-[75%] break-words px-4 py-2.5 shadow-sm text-sm ${
+                esAutor
+                  ? 'bg-[#ff6b6b] text-white self-end text-right rounded-2xl rounded-tr-none'
+                  : 'bg-[#ffeade] dark:bg-[#3f2c20] text-[#28180d] dark:text-[#ffede4] self-start text-left rounded-2xl rounded-tl-none border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10'
+              }`}
             >
-              <div className="font-semibold mb-1">{msg.autor?.nombre || 'Anon'}</div>
-              <div>{msg.contenido}</div>
-              {hora && <div className="text-xs text-gray-500 mt-1">{hora}</div>}
+              <div
+                className={`text-xs font-semibold mb-1 ${
+                  esAutor ? 'text-white/90' : 'text-[#6c2f00] dark:text-[#ffdbc9]'
+                }`}
+              >
+                {msg.autor?.nombre || 'Anon'}
+              </div>
+              <div className="leading-relaxed">{msg.contenido}</div>
+              {hora && (
+                <div
+                  className={`text-[10px] mt-1 ${
+                    esAutor ? 'text-white/75' : 'text-[#54433a] dark:text-[#dac2b6]'
+                  }`}
+                >
+                  {hora}
+                </div>
+              )}
             </div>
           );
         })}
@@ -82,20 +97,22 @@ export default function ChatWindow({ chatId, autorId, autorNombre }: ChatWindowP
           e.preventDefault();
           handleEnviar();
         }}
-        className="flex gap-3 pt-1"
+        className="flex items-center gap-2 pt-2 border-t border-[#6c2f00]/10 dark:border-[#ffdbc9]/10"
       >
         <input
           type="text"
           value={contenido}
           onChange={(e) => setContenido(e.target.value)}
           placeholder="Escribe un mensaje..."
-          className="flex-grow border border-gray-300 rounded-md px-4 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-pink-400"
+          className="flex-grow bg-white dark:bg-[#28180d] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-full px-4 py-2.5 text-sm text-[#28180d] dark:text-[#ffede4] placeholder-[#54433a]/60 dark:placeholder-[#dac2b6]/60 focus:outline-none focus:border-[#ff6b6b] transition-all shadow-sm"
         />
         <button
           type="submit"
-          className="bg-[#FA8072] hover:bg-[#e87366] text-white font-semibold px-5 py-2 rounded-md transition"
+          className="bg-[#ff6b6b] hover:bg-[#ae2f34] text-white font-semibold px-4 py-2.5 rounded-full transition-all duration-300 shadow-sm flex items-center justify-center gap-1.5 flex-shrink-0"
+          title="Enviar"
         >
-          Enviar
+          <span className="text-sm hidden sm:inline">Enviar</span>
+          <span className="material-symbols-outlined text-base">send</span>
         </button>
       </form>
     </div>
