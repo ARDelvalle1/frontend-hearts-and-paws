@@ -205,53 +205,62 @@ export default function DashboardSencillo() {
   }
 
   return (
-    <div className="flex min-h-screen bg-[#fff5f2]">
-      {/* Navegación lateral */}
-      <nav className="flex flex-col px-4 py-6 text-white bg-[#FA8072] w-60">
-        <h2 className="mb-8 text-xl font-semibold text-center">
-          Perfil del Usuario
-        </h2>
-        <button
-          onClick={() => router.push("/dashboard/usuario")}
-          className="text-left px-3 py-2 rounded hover:bg-[#e87366]"
-        >
-          Principal
-        </button>
-        <button
-          onClick={() => router.push("/usuario/adopciones")}
-          className="text-left px-3 py-2 rounded hover:bg-[#e87366]"
-        >
-          Mis Adopciones
-        </button>
-        <button
-          onClick={() => router.push("/usuario/donaciones")}
-          className="text-left px-3 py-2 rounded hover:bg-[#e87366]"
-        >
-          Mis Donaciones
-        </button>
-        <button
-          onClick={() => router.push("/usuario/favoritos")}
-          className="text-left px-3 py-2 rounded hover:bg-[#e87366]"
-        >
-          Mis Favoritos
-        </button>
-        <button
-          onClick={() => router.push("/chat")}
-          className="text-left px-3 py-2 rounded hover:bg-[#e87366]"
-        >
-          Mensajes
-        </button>
+    <div className="flex min-h-screen bg-[#fff8f5] dark:bg-[#1a0f08] text-[#28180d] dark:text-[#ffede4] font-body-editorial">
+      {/* Navegación lateral estilo Earth & Heart */}
+      <nav className="flex flex-col px-6 py-8 bg-[#ffeade] dark:bg-[#28180d] border-r border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 w-64 shadow-none flex-shrink-0">
+        <div className="font-display-editorial text-2xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] mb-8 flex items-center gap-2">
+          <span className="material-symbols-outlined text-[#6c2f00] dark:text-[#ffdbc9]">person</span>
+          <span>Perfil</span>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <button
+            onClick={() => router.push("/dashboard/usuario")}
+            className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold bg-[#fff1ea] dark:bg-[#3f2c20] text-[#6c2f00] dark:text-[#ffdbc9] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 transition-all duration-300 flex items-center gap-3"
+          >
+            <span className="material-symbols-outlined text-lg">home</span>
+            <span>Principal</span>
+          </button>
+          <button
+            onClick={() => router.push("/usuario/adopciones")}
+            className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#3f2c20] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
+          >
+            <span className="material-symbols-outlined text-lg">pets</span>
+            <span>Mis Adopciones</span>
+          </button>
+          <button
+            onClick={() => router.push("/usuario/donaciones")}
+            className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#3f2c20] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
+          >
+            <span className="material-symbols-outlined text-lg">volunteer_activism</span>
+            <span>Mis Donaciones</span>
+          </button>
+          <button
+            onClick={() => router.push("/usuario/favoritos")}
+            className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#3f2c20] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
+          >
+            <span className="material-symbols-outlined text-lg">favorite</span>
+            <span>Mis Favoritos</span>
+          </button>
+          <button
+            onClick={() => router.push("/chat")}
+            className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#3f2c20] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
+          >
+            <span className="material-symbols-outlined text-lg">chat</span>
+            <span>Mensajes</span>
+          </button>
+        </div>
       </nav>
 
-      {/* Contenido principal */}
-      <main className="flex-1 flex items-start justify-center pt-20 p-10 min-h-screen">
-        <section className="w-full max-w-3xl bg-white rounded-lg shadow p-6 border border-pink-100">
-          {/* Avatar */}
-          <div className="flex items-center space-x-6 mb-6">
-            <div className="relative w-28 h-28">
-              <div className="w-28 h-28 rounded-full border-2 border-[#FA8072] shadow overflow-hidden relative bg-white">
+      {/* Contenido principal editorial */}
+      <main className="flex-1 flex items-start justify-center pt-12 md:pt-16 p-6 md:p-12 min-h-screen">
+        <section className="w-full max-w-3xl bg-[#fff1ea] dark:bg-[#28180d] rounded-xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 p-8 md:p-10 shadow-none">
+          {/* Avatar y Encabezado */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 pb-8 border-b border-[#6c2f00]/15 dark:border-[#ffdbc9]/15">
+            <div className="relative w-28 h-28 flex-shrink-0">
+              <div className="w-28 h-28 rounded-full border-2 border-[#6c2f00]/30 dark:border-[#ffdbc9]/30 shadow-none overflow-hidden relative bg-[#fff8f5] dark:bg-[#3f2c20] flex items-center justify-center">
                 {uploading ? (
-                  <span className="text-sm text-[#FA8072] font-semibold animate-pulse flex items-center justify-center h-full">
+                  <span className="text-xs text-[#6c2f00] dark:text-[#ffdbc9] font-semibold animate-pulse flex items-center justify-center h-full">
                     Cargando...
                   </span>
                 ) : (
@@ -262,16 +271,16 @@ export default function DashboardSencillo() {
                       "/default-avatar.png"
                     }
                     alt={`Foto de perfil de ${userData.nombre}`}
-                    className="w-32 h-32 rounded-full object-cover border-2 border-[#FA8072] shadow"
+                    className="w-full h-full object-cover"
                   />
                 )}
               </div>
               <label
                 htmlFor="imagen-perfil"
-                className="absolute bottom-0 right-0 bg-[#FA8072] hover:bg-[#e87366] text-white p-1 rounded-full cursor-pointer transition"
+                className="absolute bottom-0 right-0 bg-[#ff6b6b] hover:bg-[#ae2f34] text-[#6d0010] hover:text-white p-2 rounded-full cursor-pointer transition-all duration-300 shadow-sm flex items-center justify-center"
                 title="Cambiar imagen"
               >
-                📷
+                <span className="material-symbols-outlined text-base">photo_camera</span>
                 <input
                   id="imagen-perfil"
                   type="file"
@@ -285,12 +294,12 @@ export default function DashboardSencillo() {
               </label>
             </div>
 
-            <div>
-              <p className="text-2xl font-bold text-[#FA8072]">
-                Hola, {userData.nombre}!
-              </p>
-              <p className="text-sm text-gray-500">
-                Bienvenido a tu perfil personal
+            <div className="text-center sm:text-left flex-1">
+              <h1 className="font-display-editorial text-3xl md:text-4xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] leading-tight">
+                Hola, {userData.nombre || "Usuario"}!
+              </h1>
+              <p className="font-body-editorial text-sm md:text-base text-[#54433a] dark:text-[#dac2b6] mt-1">
+                Bienvenido a tu perfil personal en Hearts&amp;Paws
               </p>
             </div>
           </div>
@@ -301,7 +310,7 @@ export default function DashboardSencillo() {
               e.preventDefault();
               handleGuardar();
             }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-4"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8"
           >
             {(
               [
@@ -316,7 +325,7 @@ export default function DashboardSencillo() {
               <div key={campo}>
                 <label
                   htmlFor={campo}
-                  className="block mb-1 text-sm font-medium text-[#FA8072] capitalize"
+                  className="block mb-2 text-xs font-semibold uppercase tracking-wider text-[#6c2f00] dark:text-[#ffdbc9] font-body-editorial"
                 >
                   {campo}
                 </label>
@@ -333,7 +342,7 @@ export default function DashboardSencillo() {
                         "El email es un campo definido que no permite edición"
                       )
                     }
-                    className="w-full px-3 py-2 rounded border text-sm border-gray-300 bg-gray-100 cursor-not-allowed"
+                    className="w-full px-4 py-3 rounded-lg text-sm bg-black/5 dark:bg-white/5 border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#54433a] dark:text-[#dac2b6] cursor-not-allowed transition-all duration-300"
                   />
                 ) : (
                   <input
@@ -343,10 +352,10 @@ export default function DashboardSencillo() {
                     disabled={!isEditando}
                     value={userData[campo]}
                     onChange={handleChange}
-                    className={`w-full px-3 py-2 rounded border text-sm transition ${
+                    className={`w-full px-4 py-3 rounded-lg text-sm transition-all duration-300 ${
                       isEditando
-                        ? "border-[#FA8072] focus:outline-none focus:ring-2 focus:ring-pink-300"
-                        : "border-gray-300 bg-gray-100 cursor-not-allowed"
+                        ? "bg-white dark:bg-[#3f2c20] border border-[#6c2f00]/40 dark:border-[#ffdbc9]/40 text-[#28180d] dark:text-[#ffede4] focus:outline-none focus:border-[#ff6b6b] focus:ring-1 focus:ring-[#ff6b6b]"
+                        : "bg-black/5 dark:bg-white/5 border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#54433a] dark:text-[#dac2b6] cursor-not-allowed"
                     }`}
                     required={campo === "nombre"}
                   />
@@ -354,24 +363,33 @@ export default function DashboardSencillo() {
               </div>
             ))}
 
-            <div className="col-span-full flex justify-end gap-4 mt-4">
-              {!isEditando && (
+            <div className="col-span-full flex justify-end gap-4 mt-6 pt-4 border-t border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
+              {!isEditando ? (
                 <button
                   type="button"
                   onClick={() => setIsEditando(true)}
-                  className="px-6 py-2 text-white transition bg-[#FA8072] rounded hover:bg-[#e87366]"
+                  className="bg-[#ff6b6b] hover:bg-[#ae2f34] text-[#6d0010] hover:text-white font-body-editorial font-semibold px-8 py-3 rounded-full transition-all duration-300 ease-in-out shadow-sm hover:scale-105 flex items-center justify-center gap-2"
                 >
-                  Editar
+                  <span className="material-symbols-outlined text-lg">edit</span>
+                  <span>Editar Perfil</span>
                 </button>
-              )}
-
-              {isEditando && (
-                <button
-                  type="submit"
-                  className="px-6 py-2 text-white transition bg-[#FA8072] rounded hover:bg-[#e87366]"
-                >
-                  Guardar
-                </button>
+              ) : (
+                <div className="flex gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setIsEditando(false)}
+                    className="bg-transparent border border-[#6c2f00]/30 dark:border-[#ffdbc9]/30 text-[#6c2f00] dark:text-[#ffdbc9] hover:bg-[#ffe3d2] dark:hover:bg-[#3f2c20] font-body-editorial font-semibold px-6 py-3 rounded-full transition-all duration-300 flex items-center justify-center gap-2"
+                  >
+                    <span>Cancelar</span>
+                  </button>
+                  <button
+                    type="submit"
+                    className="bg-[#ff6b6b] hover:bg-[#ae2f34] text-[#6d0010] hover:text-white font-body-editorial font-semibold px-8 py-3 rounded-full transition-all duration-300 ease-in-out shadow-sm hover:scale-105 flex items-center justify-center gap-2"
+                  >
+                    <span className="material-symbols-outlined text-lg">save</span>
+                    <span>Guardar Cambios</span>
+                  </button>
+                </div>
               )}
             </div>
           </form>
