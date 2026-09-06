@@ -69,53 +69,59 @@ export default function MascotaModal({
   if (!visible) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#ffece8] bg-opacity-30">
-      <div className="relative bg-[#fff5f2] rounded-2xl shadow-lg max-w-md w-full p-6 border border-[#ffcfc7] overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('/huellas-bg.png')] bg-contain bg-repeat pointer-events-none"></div>
-
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs font-body-editorial">
+      <div className="relative bg-white dark:bg-[#28180d] rounded-3xl shadow-2xl max-w-md w-full p-6 sm:p-8 border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 overflow-hidden text-[#28180d] dark:text-[#ffede4]">
+        {/* Botón cerrar */}
         <button
           onClick={onClose}
-          className="absolute top-1 right-1 text-[#FA8072] hover:text-[#FA8072] text-3xl font-bold z-10"
-          aria-label="Cerrar"
+          aria-label="Cerrar modal"
+          className="absolute top-4 right-4 text-[#6c2f00] dark:text-[#ffdbc9] hover:text-[#c85a32] dark:hover:text-[#c85a32] transition-colors p-2 rounded-full hover:bg-[#fff8f5] dark:hover:bg-[#3f2c20] cursor-pointer flex items-center justify-center z-20"
         >
-          &times;
+          <span className="material-symbols-outlined text-xl">close</span>
         </button>
 
-        <div className="mb-4 relative z-10">
+        {/* Imagen destacada */}
+        <div className="mb-5 relative z-10 w-full h-56 sm:h-64 rounded-2xl overflow-hidden bg-[#6c2f00]/5 dark:bg-[#ffdbc9]/5 border border-[#6c2f00]/10 dark:border-[#ffdbc9]/15">
           <Image
             src={imagenUrl}
             alt={mascota.nombre}
-            width={400}
-            height={300}
-            className="rounded-md object-cover w-full"
+            fill
+            className="object-cover object-center"
+            unoptimized
           />
         </div>
 
-        <h2 className="text-3xl font-extrabold text-[#FA8072] mb-2 text-center relative z-10">
+        {/* Nombre de la mascota */}
+        <h2 className="font-display-editorial text-2xl sm:text-3xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] mb-3 text-center relative z-10">
           {mascota.nombre}
         </h2>
 
-        <div className="relative z-10 mb-6 max-h-48 overflow-y-auto">
+        {/* Historia / Descripción */}
+        <div className="relative z-10 mb-6 max-h-48 overflow-y-auto px-2">
           {cargando ? (
-            <p className="text-center text-gray-500">Cargando historia...</p>
+            <p className="text-center font-body-editorial text-sm text-[#54433a] dark:text-[#dac2b6]">Cargando historia...</p>
           ) : (
-            <p className="text-gray-700 whitespace-pre-wrap leading-relaxed text-center">
-              {mascota.descripcion}
+            <p className="font-body-editorial text-[#54433a] dark:text-[#dac2b6] text-sm sm:text-base whitespace-pre-wrap leading-relaxed text-center">
+              {mascota.descripcion || 'Un compañero amoroso que busca una segunda oportunidad y un hogar lleno de cariño.'}
             </p>
           )}
         </div>
 
+        {/* Botón de Acción */}
         <div className="text-center z-10 relative">
           <button
             onClick={handleAccion}
             disabled={metaAlcanzada}
-            className={`px-6 py-3 rounded-full shadow-md transition-all duration-300 font-semibold ${
+            className={`w-full py-3.5 px-6 rounded-full font-body-editorial font-semibold text-sm transition-all duration-300 shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-95 ${
               metaAlcanzada
-                ? 'bg-[#ffcfc7] text-[#FA8072] cursor-not-allowed'
-                : 'bg-[#fff5f2]0 hover:bg-[#FA8072] text-white'
+                ? 'bg-neutral-200 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 cursor-not-allowed border border-neutral-300 dark:border-neutral-700'
+                : 'bg-[#c85a32] hover:bg-[#a84320] text-white'
             }`}
           >
-            {metaAlcanzada ? 'Meta alcanzada 🐾' : textoBoton}
+            <span className="material-symbols-outlined text-base">
+              {modo === 'adopcion' ? 'pets' : 'favorite'}
+            </span>
+            <span>{metaAlcanzada ? 'Meta alcanzada 🐾' : textoBoton}</span>
           </button>
         </div>
       </div>
