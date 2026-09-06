@@ -57,13 +57,6 @@ const SUCCESS_STORIES: SuccessStory[] = [
 ];
 
 export default function Home() {
-  // Asegurar que la página Home siempre renderice en modo claro puro
-  useEffect(() => {
-    document.documentElement.classList.remove('dark');
-    document.documentElement.classList.add('light');
-    document.documentElement.dataset.theme = 'light';
-  }, []);
-
   // Estado del carrusel de Historias de éxito
   const [stories, setStories] = useState<SuccessStory[]>(SUCCESS_STORIES);
   const [currentIndex, setCurrentIndex] = useState(0);

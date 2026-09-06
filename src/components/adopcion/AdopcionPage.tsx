@@ -13,13 +13,6 @@ import { getMascotasEnAdopcion, getMascotasFiltradas } from '@/services/mascotas
 export default function AdopcionPage() {
   const router = useRouter()
 
-  // Estado para el tema claro forzado de esta vista editorial
-  useEffect(() => {
-    document.documentElement.classList.remove('dark')
-    document.documentElement.classList.add('light')
-    document.documentElement.dataset.theme = 'light'
-  }, [])
-
   // Ahora tipo puede ser '', 'perro' o 'gato'
   const [tipo, setTipo] = useState<'perro' | 'gato' | ''>('')
   const [resultados, setResultados] = useState<Caso[]>([])
@@ -78,17 +71,17 @@ export default function AdopcionPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
+    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#1a0f08] text-[#28180d] dark:text-[#ffede4] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
 
 
       {/* 2. Main Content */}
       <main className="flex-grow py-16 px-6 md:px-12 max-w-[1280px] mx-auto w-full">
         {/* Titulación Hero Editorial */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h1 className="font-display-editorial text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#6c2f00] font-bold mb-6 tracking-tight leading-[1.1]">
+          <h1 className="font-display-editorial text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#6c2f00] dark:text-[#ffdbc9] font-bold mb-6 tracking-tight leading-[1.1]">
             Nuestros Amigos Esperan
           </h1>
-          <p className="font-body-editorial text-base sm:text-lg md:text-xl text-[#54433a] leading-relaxed">
+          <p className="font-body-editorial text-base sm:text-lg md:text-xl text-[#54433a] dark:text-[#dac2b6] leading-relaxed">
             Cada uno de estos animales tiene una historia única y está listo para comenzar un nuevo capítulo. Encuentra a tu compañero ideal.
           </p>
         </div>
@@ -98,16 +91,16 @@ export default function AdopcionPage() {
           {/* Filtro por Tipo */}
           <div className="relative w-full sm:w-1/2">
             <select
-              className="appearance-none w-full px-5 py-3 pr-10 border border-[#6c2f00]/20 bg-white text-[#6c2f00] font-body-editorial text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] transition-all cursor-pointer"
+              className="appearance-none w-full px-5 py-3 pr-10 border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-white dark:bg-[#28180d] text-[#6c2f00] dark:text-[#ffdbc9] font-body-editorial text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] dark:focus:ring-[#c85a32] transition-all cursor-pointer"
               value={tipo}
               onChange={(e) => setTipo(e.target.value as 'perro' | 'gato' | '')}
               aria-label="Filtrar por tipo de mascota"
             >
-              <option value="">Todos los animales</option>
-              <option value="perro">Perros</option>
-              <option value="gato">Gatos</option>
+              <option value="" className="bg-white dark:bg-[#28180d] text-[#6c2f00] dark:text-[#ffdbc9]">Todos los animales</option>
+              <option value="perro" className="bg-white dark:bg-[#28180d] text-[#6c2f00] dark:text-[#ffdbc9]">Perros</option>
+              <option value="gato" className="bg-white dark:bg-[#28180d] text-[#6c2f00] dark:text-[#ffdbc9]">Gatos</option>
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-[#6c2f00]">
+            <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-[#6c2f00] dark:text-[#ffdbc9]">
               <span className="material-symbols-outlined text-xl">expand_more</span>
             </div>
           </div>
@@ -115,15 +108,15 @@ export default function AdopcionPage() {
           {/* Filtro por Orden */}
           <div className="relative w-full sm:w-1/2">
             <select
-              className="appearance-none w-full px-5 py-3 pr-10 border border-[#6c2f00]/20 bg-white text-[#6c2f00] font-body-editorial text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] transition-all cursor-pointer"
+              className="appearance-none w-full px-5 py-3 pr-10 border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-white dark:bg-[#28180d] text-[#6c2f00] dark:text-[#ffdbc9] font-body-editorial text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] dark:focus:ring-[#c85a32] transition-all cursor-pointer"
               value={orden}
               onChange={(e) => setOrden(e.target.value as 'mas_reciente' | 'mas_antiguo')}
               aria-label="Ordenar mascotas"
             >
-              <option value="mas_reciente">Más reciente</option>
-              <option value="mas_antiguo">Más antiguo</option>
+              <option value="mas_reciente" className="bg-white dark:bg-[#28180d] text-[#6c2f00] dark:text-[#ffdbc9]">Más reciente</option>
+              <option value="mas_antiguo" className="bg-white dark:bg-[#28180d] text-[#6c2f00] dark:text-[#ffdbc9]">Más antiguo</option>
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-[#6c2f00]">
+            <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-[#6c2f00] dark:text-[#ffdbc9]">
               <span className="material-symbols-outlined text-xl">swap_vert</span>
             </div>
           </div>
@@ -132,21 +125,21 @@ export default function AdopcionPage() {
         {/* Estados de Carga y Error */}
         {cargando && (
           <div className="text-center py-12">
-            <span className="material-symbols-outlined text-4xl text-[#6c2f00] animate-spin mb-2">progress_activity</span>
-            <p className="font-body-editorial text-base text-[#54433a]">Cargando compañeros en adopción...</p>
+            <span className="material-symbols-outlined text-4xl text-[#6c2f00] dark:text-[#ffdbc9] animate-spin mb-2">progress_activity</span>
+            <p className="font-body-editorial text-base text-[#54433a] dark:text-[#dac2b6]">Cargando compañeros en adopción...</p>
           </div>
         )}
 
         {error && (
-          <div className="text-center py-8 p-4 rounded-xl bg-red-50 border border-red-200 max-w-md mx-auto">
-            <p className="font-body-editorial text-sm text-red-600 font-semibold">{error}</p>
+          <div className="text-center py-8 p-4 rounded-xl bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/40 max-w-md mx-auto">
+            <p className="font-body-editorial text-sm text-red-600 dark:text-red-300 font-semibold">{error}</p>
           </div>
         )}
 
         {!cargando && resultados.length === 0 && (
-          <div className="text-center py-16 bg-[#fff1ea] rounded-2xl border border-[#6c2f00]/10">
-            <span className="material-symbols-outlined text-5xl text-[#6c2f00]/40 mb-3">pets</span>
-            <p className="font-body-editorial text-lg text-[#54433a] font-medium">No se encontraron mascotas con el filtro seleccionado.</p>
+          <div className="text-center py-16 bg-[#fff1ea] dark:bg-[#28180d] rounded-2xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/15">
+            <span className="material-symbols-outlined text-5xl text-[#6c2f00]/40 dark:text-[#ffdbc9]/40 mb-3">pets</span>
+            <p className="font-body-editorial text-lg text-[#54433a] dark:text-[#dac2b6] font-medium">No se encontraron mascotas con el filtro seleccionado.</p>
           </div>
         )}
 
@@ -188,19 +181,19 @@ export default function AdopcionPage() {
       )}
 
       {/* 5. Footer Editorial (Idéntico a la referencia) */}
-      <footer className="bg-[#fbddca] w-full py-12 px-6 md:px-12 border-t border-[#dac2b6]/40 mt-auto">
+      <footer className="bg-[#fbddca] dark:bg-[#120a05] w-full py-12 px-6 md:px-12 border-t border-[#dac2b6]/40 dark:border-[#ffdbc9]/15 mt-auto text-[#28180d] dark:text-[#ffede4]">
         <div className="flex flex-col md:flex-row justify-between items-center max-w-[1280px] mx-auto gap-8">
-          <div className="font-display-editorial text-2xl font-bold text-[#6c2f00] flex items-center gap-2">
-            <span className="material-symbols-outlined text-[#6c2f00]">pets</span>
+          <div className="font-display-editorial text-2xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] flex items-center gap-2">
+            <span className="material-symbols-outlined text-[#6c2f00] dark:text-[#ffdbc9]">pets</span>
             Hearts&amp;Paws
           </div>
-          <nav className="flex flex-wrap justify-center gap-6 font-body-editorial text-sm font-semibold text-[#54433a]">
-            <a href="#" className="hover:text-[#6c2f00] transition-colors">Privacidad</a>
-            <a href="#" className="hover:text-[#6c2f00] transition-colors">Términos</a>
-            <a href="#" className="hover:text-[#6c2f00] transition-colors">Contacto</a>
-            <a href="#" className="hover:text-[#6c2f00] transition-colors">Voluntariado</a>
+          <nav className="flex flex-wrap justify-center gap-6 font-body-editorial text-sm font-semibold text-[#54433a] dark:text-[#dac2b6]">
+            <a href="#" className="hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-colors">Privacidad</a>
+            <a href="#" className="hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-colors">Términos</a>
+            <a href="#" className="hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-colors">Contacto</a>
+            <a href="#" className="hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-colors">Voluntariado</a>
           </nav>
-          <div className="font-body-editorial text-sm text-[#6c2f00] text-center md:text-right font-medium">
+          <div className="font-body-editorial text-sm text-[#6c2f00] dark:text-[#ffdbc9] text-center md:text-right font-medium">
             © 2024 Hearts&amp;Paws. Cada huella cuenta una historia.
           </div>
         </div>
