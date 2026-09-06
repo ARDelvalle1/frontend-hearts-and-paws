@@ -80,37 +80,37 @@ export default function DonarModal({
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#28180d]/50 backdrop-blur-xs font-body-editorial">
-      <div className="relative bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 border border-[#6c2f00]/15 overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs font-body-editorial">
+      <div className="relative bg-white dark:bg-[#28180d] rounded-3xl shadow-2xl max-w-md w-full p-8 border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 overflow-hidden text-[#28180d] dark:text-[#ffede4]">
         {/* Botón cerrar */}
         <button
           onClick={onClose}
           disabled={loading}
           aria-label="Cerrar modal"
-          className="absolute top-4 right-4 text-[#6c2f00] hover:text-[#c85a32] transition-colors p-2 rounded-full hover:bg-[#fff8f5] cursor-pointer flex items-center justify-center z-10"
+          className="absolute top-4 right-4 text-[#6c2f00] dark:text-[#ffdbc9] hover:text-[#c85a32] dark:hover:text-[#c85a32] transition-colors p-2 rounded-full hover:bg-[#fff8f5] dark:hover:bg-[#3f2c20] cursor-pointer flex items-center justify-center z-10"
         >
           <span className="material-symbols-outlined text-xl">close</span>
         </button>
 
         {/* Overlay de carga */}
         {loading && (
-          <div className="absolute inset-0 z-30 bg-white/95 backdrop-blur-xs flex flex-col items-center justify-center text-center p-6">
+          <div className="absolute inset-0 z-30 bg-white/95 dark:bg-[#28180d]/95 backdrop-blur-xs flex flex-col items-center justify-center text-center p-6">
             <div className="w-12 h-12 border-4 border-[#c85a32] border-t-transparent rounded-full animate-spin mb-4"></div>
-            <p className="font-display-editorial text-lg font-bold text-[#6c2f00]">
+            <p className="font-display-editorial text-lg font-bold text-[#6c2f00] dark:text-[#ffdbc9]">
               Redirigiéndote a Stripe...
             </p>
-            <p className="text-xs text-[#54433a] mt-2">
+            <p className="text-xs text-[#54433a] dark:text-[#dac2b6] mt-2">
               Tu donación será procesada de forma segura. No cierres ni recargues esta ventana.
             </p>
           </div>
         )}
 
-        <h2 className="font-display-editorial text-2xl font-bold text-[#6c2f00] text-center mb-2 flex items-center justify-center gap-2">
+        <h2 className="font-display-editorial text-2xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] text-center mb-2 flex items-center justify-center gap-2">
           <span className="material-symbols-outlined text-2xl text-[#c85a32]">favorite</span>
           Doná para ayudar
         </h2>
-        <p className="text-center mb-6 text-[#54433a] text-sm">
-          Faltan <strong className="text-[#6c2f00]">${faltante.toLocaleString('es-AR')}</strong> para alcanzar la meta.
+        <p className="text-center mb-6 text-[#54433a] dark:text-[#dac2b6] text-sm">
+          Faltan <strong className="text-[#6c2f00] dark:text-[#ffdbc9]">${faltante.toLocaleString('es-AR')}</strong> para alcanzar la meta.
         </p>
 
         <div className="flex gap-2 justify-center mb-5">
@@ -122,7 +122,7 @@ export default function DonarModal({
               className={`px-4 py-2.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                 monto === op
                   ? 'bg-[#c85a32] text-white shadow-xs'
-                  : 'border border-[#6c2f00]/20 text-[#6c2f00] bg-[#fff8f5] hover:bg-[#fff1ea]'
+                  : 'border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 text-[#6c2f00] dark:text-[#ffdbc9] bg-[#fff8f5] dark:bg-[#1a0f08] hover:bg-[#fff1ea] dark:hover:bg-[#3f2c20]'
               }`}
             >
               ${op.toLocaleString('es-AR')}
@@ -133,7 +133,7 @@ export default function DonarModal({
         <div className="mb-6">
           <input
             type="number"
-            className="w-full px-5 py-2.5 border border-[#6c2f00]/20 bg-[#fff8f5] text-[#6c2f00] placeholder:text-[#54433a]/60 text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] transition-all"
+            className="w-full px-5 py-2.5 border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-[#fff8f5] dark:bg-[#1a0f08] text-[#6c2f00] dark:text-[#ffdbc9] placeholder:text-[#54433a]/60 dark:placeholder:text-[#dac2b6]/50 text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] dark:focus:ring-[#c85a32] transition-all"
             placeholder="Ingresar otro monto ($)"
             value={monto}
             onChange={(e) => handleChange(Number(e.target.value))}
@@ -141,7 +141,7 @@ export default function DonarModal({
             min={1}
           />
           {errorMonto && (
-            <p className="text-xs text-red-600 mt-1.5 text-center font-semibold">{errorMonto}</p>
+            <p className="text-xs text-red-600 dark:text-red-400 mt-1.5 text-center font-semibold">{errorMonto}</p>
           )}
         </div>
 
