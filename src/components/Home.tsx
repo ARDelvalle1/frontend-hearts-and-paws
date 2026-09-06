@@ -91,7 +91,7 @@ export default function Home() {
   const currentStory = stories[currentIndex] || SUCCESS_STORIES[0];
 
   return (
-    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#ff6b6b] selection:text-white">
+    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
 
 
       {/* Main Content */}
@@ -121,7 +121,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#historias"
-                className="bg-[#ff6b6b] hover:bg-[#ae2f34] text-white font-body-editorial text-sm font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-md hover:scale-105 flex items-center justify-center gap-2 cursor-pointer"
+                className="bg-[#c85a32] hover:bg-[#a84320] text-white font-body-editorial text-sm font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-md hover:scale-105 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span className="material-symbols-outlined text-lg">pets</span> Adoptar ahora
               </a>
@@ -155,7 +155,7 @@ export default function Home() {
           {/* Encabezado de la sección */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
             <div>
-              <div className="flex items-center gap-2 text-[#ae2f34] text-sm font-semibold uppercase tracking-wider mb-2 font-body-editorial">
+              <div className="flex items-center gap-2 text-[#a84320] text-sm font-semibold uppercase tracking-wider mb-2 font-body-editorial">
                 <span className="material-symbols-outlined text-lg">verified</span>
                 Casos Reales Seleccionados por ONGs
               </div>
@@ -206,11 +206,11 @@ export default function Home() {
                   {/* Fila ONG & Badges */}
                   <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
                     <div className="flex items-center gap-2 bg-[#6c2f00]/10 px-3.5 py-1.5 rounded-full text-[#6c2f00] font-body-editorial text-xs font-bold shadow-xs">
-                      <span className="material-symbols-outlined text-base text-[#ae2f34]">pets</span>
+                      <span className="material-symbols-outlined text-base text-[#a84320]">pets</span>
                       {currentStory.ongName}
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="bg-[#ae2f34] text-white px-3 py-1 rounded-full font-body-editorial text-xs font-semibold uppercase tracking-wider shadow-xs">
+                      <span className="bg-[#a84320] text-white px-3 py-1 rounded-full font-body-editorial text-xs font-semibold uppercase tracking-wider shadow-xs">
                         {currentStory.tag}
                       </span>
                       <span className="bg-[#6c2f00]/10 text-[#6c2f00] px-3 py-1 rounded-full font-body-editorial text-xs font-semibold">
@@ -253,7 +253,7 @@ export default function Home() {
                 {/* Footer de la Tarjeta y Paginación */}
                 <div className="flex items-center justify-between pt-4 border-t border-[#6c2f00]/10">
                   <div className="flex items-center gap-2 text-xs text-[#54433a] font-semibold">
-                    <span className="material-symbols-outlined text-base text-[#ae2f34]">favorite</span>
+                    <span className="material-symbols-outlined text-base text-[#a84320]">favorite</span>
                     Caso {currentIndex + 1} de {stories.length}
                   </div>
 
@@ -299,7 +299,7 @@ export default function Home() {
         <section id="publicaciones" className="w-full py-16 px-6 md:px-12 border-t border-[#6c2f00]/10 bg-[#fff1ea]/40">
           <div className="max-w-[1280px] mx-auto">
             <div className="text-center mb-12">
-              <span className="material-symbols-outlined text-[#ae2f34] text-4xl mb-2">
+              <span className="material-symbols-outlined text-[#a84320] text-4xl mb-2">
                 pets
               </span>
               <h2 className="font-display-editorial text-3xl md:text-4xl text-[#6c2f00] font-semibold">

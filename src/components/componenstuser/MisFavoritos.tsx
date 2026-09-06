@@ -222,7 +222,7 @@ export default function MisFavoritos() {
               </p>
               <button
                 onClick={() => router.push('/adoptar/adopcion')}
-                className="bg-[#ff6b6b] hover:bg-[#ae2f34] text-[#6d0010] hover:text-white font-body-editorial font-semibold px-6 py-2.5 rounded-full transition-all duration-300 shadow-sm inline-flex items-center gap-2 text-sm"
+                className="bg-[#c85a32] hover:bg-[#a84320] text-white font-body-editorial font-semibold px-6 py-2.5 rounded-full transition-all duration-300 shadow-sm inline-flex items-center gap-2 text-sm"
               >
                 <span className="material-symbols-outlined text-base">search</span>
                 <span>Explorar Mascotas</span>
@@ -254,7 +254,7 @@ export default function MisFavoritos() {
                     />
                     <button
                       onClick={() => handleEliminarFavorito(fav)}
-                      className="absolute top-3 right-3 bg-white/90 dark:bg-black/70 backdrop-blur-sm p-2 rounded-full text-[#6c2f00] dark:text-[#ffdbc9] hover:text-[#ae2f34] dark:hover:text-[#ff6b6b] hover:scale-110 transition-all shadow-sm z-20"
+                      className="absolute top-3 right-3 bg-white/90 dark:bg-black/70 backdrop-blur-sm p-2 rounded-full text-[#6c2f00] dark:text-[#ffdbc9] hover:text-[#a84320] dark:hover:text-[#c85a32] hover:scale-110 transition-all shadow-sm z-20"
                       aria-label="Eliminar favorito"
                       title="Quitar de favoritos"
                     >

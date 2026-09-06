@@ -51,12 +51,12 @@ export default function AdopcionesRegistradas() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#ff6b6b] selection:text-white">
+    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
       <div className="flex-grow max-w-[1280px] mx-auto px-6 md:px-12 py-12 w-full">
         {/* Encabezado Hero Editorial */}
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] border border-[#6c2f00]/15 text-[#6c2f00] font-body-editorial text-xs font-semibold mb-4">
-            <span className="material-symbols-outlined text-base text-[#ff6b6b]">favorite</span>
+            <span className="material-symbols-outlined text-base text-[#c85a32]">favorite</span>
             Registro de Adopciones
           </div>
           <h1 className="font-display-editorial text-4xl sm:text-5xl md:text-6xl text-[#6c2f00] font-bold tracking-tight mb-4 leading-[1.1]">
@@ -72,7 +72,7 @@ export default function AdopcionesRegistradas() {
           <aside className="w-full md:w-64 shrink-0 space-y-4 sticky top-6 font-body-editorial">
             <div className="bg-white border border-[#6c2f00]/15 rounded-2xl p-5 shadow-xs text-center">
               <p className="font-body-editorial text-xs font-bold uppercase tracking-wider text-[#54433a] mb-1 flex items-center justify-center gap-1.5">
-                <span className="material-symbols-outlined text-lg text-[#ff6b6b]">favorite</span>
+                <span className="material-symbols-outlined text-lg text-[#c85a32]">favorite</span>
                 Total Adopciones
               </p>
               <p className="font-display-editorial text-3xl font-bold text-[#6c2f00]">
@@ -85,12 +85,12 @@ export default function AdopcionesRegistradas() {
           <main className="flex-1 w-full">
             {loading ? (
               <div className="bg-white border border-[#6c2f00]/15 rounded-3xl p-12 text-center shadow-xs">
-                <div className="w-10 h-10 border-4 border-[#ff6b6b] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+                <div className="w-10 h-10 border-4 border-[#c85a32] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
                 <p className="font-display-editorial text-lg text-[#6c2f00] font-bold">Cargando registros de adopción...</p>
               </div>
             ) : error ? (
               <div className="bg-white border border-[#6c2f00]/15 rounded-3xl p-12 text-center shadow-xs">
-                <span className="material-symbols-outlined text-5xl text-[#ff6b6b] mb-3">error</span>
+                <span className="material-symbols-outlined text-5xl text-[#c85a32] mb-3">error</span>
                 <p className="text-sm text-red-500 font-semibold">{error}</p>
               </div>
             ) : adopciones.length === 0 ? (
@@ -123,7 +123,7 @@ export default function AdopcionesRegistradas() {
                             {adopcion.caso.titulo}
                           </h2>
                           <p className="text-xs text-[#54433a] flex items-center gap-1 mt-1">
-                            <span className="material-symbols-outlined text-sm text-[#ff6b6b]">pets</span>
+                            <span className="material-symbols-outlined text-sm text-[#c85a32]">pets</span>
                             <strong>{adopcion.caso.mascota.nombre}</strong> ({adopcion.caso.mascota.edad} {adopcion.caso.mascota.edad === 1 ? 'año' : 'años'})
                           </p>
                         </div>

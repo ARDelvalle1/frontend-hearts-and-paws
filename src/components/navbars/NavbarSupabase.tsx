@@ -208,7 +208,7 @@ const Navbar = ({ theme, toggleTheme }: ThemeProps) => {
                         router.push(link.href);
                       }
                     }}
-                    className="bg-[#ff6b6b] hover:bg-[#ae2f34] text-white font-body-editorial text-xs font-semibold px-5 py-2.5 rounded-full transition-all duration-300 shadow-xs flex items-center gap-1.5 cursor-pointer"
+                    className="bg-[#c85a32] hover:bg-[#a84320] text-white font-body-editorial text-xs font-semibold px-5 py-2.5 rounded-full transition-all duration-300 shadow-xs flex items-center gap-1.5 cursor-pointer"
                   >
                     <span className="material-symbols-outlined text-base">login</span>
                     {link.label}

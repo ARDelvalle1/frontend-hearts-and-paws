@@ -14,7 +14,7 @@ export default function LoginSelector() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex items-center justify-center p-4 selection:bg-[#ff6b6b] selection:text-white">
+    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex items-center justify-center p-4 selection:bg-[#c85a32] selection:text-white">
       <div className="max-w-xl w-full bg-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-[#6c2f00]/15 relative">
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] border border-[#6c2f00]/15 text-[#6c2f00] text-xs font-semibold mb-4">
@@ -29,7 +29,7 @@ export default function LoginSelector() {
         <div className="flex flex-col gap-4">
           <button
             onClick={() => router.push('/login/login')}
-            className="bg-[#ff6b6b] hover:bg-[#ae2f34] text-white font-body-editorial font-semibold py-3.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 w-full shadow-xs flex items-center justify-center gap-2.5 cursor-pointer"
+            className="bg-[#c85a32] hover:bg-[#a84320] text-white font-body-editorial font-semibold py-3.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 w-full shadow-xs flex items-center justify-center gap-2.5 cursor-pointer"
           >
             <span className="material-symbols-outlined text-xl">login</span>
             Iniciar sesión con Google

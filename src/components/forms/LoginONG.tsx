@@ -118,7 +118,7 @@ export default function LoginOng() {
         <button
           type="button"
           onClick={() => setShowPassword((prev) => !prev)}
-          className="absolute text-[#6c2f00] hover:text-[#ff6b6b] right-4 top-8 transition-colors p-1 cursor-pointer"
+          className="absolute text-[#6c2f00] hover:text-[#c85a32] right-4 top-8 transition-colors p-1 cursor-pointer"
           tabIndex={-1}
           aria-label={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
         >
@@ -129,7 +129,7 @@ export default function LoginOng() {
       <button
         type="submit"
         disabled={loading}
-        className={`w-full bg-[#ff6b6b] hover:bg-[#ae2f34] text-white font-body-editorial font-semibold py-3.5 px-6 rounded-full text-base transition-all duration-300 shadow-md flex items-center justify-center gap-2 cursor-pointer ${
+        className={`w-full bg-[#c85a32] hover:bg-[#a84320] text-white font-body-editorial font-semibold py-3.5 px-6 rounded-full text-base transition-all duration-300 shadow-md flex items-center justify-center gap-2 cursor-pointer ${
           loading ? "opacity-60 cursor-not-allowed" : ""
         }`}
       >
@@ -142,7 +142,7 @@ export default function LoginOng() {
         <button
           type="button"
           onClick={() => router.push("/register")}
-          className="text-[#6c2f00] font-bold hover:text-[#ff6b6b] transition-colors ml-1 underline underline-offset-2 cursor-pointer"
+          className="text-[#6c2f00] font-bold hover:text-[#c85a32] transition-colors ml-1 underline underline-offset-2 cursor-pointer"
         >
           Registrate acá
         </button>
@@ -152,7 +152,7 @@ export default function LoginOng() {
     {loading && (
       <div className="fixed inset-0 z-50 bg-white/90 backdrop-blur-xs flex items-center justify-center pointer-events-auto">
         <div className="flex flex-col items-center gap-4 bg-[#fff8f5] border border-[#6c2f00]/15 p-8 rounded-3xl shadow-2xl max-w-xs text-center font-body-editorial">
-          <div className="w-10 h-10 border-4 border-[#ff6b6b] border-t-transparent rounded-full animate-spin" />
+          <div className="w-10 h-10 border-4 border-[#c85a32] border-t-transparent rounded-full animate-spin" />
           <div>
             <p className="font-display-editorial font-bold text-lg text-[#6c2f00]">
               Iniciando sesión...

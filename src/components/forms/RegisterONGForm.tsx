@@ -183,7 +183,7 @@ export function RegisterONGForm() {
             <button
               type="button"
               onClick={() => router.push("/login/login-ong")}
-              className="text-[#6c2f00] font-bold hover:text-[#ff6b6b] transition-colors ml-1 underline underline-offset-2 cursor-pointer"
+              className="text-[#6c2f00] font-bold hover:text-[#c85a32] transition-colors ml-1 underline underline-offset-2 cursor-pointer"
             >
               Iniciá sesión acá
             </button>

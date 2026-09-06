@@ -80,7 +80,7 @@ export function Vistausuario() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#ff6b6b] selection:text-white">
+    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
       <div className="flex-grow max-w-[1280px] mx-auto px-6 md:px-12 py-12 w-full">
         {/* Encabezado Hero Editorial */}
         <div className="text-center max-w-3xl mx-auto mb-10">
@@ -154,7 +154,7 @@ export function Vistausuario() {
           <div className="flex items-center gap-3 w-full sm:w-auto justify-center">
             <button
               onClick={handleBuscar}
-              className="bg-[#ff6b6b] hover:bg-[#ae2f34] text-white font-body-editorial text-xs font-semibold px-6 py-2.5 rounded-full transition-all duration-300 shadow-xs flex items-center justify-center gap-1.5 cursor-pointer flex-1 sm:flex-initial"
+              className="bg-[#c85a32] hover:bg-[#a84320] text-white font-body-editorial text-xs font-semibold px-6 py-2.5 rounded-full transition-all duration-300 shadow-xs flex items-center justify-center gap-1.5 cursor-pointer flex-1 sm:flex-initial"
             >
               <span className="material-symbols-outlined text-base">search</span>
               Buscar
@@ -187,10 +187,10 @@ export function Vistausuario() {
               <img
                 src={getAvatarUrl(user.nombre, user.imagenPerfil)}
                 alt={user.nombre}
-                className="w-16 h-16 rounded-full object-cover border-2 border-[#6c2f00]/15 group-hover:border-[#ff6b6b] transition-colors shrink-0 shadow-xs"
+                className="w-16 h-16 rounded-full object-cover border-2 border-[#6c2f00]/15 group-hover:border-[#c85a32] transition-colors shrink-0 shadow-xs"
               />
               <div className="min-w-0 flex-1">
-                <p className="font-display-editorial text-lg font-bold text-[#6c2f00] group-hover:text-[#ff6b6b] transition-colors truncate">
+                <p className="font-display-editorial text-lg font-bold text-[#6c2f00] group-hover:text-[#c85a32] transition-colors truncate">
                   {user.nombre || "Usuario Anónimo"}
                 </p>
                 <p className="font-body-editorial text-xs text-[#54433a] truncate mt-0.5">
@@ -234,7 +234,7 @@ export function Vistausuario() {
           >
             <button
               onClick={cerrarModal}
-              className="absolute top-4 right-4 text-[#6c2f00] hover:text-[#ff6b6b] transition-colors p-2 rounded-full hover:bg-[#fff8f5] cursor-pointer flex items-center justify-center"
+              className="absolute top-4 right-4 text-[#6c2f00] hover:text-[#c85a32] transition-colors p-2 rounded-full hover:bg-[#fff8f5] cursor-pointer flex items-center justify-center"
               aria-label="Cerrar detalles"
             >
               <span className="material-symbols-outlined text-2xl">close</span>

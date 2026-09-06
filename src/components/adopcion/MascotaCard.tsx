@@ -115,11 +115,11 @@ export default function MascotaCard({
       {mostrarFavorito && (
         <button
           onClick={toggleFavorito}
-          className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#ff6b6b] hover:bg-white hover:scale-110 transition-all shadow-xs cursor-pointer"
+          className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#c85a32] hover:bg-white hover:scale-110 transition-all shadow-xs cursor-pointer"
           aria-label="Marcar como favorito"
           type="button"
         >
-          {esFavorito ? <FaHeart className="text-base text-[#ff6b6b]" /> : <FaRegHeart className="text-base text-[#ff6b6b]" />}
+          {esFavorito ? <FaHeart className="text-base text-[#c85a32]" /> : <FaRegHeart className="text-base text-[#c85a32]" />}
         </button>
       )}
 
@@ -187,7 +187,7 @@ export default function MascotaCard({
               <div className="relative w-full bg-[#6c2f00]/10 rounded-full h-3 overflow-hidden">
                 <div
                   className={`h-full transition-all duration-500 ${
-                    metaAlcanzada ? 'bg-[#2e5d32]' : 'bg-[#ae2f34]'
+                    metaAlcanzada ? 'bg-[#2e5d32]' : 'bg-[#a84320]'
                   }`}
                   style={{ width: `${porcentaje}%` }}
                 />
@@ -214,7 +214,7 @@ export default function MascotaCard({
           <div className="flex items-center gap-3">
             <button
               onClick={() => onConocerHistoria?.(mascota)}
-              className="flex-1 bg-[#ff6b6b] hover:bg-[#ae2f34] text-white font-body-editorial text-xs font-semibold py-2.5 px-3 rounded-full transition-all duration-300 shadow-xs flex items-center justify-center gap-1 cursor-pointer active:scale-95"
+              className="flex-1 bg-[#c85a32] hover:bg-[#a84320] text-white font-body-editorial text-xs font-semibold py-2.5 px-3 rounded-full transition-all duration-300 shadow-xs flex items-center justify-center gap-1 cursor-pointer active:scale-95"
               type="button"
             >
               <span className="material-symbols-outlined text-base">menu_book</span>

@@ -48,7 +48,7 @@ export default function MascotasRegistradas() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#ff6b6b] selection:text-white">
+    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
       <div className="flex-grow max-w-[1280px] mx-auto px-6 md:px-12 py-12 w-full">
         {/* Encabezado Hero Editorial */}
         <div className="text-center max-w-3xl mx-auto mb-10">
@@ -82,12 +82,12 @@ export default function MascotasRegistradas() {
           <main className="flex-1 w-full">
             {loading ? (
               <div className="bg-white border border-[#6c2f00]/15 rounded-3xl p-12 text-center shadow-xs">
-                <div className="w-10 h-10 border-4 border-[#ff6b6b] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+                <div className="w-10 h-10 border-4 border-[#c85a32] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
                 <p className="font-display-editorial text-lg text-[#6c2f00] font-bold">Cargando catálogo de mascotas...</p>
               </div>
             ) : error ? (
               <div className="bg-white border border-[#6c2f00]/15 rounded-3xl p-12 text-center shadow-xs">
-                <span className="material-symbols-outlined text-5xl text-[#ff6b6b] mb-3">error</span>
+                <span className="material-symbols-outlined text-5xl text-[#c85a32] mb-3">error</span>
                 <p className="text-sm text-red-500 font-semibold">{error}</p>
               </div>
             ) : mascotas.length === 0 ? (

@@ -55,7 +55,7 @@ export default function OrganizacionesPanel() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#ff6b6b] selection:text-white">
+    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
       <div className="flex-grow max-w-[1280px] mx-auto px-6 md:px-12 py-12 w-full">
         {/* Encabezado Hero Editorial */}
         <div className="text-center max-w-3xl mx-auto mb-10">
@@ -84,7 +84,7 @@ export default function OrganizacionesPanel() {
                 className="w-full flex items-center justify-between px-4 py-2.5 text-xs font-semibold text-[#54433a] hover:text-[#6c2f00] bg-[#fff8f5] hover:bg-[#fff1ea] border border-[#6c2f00]/15 rounded-full transition-all cursor-pointer group"
               >
                 <div className="flex items-center gap-2">
-                  <span className="material-symbols-outlined text-base text-[#ff6b6b]">cancel</span>
+                  <span className="material-symbols-outlined text-base text-[#c85a32]">cancel</span>
                   <span>Ver Rechazadas</span>
                 </div>
                 <span className="material-symbols-outlined text-base group-hover:translate-x-0.5 transition-transform">chevron_right</span>
@@ -127,7 +127,7 @@ export default function OrganizacionesPanel() {
                 <div className="flex items-center gap-2 w-full sm:w-auto ml-auto">
                   <button
                     onClick={handleBuscar}
-                    className="bg-[#ff6b6b] hover:bg-[#ae2f34] text-white font-body-editorial text-xs font-semibold px-5 py-2.5 rounded-full transition-all duration-300 shadow-xs flex items-center justify-center gap-1.5 cursor-pointer flex-1 sm:flex-initial"
+                    className="bg-[#c85a32] hover:bg-[#a84320] text-white font-body-editorial text-xs font-semibold px-5 py-2.5 rounded-full transition-all duration-300 shadow-xs flex items-center justify-center gap-1.5 cursor-pointer flex-1 sm:flex-initial"
                   >
                     <span className="material-symbols-outlined text-base">search</span>
                     Buscar
@@ -155,10 +155,10 @@ export default function OrganizacionesPanel() {
                     <img
                       src={org.imagenPerfil || "https://ui-avatars.com/api/?name=ONG&background=FFC0CB&color=fff"}
                       alt={`Foto de ${org.nombre}`}
-                      className="w-16 h-16 object-cover border-2 border-[#6c2f00]/15 group-hover:border-[#ff6b6b] rounded-full shadow-xs transition-colors shrink-0"
+                      className="w-16 h-16 object-cover border-2 border-[#6c2f00]/15 group-hover:border-[#c85a32] rounded-full shadow-xs transition-colors shrink-0"
                     />
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-display-editorial text-lg font-bold text-[#6c2f00] group-hover:text-[#ff6b6b] transition-colors truncate">
+                      <h3 className="font-display-editorial text-lg font-bold text-[#6c2f00] group-hover:text-[#c85a32] transition-colors truncate">
                         {org.nombre}
                       </h3>
                       <p className="font-body-editorial text-xs text-[#54433a] truncate mt-0.5">
@@ -176,7 +176,7 @@ export default function OrganizacionesPanel() {
                       <span className="material-symbols-outlined text-xs text-[#6c2f00]">calendar_month</span>
                       {new Date(org.creado_en).toLocaleDateString("es-AR")}
                     </span>
-                    <span className="font-semibold text-[#6c2f00] group-hover:text-[#ff6b6b] transition-colors flex items-center gap-0.5">
+                    <span className="font-semibold text-[#6c2f00] group-hover:text-[#c85a32] transition-colors flex items-center gap-0.5">
                       Ver más
                       <span className="material-symbols-outlined text-xs">chevron_right</span>
                     </span>
@@ -195,7 +195,7 @@ export default function OrganizacionesPanel() {
           <div className="bg-white border border-[#6c2f00]/15 rounded-3xl p-8 max-w-md w-full shadow-2xl relative font-body-editorial">
             <button
               onClick={() => setOrganizacionSeleccionada(null)}
-              className="absolute top-4 right-4 text-[#6c2f00] hover:text-[#ff6b6b] transition-colors p-2 rounded-full hover:bg-[#fff8f5] cursor-pointer flex items-center justify-center"
+              className="absolute top-4 right-4 text-[#6c2f00] hover:text-[#c85a32] transition-colors p-2 rounded-full hover:bg-[#fff8f5] cursor-pointer flex items-center justify-center"
             >
               <span className="material-symbols-outlined text-xl">close</span>
             </button>

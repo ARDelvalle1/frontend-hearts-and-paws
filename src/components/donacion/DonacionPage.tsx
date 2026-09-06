@@ -140,7 +140,7 @@ export default function DonacionPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#ff6b6b] selection:text-white">
+    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
       <div className="flex-grow max-w-[1280px] mx-auto px-6 md:px-12 py-12 w-full">
         {/* Encabezado Hero Editorial */}
         <div className="text-center max-w-3xl mx-auto mb-10">
@@ -149,7 +149,7 @@ export default function DonacionPage() {
             Donaciones &amp; Casos Críticos
           </div>
           <h1 className="font-display-editorial text-4xl sm:text-5xl md:text-6xl text-[#6c2f00] font-bold tracking-tight mb-4 leading-[1.1]">
-            Ayudá a una mascota en <em className="italic text-[#ff6b6b]">situación crítica</em>
+            Ayudá a una mascota en <em className="italic text-[#c85a32]">situación crítica</em>
           </h1>
           <p className="font-body-editorial text-base sm:text-lg text-[#54433a] leading-relaxed max-w-2xl mx-auto">
             Estos animales necesitan atención médica urgente y refugio. Tu colaboración marca una diferencia real en sus vidas.
@@ -192,7 +192,7 @@ export default function DonacionPage() {
 
         {cargando && (
           <div className="flex flex-col items-center justify-center py-16 gap-3">
-            <div className="w-10 h-10 border-4 border-[#ff6b6b] border-t-transparent rounded-full animate-spin"></div>
+            <div className="w-10 h-10 border-4 border-[#c85a32] border-t-transparent rounded-full animate-spin"></div>
             <p className="font-body-editorial text-sm font-semibold text-[#54433a]">
               Cargando casos de donación...
             </p>
@@ -207,7 +207,7 @@ export default function DonacionPage() {
 
         {!cargando && !error && resultados.length === 0 && (
           <div className="bg-white border border-[#6c2f00]/15 rounded-3xl p-12 text-center max-w-md mx-auto my-8 shadow-xs font-body-editorial">
-            <span className="material-symbols-outlined text-4xl text-[#ff6b6b] mb-3">pets</span>
+            <span className="material-symbols-outlined text-4xl text-[#c85a32] mb-3">pets</span>
             <h3 className="font-display-editorial text-xl font-bold text-[#6c2f00] mb-1">
               No se encontraron casos
             </h3>

@@ -140,7 +140,7 @@ useEffect(() => {
               </p>
               <button
                 onClick={() => router.push('/donacion')}
-                className="bg-[#ff6b6b] hover:bg-[#ae2f34] text-[#6d0010] hover:text-white font-body-editorial font-semibold px-6 py-2.5 rounded-full transition-all duration-300 shadow-sm inline-flex items-center gap-2 text-sm"
+                className="bg-[#c85a32] hover:bg-[#a84320] text-white font-body-editorial font-semibold px-6 py-2.5 rounded-full transition-all duration-300 shadow-sm inline-flex items-center gap-2 text-sm"
               >
                 <span className="material-symbols-outlined text-base">favorite</span>
                 <span>Explorar Causas</span>

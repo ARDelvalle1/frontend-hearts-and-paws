@@ -278,7 +278,7 @@ export default function DashboardSencillo() {
               </div>
               <label
                 htmlFor="imagen-perfil"
-                className="absolute bottom-0 right-0 bg-[#ff6b6b] hover:bg-[#ae2f34] text-[#6d0010] hover:text-white p-2 rounded-full cursor-pointer transition-all duration-300 shadow-sm flex items-center justify-center"
+                className="absolute bottom-0 right-0 bg-[#c85a32] hover:bg-[#a84320] text-white p-2 rounded-full cursor-pointer transition-all duration-300 shadow-sm flex items-center justify-center"
                 title="Cambiar imagen"
               >
                 <span className="material-symbols-outlined text-base">photo_camera</span>
@@ -355,7 +355,7 @@ export default function DashboardSencillo() {
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg text-sm transition-all duration-300 ${
                       isEditando
-                        ? "bg-white dark:bg-[#3f2c20] border border-[#6c2f00]/40 dark:border-[#ffdbc9]/40 text-[#28180d] dark:text-[#ffede4] focus:outline-none focus:border-[#ff6b6b] focus:ring-1 focus:ring-[#ff6b6b]"
+                        ? "bg-white dark:bg-[#3f2c20] border border-[#6c2f00]/40 dark:border-[#ffdbc9]/40 text-[#28180d] dark:text-[#ffede4] focus:outline-none focus:border-[#c85a32] focus:ring-1 focus:ring-[#c85a32]"
                         : "bg-black/5 dark:bg-white/5 border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#54433a] dark:text-[#dac2b6] cursor-not-allowed"
                     }`}
                     required={campo === "nombre"}
@@ -369,7 +369,7 @@ export default function DashboardSencillo() {
                 <button
                   type="button"
                   onClick={() => setIsEditando(true)}
-                  className="bg-[#ff6b6b] hover:bg-[#ae2f34] text-[#6d0010] hover:text-white font-body-editorial font-semibold px-8 py-3 rounded-full transition-all duration-300 ease-in-out shadow-sm hover:scale-105 flex items-center justify-center gap-2"
+                  className="bg-[#c85a32] hover:bg-[#a84320] text-white font-body-editorial font-semibold px-8 py-3 rounded-full transition-all duration-300 ease-in-out shadow-sm hover:scale-105 flex items-center justify-center gap-2"
                 >
                   <span className="material-symbols-outlined text-lg">edit</span>
                   <span>Editar Perfil</span>
@@ -385,7 +385,7 @@ export default function DashboardSencillo() {
                   </button>
                   <button
                     type="submit"
-                    className="bg-[#ff6b6b] hover:bg-[#ae2f34] text-[#6d0010] hover:text-white font-body-editorial font-semibold px-8 py-3 rounded-full transition-all duration-300 ease-in-out shadow-sm hover:scale-105 flex items-center justify-center gap-2"
+                    className="bg-[#c85a32] hover:bg-[#a84320] text-white font-body-editorial font-semibold px-8 py-3 rounded-full transition-all duration-300 ease-in-out shadow-sm hover:scale-105 flex items-center justify-center gap-2"
                   >
                     <span className="material-symbols-outlined text-lg">save</span>
                     <span>Guardar Cambios</span>

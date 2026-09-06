@@ -65,7 +65,7 @@ export default function ChatWindow({ chatId, autorId, autorNombre }: ChatWindowP
               key={msg.id}
               className={`max-w-[85%] sm:max-w-[75%] break-words px-4 py-2.5 shadow-sm text-sm ${
                 esAutor
-                  ? 'bg-[#ff6b6b] text-white self-end text-right rounded-2xl rounded-tr-none'
+                  ? 'bg-[#c85a32] text-white self-end text-right rounded-2xl rounded-tr-none'
                   : 'bg-[#ffeade] dark:bg-[#3f2c20] text-[#28180d] dark:text-[#ffede4] self-start text-left rounded-2xl rounded-tl-none border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10'
               }`}
             >
@@ -104,11 +104,11 @@ export default function ChatWindow({ chatId, autorId, autorNombre }: ChatWindowP
           value={contenido}
           onChange={(e) => setContenido(e.target.value)}
           placeholder="Escribe un mensaje..."
-          className="flex-grow bg-white dark:bg-[#28180d] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-full px-4 py-2.5 text-sm text-[#28180d] dark:text-[#ffede4] placeholder-[#54433a]/60 dark:placeholder-[#dac2b6]/60 focus:outline-none focus:border-[#ff6b6b] transition-all shadow-sm"
+          className="flex-grow bg-white dark:bg-[#28180d] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-full px-4 py-2.5 text-sm text-[#28180d] dark:text-[#ffede4] placeholder-[#54433a]/60 dark:placeholder-[#dac2b6]/60 focus:outline-none focus:border-[#c85a32] transition-all shadow-sm"
         />
         <button
           type="submit"
-          className="bg-[#ff6b6b] hover:bg-[#ae2f34] text-white font-semibold px-4 py-2.5 rounded-full transition-all duration-300 shadow-sm flex items-center justify-center gap-1.5 flex-shrink-0"
+          className="bg-[#c85a32] hover:bg-[#a84320] text-white font-semibold px-4 py-2.5 rounded-full transition-all duration-300 shadow-sm flex items-center justify-center gap-1.5 flex-shrink-0"
           title="Enviar"
         >
           <span className="text-sm hidden sm:inline">Enviar</span>

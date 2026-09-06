@@ -112,13 +112,13 @@ export default function DashboardResumen() {
   if (error) {
     return (
       <div className="min-h-screen bg-[#fff8f5] flex items-center justify-center p-6 font-body-editorial">
-        <div className="bg-white border border-[#ae2f34]/20 p-8 rounded-2xl shadow-xs max-w-md text-center">
-          <span className="material-symbols-outlined text-[#ae2f34] text-4xl mb-2">error</span>
+        <div className="bg-white border border-[#a84320]/20 p-8 rounded-2xl shadow-xs max-w-md text-center">
+          <span className="material-symbols-outlined text-[#a84320] text-4xl mb-2">error</span>
           <h3 className="font-display-editorial text-xl font-bold text-[#6c2f00] mb-2">Error de Carga</h3>
           <p className="text-[#54433a] text-sm mb-4">{error}</p>
           <button
             onClick={() => window.location.reload()}
-            className="bg-[#ff6b6b] hover:bg-[#ae2f34] text-white font-semibold text-xs py-2.5 px-5 rounded-full transition-all cursor-pointer"
+            className="bg-[#c85a32] hover:bg-[#a84320] text-white font-semibold text-xs py-2.5 px-5 rounded-full transition-all cursor-pointer"
           >
             Reintentar
           </button>
@@ -128,7 +128,7 @@ export default function DashboardResumen() {
   }
 
   return (
-    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#ff6b6b] selection:text-white">
+    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
       <div className="flex-grow max-w-[1280px] mx-auto px-6 md:px-12 py-12 w-full">
         {/* Encabezado Hero Editorial */}
         <div className="text-center max-w-3xl mx-auto mb-12">

@@ -39,12 +39,12 @@ export default function OngsRechazadas() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#ff6b6b] selection:text-white">
+    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
       <div className="flex-grow max-w-[1280px] mx-auto px-6 md:px-12 py-12 w-full">
         {/* Encabezado Hero Editorial */}
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] border border-[#6c2f00]/15 text-[#6c2f00] font-body-editorial text-xs font-semibold mb-4">
-            <span className="material-symbols-outlined text-base text-[#ff6b6b]">cancel</span>
+            <span className="material-symbols-outlined text-base text-[#c85a32]">cancel</span>
             Administración ONG
           </div>
           <h1 className="font-display-editorial text-4xl sm:text-5xl md:text-6xl text-[#6c2f00] font-bold tracking-tight mb-4 leading-[1.1]">
@@ -78,7 +78,7 @@ export default function OngsRechazadas() {
             {/* Contador de Rechazadas */}
             <div className="bg-white border border-[#6c2f00]/15 rounded-2xl p-5 shadow-xs text-center">
               <p className="font-body-editorial text-xs font-bold uppercase tracking-wider text-[#54433a] mb-1 flex items-center justify-center gap-1.5">
-                <span className="material-symbols-outlined text-lg text-[#ff6b6b]">block</span>
+                <span className="material-symbols-outlined text-lg text-[#c85a32]">block</span>
                 Total Rechazadas
               </p>
               <p className="font-display-editorial text-3xl font-bold text-[#6c2f00]">
@@ -91,7 +91,7 @@ export default function OngsRechazadas() {
           <main className="flex-1 w-full">
             {loading ? (
               <div className="bg-white border border-[#6c2f00]/15 rounded-3xl p-12 text-center shadow-xs">
-                <div className="w-10 h-10 border-4 border-[#ff6b6b] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+                <div className="w-10 h-10 border-4 border-[#c85a32] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
                 <p className="font-display-editorial text-lg text-[#6c2f00] font-bold">Cargando solicitudes rechazadas...</p>
               </div>
             ) : ongs.length === 0 ? (
@@ -116,7 +116,7 @@ export default function OngsRechazadas() {
                         />
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-1 flex-wrap">
-                            <span className="px-2.5 py-0.5 rounded-full bg-[#ffe6e6] border border-[#ff6b6b]/30 text-[#ff6b6b] text-[10px] font-bold uppercase tracking-wider">
+                            <span className="px-2.5 py-0.5 rounded-full bg-[#ffe6e6] border border-[#c85a32]/30 text-[#c85a32] text-[10px] font-bold uppercase tracking-wider">
                               Rechazada
                             </span>
                           </div>
@@ -139,7 +139,7 @@ export default function OngsRechazadas() {
 
                     <div className="pt-3 border-t border-[#6c2f00]/10 flex items-center justify-between text-xs text-[#6c2f00]">
                       <span className="font-semibold truncate flex items-center gap-1">
-                        <span className="material-symbols-outlined text-sm text-[#ff6b6b]">mail</span>
+                        <span className="material-symbols-outlined text-sm text-[#c85a32]">mail</span>
                         {org.email}
                       </span>
                       <button
@@ -174,7 +174,7 @@ export default function OngsRechazadas() {
                 className="w-16 h-16 rounded-2xl object-cover border-2 border-[#6c2f00]/20 shadow-xs"
               />
               <div>
-                <span className="px-2.5 py-0.5 rounded-full bg-[#ffe6e6] border border-[#ff6b6b]/30 text-[#ff6b6b] text-[10px] font-bold uppercase tracking-wider">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#ffe6e6] border border-[#c85a32]/30 text-[#c85a32] text-[10px] font-bold uppercase tracking-wider">
                   Rechazada
                 </span>
                 <h3 className="font-display-editorial text-2xl font-bold text-[#6c2f00] mt-1">

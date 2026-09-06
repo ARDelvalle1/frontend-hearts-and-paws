@@ -176,7 +176,7 @@ export default function ChatSidebar({ esOng, userId, onSelectChat }: ChatSidebar
     <aside className="w-full md:w-72 border-b md:border-b-0 md:border-r border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 p-4 flex flex-col bg-[#fff8f5]/60 dark:bg-[#1a0f08]/60 h-full flex-shrink-0">
       <button
         onClick={handleToggleDropdown}
-        className="mb-3 w-full bg-[#ff6b6b] hover:bg-[#ae2f34] text-white font-semibold py-2.5 px-4 rounded-full transition-all duration-300 shadow-sm flex items-center justify-center gap-2 text-sm"
+        className="mb-3 w-full bg-[#c85a32] hover:bg-[#a84320] text-white font-semibold py-2.5 px-4 rounded-full transition-all duration-300 shadow-sm flex items-center justify-center gap-2 text-sm"
       >
         <span className="material-symbols-outlined text-base">
           {mostrarDropdown ? "close" : "add_comment"}
@@ -226,7 +226,7 @@ export default function ChatSidebar({ esOng, userId, onSelectChat }: ChatSidebar
           value={filtro}
           onChange={(e) => setFiltro(e.target.value)}
           placeholder="Buscar por nombre..."
-          className="w-full pl-9 pr-3 py-2 text-sm bg-white dark:bg-[#28180d] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#28180d] dark:text-[#ffede4] placeholder-[#54433a]/60 dark:placeholder-[#dac2b6]/60 focus:outline-none focus:border-[#ff6b6b] transition-all"
+          className="w-full pl-9 pr-3 py-2 text-sm bg-white dark:bg-[#28180d] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#28180d] dark:text-[#ffede4] placeholder-[#54433a]/60 dark:placeholder-[#dac2b6]/60 focus:outline-none focus:border-[#c85a32] transition-all"
         />
       </div>
 

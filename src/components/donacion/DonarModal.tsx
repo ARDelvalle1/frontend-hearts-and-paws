@@ -87,7 +87,7 @@ export default function DonarModal({
           onClick={onClose}
           disabled={loading}
           aria-label="Cerrar modal"
-          className="absolute top-4 right-4 text-[#6c2f00] hover:text-[#ff6b6b] transition-colors p-2 rounded-full hover:bg-[#fff8f5] cursor-pointer flex items-center justify-center z-10"
+          className="absolute top-4 right-4 text-[#6c2f00] hover:text-[#c85a32] transition-colors p-2 rounded-full hover:bg-[#fff8f5] cursor-pointer flex items-center justify-center z-10"
         >
           <span className="material-symbols-outlined text-xl">close</span>
         </button>
@@ -95,7 +95,7 @@ export default function DonarModal({
         {/* Overlay de carga */}
         {loading && (
           <div className="absolute inset-0 z-30 bg-white/95 backdrop-blur-xs flex flex-col items-center justify-center text-center p-6">
-            <div className="w-12 h-12 border-4 border-[#ff6b6b] border-t-transparent rounded-full animate-spin mb-4"></div>
+            <div className="w-12 h-12 border-4 border-[#c85a32] border-t-transparent rounded-full animate-spin mb-4"></div>
             <p className="font-display-editorial text-lg font-bold text-[#6c2f00]">
               Redirigiéndote a Stripe...
             </p>
@@ -106,7 +106,7 @@ export default function DonarModal({
         )}
 
         <h2 className="font-display-editorial text-2xl font-bold text-[#6c2f00] text-center mb-2 flex items-center justify-center gap-2">
-          <span className="material-symbols-outlined text-2xl text-[#ff6b6b]">favorite</span>
+          <span className="material-symbols-outlined text-2xl text-[#c85a32]">favorite</span>
           Doná para ayudar
         </h2>
         <p className="text-center mb-6 text-[#54433a] text-sm">
@@ -121,7 +121,7 @@ export default function DonarModal({
               disabled={loading}
               className={`px-4 py-2.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                 monto === op
-                  ? 'bg-[#ff6b6b] text-white shadow-xs'
+                  ? 'bg-[#c85a32] text-white shadow-xs'
                   : 'border border-[#6c2f00]/20 text-[#6c2f00] bg-[#fff8f5] hover:bg-[#fff1ea]'
               }`}
             >
@@ -149,7 +149,7 @@ export default function DonarModal({
           <button
             onClick={handleConfirmar}
             disabled={loading || !!errorMonto || monto === ''}
-            className="w-full bg-[#ff6b6b] hover:bg-[#ae2f34] text-white font-semibold text-sm px-6 py-3.5 rounded-full shadow-md transition-all duration-300 disabled:opacity-50 cursor-pointer"
+            className="w-full bg-[#c85a32] hover:bg-[#a84320] text-white font-semibold text-sm px-6 py-3.5 rounded-full shadow-md transition-all duration-300 disabled:opacity-50 cursor-pointer"
           >
             {loading ? 'Procesando...' : '¡Quiero Donar!'}
           </button>

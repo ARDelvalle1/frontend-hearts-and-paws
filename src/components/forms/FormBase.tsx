@@ -108,7 +108,7 @@ export default function FormBase<T>({
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-4 top-2.5 text-[#6c2f00] hover:text-[#ff6b6b] transition-colors p-1 cursor-pointer"
+                    className="absolute right-4 top-2.5 text-[#6c2f00] hover:text-[#c85a32] transition-colors p-1 cursor-pointer"
                   >
                     {showPassword ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
                   </button>
@@ -127,7 +127,7 @@ export default function FormBase<T>({
         <button
           type="submit"
           disabled={isLoading}
-          className={`w-full bg-[#ff6b6b] hover:bg-[#ae2f34] text-white font-body-editorial font-semibold py-3.5 px-6 rounded-full text-base transition-all duration-300 shadow-md flex items-center justify-center gap-2 cursor-pointer ${
+          className={`w-full bg-[#c85a32] hover:bg-[#a84320] text-white font-body-editorial font-semibold py-3.5 px-6 rounded-full text-base transition-all duration-300 shadow-md flex items-center justify-center gap-2 cursor-pointer ${
             isLoading ? 'opacity-60 cursor-not-allowed' : ''
           }`}
         >
@@ -141,7 +141,7 @@ export default function FormBase<T>({
       {isLoading && (
         <div className="fixed inset-0 z-50 bg-white/90 backdrop-blur-xs flex items-center justify-center pointer-events-auto">
           <div className="flex flex-col items-center gap-4 bg-[#fff8f5] border border-[#6c2f00]/15 p-8 rounded-3xl shadow-2xl max-w-xs text-center font-body-editorial">
-            <div className="w-10 h-10 border-4 border-[#ff6b6b] border-t-transparent rounded-full animate-spin" />
+            <div className="w-10 h-10 border-4 border-[#c85a32] border-t-transparent rounded-full animate-spin" />
             <div>
               <p className="font-display-editorial font-bold text-lg text-[#6c2f00]">
                 Procesando registro...

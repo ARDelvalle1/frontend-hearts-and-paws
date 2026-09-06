@@ -36,7 +36,7 @@ export default function GlobalFeedPostCard({ caso }: { caso: CasoFeedItem }) {
         <div className="flex-1 min-w-0">
           <Link
             href={`/ong/${caso.ong.id}`}
-            className="font-display-editorial font-semibold text-base text-[#6c2f00] hover:text-[#ae2f34] transition truncate block"
+            className="font-display-editorial font-semibold text-base text-[#6c2f00] hover:text-[#a84320] transition truncate block"
           >
             {caso.ong.nombre}
           </Link>
@@ -48,7 +48,7 @@ export default function GlobalFeedPostCard({ caso }: { caso: CasoFeedItem }) {
 
         <span
           className={`text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-sm shrink-0 ${
-            esAdopcion ? 'bg-[#934b19] text-white' : 'bg-[#ff6b6b] text-white'
+            esAdopcion ? 'bg-[#934b19] text-white' : 'bg-[#c85a32] text-white'
           }`}
         >
           {esAdopcion ? 'En adopción' : 'Donación'}
@@ -68,7 +68,7 @@ export default function GlobalFeedPostCard({ caso }: { caso: CasoFeedItem }) {
 
         <Link
           href={`/mascotas/${caso.mascota.id}`}
-          className="mt-2 self-start font-semibold text-sm text-[#ae2f34] hover:text-[#6c2f00] transition flex items-center gap-1"
+          className="mt-2 self-start font-semibold text-sm text-[#a84320] hover:text-[#6c2f00] transition flex items-center gap-1"
         >
           Ver a {caso.mascota.nombre} <span className="material-symbols-outlined text-base">arrow_forward</span>
         </Link>

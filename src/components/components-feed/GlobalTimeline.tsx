@@ -65,7 +65,7 @@ export default function GlobalTimeline() {
           ))}
         </div>
       )}
-      {error && <p className="text-center text-[#ae2f34] font-medium">{error}</p>}
+      {error && <p className="text-center text-[#a84320] font-medium">{error}</p>}
 
       {!cargando && !error && casos.length === 0 && (
         <p className="text-center text-[#54433a]">
@@ -81,7 +81,7 @@ export default function GlobalTimeline() {
         <button
           onClick={handleCargarMas}
           disabled={cargandoMas}
-          className="self-center bg-[#ff6b6b] hover:bg-[#ae2f34] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-sm hover:scale-105 disabled:opacity-50 flex items-center gap-2 cursor-pointer"
+          className="self-center bg-[#c85a32] hover:bg-[#a84320] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-sm hover:scale-105 disabled:opacity-50 flex items-center gap-2 cursor-pointer"
         >
           {cargandoMas ? 'Cargando...' : 'Cargar más publicaciones'}
         </button>
