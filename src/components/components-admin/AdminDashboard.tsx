@@ -75,62 +75,62 @@ export default function AdminDashboard() {
 
   
   return (
-    <div className="min-h-screen bg-[#fff8f5] text-[#28180d] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
+    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#1a0f08] text-[#28180d] dark:text-[#ffede4] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
       <div className="flex-grow max-w-[1280px] mx-auto px-6 md:px-12 py-12 w-full">
         {/* Encabezado Hero Editorial */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] border border-[#6c2f00]/15 text-[#6c2f00] font-body-editorial text-xs font-semibold mb-4">
-            <span className="material-symbols-outlined text-base">verified</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] font-body-editorial text-xs font-semibold mb-4">
+            <span className="material-symbols-outlined text-base text-[#c85a32]">verified</span>
             Panel de Verificación
           </div>
-          <h1 className="font-display-editorial text-4xl sm:text-5xl md:text-6xl text-[#6c2f00] font-bold tracking-tight mb-4 leading-[1.1]">
+          <h1 className="font-display-editorial text-4xl sm:text-5xl md:text-6xl text-[#6c2f00] dark:text-[#ffdbc9] font-bold tracking-tight mb-4 leading-[1.1]">
             Solicitudes de ONGs
           </h1>
-          <p className="font-body-editorial text-base sm:text-lg text-[#54433a] leading-relaxed">
+          <p className="font-body-editorial text-base sm:text-lg text-[#54433a] dark:text-[#dac2b6] leading-relaxed">
             Revisa, valida la documentación y gestiona las solicitudes de verificación pendientes para incorporar nuevas organizaciones a Hearts&amp;Paws.
           </p>
         </div>
 
         {loading ? (
-          <div className="flex flex-col items-center justify-center p-12 text-[#6c2f00] gap-3">
+          <div className="flex flex-col items-center justify-center p-12 text-[#6c2f00] dark:text-[#ffdbc9] gap-3">
             <span className="material-symbols-outlined text-4xl animate-spin">progress_activity</span>
             <p className="font-semibold text-sm">Cargando solicitudes pendientes...</p>
           </div>
         ) : requests.length === 0 ? (
-          <div className="p-12 text-center text-[#54433a] bg-white border border-[#6c2f00]/15 rounded-2xl shadow-xs max-w-xl mx-auto font-body-editorial">
-            <span className="material-symbols-outlined text-[#6c2f00] text-4xl mb-3">task_alt</span>
-            <h3 className="font-display-editorial text-xl font-bold text-[#6c2f00] mb-2">Todo al día</h3>
-            <p className="text-sm text-[#54433a]">No hay solicitudes de verificación de ONGs pendientes en este momento.</p>
+          <div className="p-12 text-center text-[#54433a] dark:text-[#dac2b6] bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl shadow-xs max-w-xl mx-auto font-body-editorial">
+            <span className="material-symbols-outlined text-[#6c2f00] dark:text-[#ffdbc9] text-4xl mb-3">task_alt</span>
+            <h3 className="font-display-editorial text-xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] mb-2">Todo al día</h3>
+            <p className="text-sm text-[#54433a] dark:text-[#dac2b6]">No hay solicitudes de verificación de ONGs pendientes en este momento.</p>
           </div>
         ) : (
           <div className="space-y-6">
             {requests.map((req: OngUser) => (
               <div
                 key={req.id}
-                className="bg-white border border-[#6c2f00]/15 rounded-3xl p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 font-body-editorial"
+                className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 font-body-editorial"
               >
                 {/* Imagen de perfil */}
                 <img
                   src={req.imagenPerfil || "https://ui-avatars.com/api/?name=ONG&background=FFC0CB&color=fff"}
                   alt={`Foto de perfil de ${req.nombre}`}
-                  className="w-32 h-32 md:w-36 md:h-36 object-cover border-4 border-[#fff1ea] rounded-2xl shadow-xs shrink-0"
+                  className="w-32 h-32 md:w-36 md:h-36 object-cover border-4 border-[#fff1ea] dark:border-[#1a0f08] rounded-2xl shadow-xs shrink-0"
                 />
 
                 {/* Información textual y Botones */}
                 <div className="flex-1 flex flex-col justify-between w-full">
                   <div>
-                    <h2 className="font-display-editorial text-2xl font-bold text-[#6c2f00] mb-2">
+                    <h2 className="font-display-editorial text-2xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] mb-2">
                       {req.nombre}
                     </h2>
                     
-                    <div className="space-y-1 mb-4 text-sm text-[#54433a]">
+                    <div className="space-y-1 mb-4 text-sm text-[#54433a] dark:text-[#dac2b6]">
                       <p className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-base text-[#6c2f00]">mail</span>
-                        <span className="font-bold text-[#6c2f00]">Contacto:</span> {req.email ?? "Sin contacto registrado"}
+                        <span className="material-symbols-outlined text-base text-[#6c2f00] dark:text-[#ffdbc9]">mail</span>
+                        <span className="font-bold text-[#6c2f00] dark:text-[#ffdbc9]">Contacto:</span> {req.email ?? "Sin contacto registrado"}
                       </p>
                       <p className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-base text-[#6c2f00]">calendar_month</span>
-                        <span className="font-bold text-[#6c2f00]">Fecha de Registro:</span>{" "}
+                        <span className="material-symbols-outlined text-base text-[#6c2f00] dark:text-[#ffdbc9]">calendar_month</span>
+                        <span className="font-bold text-[#6c2f00] dark:text-[#ffdbc9]">Fecha de Registro:</span>{" "}
                         {req.creado_en
                           ? new Date(req.creado_en).toLocaleDateString("es-ES", {
                               day: "numeric",
@@ -143,7 +143,7 @@ export default function AdminDashboard() {
                   </div>
 
                   {/* Botonera de Acciones Editorial */}
-                  <div className="flex flex-wrap items-center gap-3 pt-2 border-t border-[#6c2f00]/10">
+                  <div className="flex flex-wrap items-center gap-3 pt-2 border-t border-[#6c2f00]/10 dark:border-[#ffdbc9]/15">
                     <button
                       onClick={() => handleDecision(String(req.id), "APROBADA")}
                       className="bg-[#2e5d32] hover:bg-[#1b431e] text-white font-body-editorial text-xs font-semibold px-5 py-2.5 rounded-full transition-all duration-300 shadow-xs flex items-center justify-center gap-1.5 cursor-pointer flex-1 sm:flex-initial"
@@ -162,7 +162,7 @@ export default function AdminDashboard() {
 
                     <button
                       onClick={() => handleVerificacion(String(req.id))}
-                      className="border border-[#6c2f00]/20 text-[#6c2f00] hover:bg-[#ffeade] font-body-editorial text-xs font-semibold px-5 py-2.5 rounded-full transition-all cursor-pointer flex items-center justify-center gap-1.5 w-full sm:w-auto"
+                      className="border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 text-[#6c2f00] dark:text-[#ffdbc9] hover:bg-[#ffeade] dark:hover:bg-[#3f2c20] font-body-editorial text-xs font-semibold px-5 py-2.5 rounded-full transition-all cursor-pointer flex items-center justify-center gap-1.5 w-full sm:w-auto"
                     >
                       <span className="material-symbols-outlined text-base">description</span>
                       Ver Documentación
