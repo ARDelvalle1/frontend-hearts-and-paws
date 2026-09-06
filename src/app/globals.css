@@ -44,13 +44,33 @@ html.light {
 }
 
 html.dark {
-  --background: #000000;
-  --foreground: #f8fafc;
-  --card: #0a0a0a;
-  --input-background: #0a0a0a;
-  --input-border: #1f1f1f;
-  --input-placeholder: #94a3b8;
-  --surface: #0a0a0a;
+  --background: #1a0f08;
+  --foreground: #ffede4;
+  --card: #28180d;
+  --input-background: #28180d;
+  --input-border: rgba(255, 219, 201, 0.2);
+  --input-placeholder: rgba(218, 194, 182, 0.6);
+  --surface: #28180d;
+
+  /* Sistema de diseño Earth & Heart (Modo Oscuro) */
+  --earth-surface: #1a0f08;
+  --earth-surface-dim: #120a05;
+  --earth-surface-bright: #28180d;
+  --earth-surface-container: #28180d;
+  --earth-surface-container-low: #1f130b;
+  --earth-surface-container-high: #342013;
+  --earth-surface-container-highest: #3f2c20;
+  --earth-primary: #ffdbc9;
+  --earth-primary-container: #6c2f00;
+  --earth-on-primary: #1a0f08;
+  --earth-secondary: #c85a32;
+  --earth-secondary-container: #c85a32;
+  --earth-on-secondary-container: #ffffff;
+  --earth-on-surface-variant: #dac2b6;
+  --earth-outline: rgba(255, 219, 201, 0.2);
+  --earth-outline-variant: rgba(255, 219, 201, 0.1);
+  --earth-surface-tint: #ffdbc9;
+  --earth-inverse-surface: #fff8f5;
 }
 
 @theme inline {
@@ -111,50 +131,5 @@ a.bg-\[\#c85a32\] * {
 input::placeholder,
 textarea::placeholder {
   color: var(--input-placeholder);
-}
-
-html.dark .bg-white,
-html.dark .bg-\[\#fff5f2\],
-html.dark .bg-\[\#ffece8\],
-html.dark .bg-gray-50,
-html.dark .bg-gray-100,
-html.dark .bg-white\/80,
-html.dark .bg-white\/90,
-html.dark .bg-white\/70 {
-  background-color: #0a0a0a !important;
-}
-
-html.dark .bg-\[\#fff5f2\] {
-  background-color: #000000 !important;
-}
-
-html.dark .bg-\[\#ffcfc7\],
-html.dark .bg-pink-300,
-html.dark .border-\[\#ffcfc7\],
-html.dark .border-\[\#ffbba5\],
-html.dark .border-gray-300,
-html.dark .border-gray-200,
-html.dark .border-gray-100,
-html.dark .border-gray-500 {
-  border-color: #1f1f1f !important;
-}
-
-html.dark .text-gray-800,
-html.dark .text-gray-700,
-html.dark .text-gray-600,
-html.dark .text-gray-500,
-html.dark .text-gray-900,
-html.dark .text-gray-400 {
-  color: var(--foreground) !important;
-}
-
-html.dark .text-gray-300,
-html.dark .text-gray-200 {
-  color: #cbd5e1 !important;
-}
-
-html.dark .hover\:bg-\[\#ffece8\]:hover,
-html.dark .hover\:bg-gray-100:hover {
-  background-color: #141414 !important;
 }
 
