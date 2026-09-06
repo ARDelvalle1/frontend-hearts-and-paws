@@ -97,6 +97,17 @@ button {
   color: var(--foreground);
 }
 
+/* Letra blanca exclusivamente para botones y enlaces con fondo terracota (#c85a32) */
+button.bg-\[\#c85a32\],
+a.bg-\[\#c85a32\] {
+  color: #ffffff !important;
+}
+
+button.bg-\[\#c85a32\] *,
+a.bg-\[\#c85a32\] * {
+  color: #ffffff !important;
+}
+
 input::placeholder,
 textarea::placeholder {
   color: var(--input-placeholder);

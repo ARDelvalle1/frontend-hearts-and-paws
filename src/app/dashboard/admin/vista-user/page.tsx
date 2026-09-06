@@ -1,7 +1,7 @@
 
 
 
-import Vistausuario from '@/components/components-admin/VistaUsuario'
+import Vistausuario from '@/components/components-admin/Vistausuario'
 
 export default async function UserPage() {
  
