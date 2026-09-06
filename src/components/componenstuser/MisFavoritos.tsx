@@ -254,7 +254,7 @@ export default function MisFavoritos() {
                     />
                     <button
                       onClick={() => handleEliminarFavorito(fav)}
-                      className="absolute top-3 right-3 bg-white/90 dark:bg-black/70 backdrop-blur-sm p-2 rounded-full text-[#6c2f00] dark:text-[#ffdbc9] hover:text-[#a84320] dark:hover:text-[#c85a32] hover:scale-110 transition-all shadow-sm z-20"
+                      className="absolute top-3 right-3 bg-white/90 dark:bg-[#28180d]/90 backdrop-blur-sm p-2 rounded-full text-[#6c2f00] dark:text-[#ffdbc9] hover:text-[#a84320] dark:hover:text-[#c85a32] hover:scale-110 transition-all shadow-sm z-20 cursor-pointer"
                       aria-label="Eliminar favorito"
                       title="Quitar de favoritos"
                     >
