@@ -110,12 +110,12 @@ export default function MascotaCard({
   const metaAlcanzada = recaudado >= meta
 
   return (
-    <article className="bg-white rounded-2xl border border-[#6c2f00]/15 overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between h-full relative group">
+    <article className="bg-white dark:bg-[#28180d] rounded-2xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between h-full relative group">
       {/* Botón de Favoritos en la esquina superior derecha de la imagen */}
       {mostrarFavorito && (
         <button
           onClick={toggleFavorito}
-          className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-[#c85a32] hover:bg-white hover:scale-110 transition-all shadow-xs cursor-pointer"
+          className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-white/90 dark:bg-[#28180d]/90 backdrop-blur-md flex items-center justify-center text-[#c85a32] hover:bg-white dark:hover:bg-[#3f2c20] hover:scale-110 transition-all shadow-xs cursor-pointer"
           aria-label="Marcar como favorito"
           type="button"
         >
@@ -124,7 +124,7 @@ export default function MascotaCard({
       )}
 
       {/* Contenedor Destacado de Imagen */}
-      <div className="relative w-full h-64 sm:h-72 bg-[#6c2f00]/5 overflow-hidden">
+      <div className="relative w-full h-64 sm:h-72 bg-[#6c2f00]/5 dark:bg-[#ffdbc9]/5 overflow-hidden">
         {totalImagenes > 0 ? (
           <Image
             src={mascota.imagenes[imagenActual]?.url}
@@ -134,7 +134,7 @@ export default function MascotaCard({
             unoptimized
           />
         ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center text-[#6c2f00]/30">
+          <div className="w-full h-full flex flex-col items-center justify-center text-[#6c2f00]/30 dark:text-[#ffdbc9]/30">
             <span className="material-symbols-outlined text-4xl mb-1">pets</span>
             <span className="font-body-editorial text-xs">Sin foto disponible</span>
           </div>
@@ -145,7 +145,7 @@ export default function MascotaCard({
           <>
             <button
               onClick={irAAnterior}
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6c2f00] bg-white/90 backdrop-blur-md rounded-full shadow-xs p-2 hover:bg-white transition-all z-10 cursor-pointer"
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6c2f00] dark:text-[#ffdbc9] bg-white/90 dark:bg-[#28180d]/90 backdrop-blur-md rounded-full shadow-xs p-2 hover:bg-white dark:hover:bg-[#3f2c20] transition-all z-10 cursor-pointer"
               type="button"
               aria-label="Imagen anterior"
             >
@@ -153,7 +153,7 @@ export default function MascotaCard({
             </button>
             <button
               onClick={irASiguiente}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-[#6c2f00] bg-white/90 backdrop-blur-md rounded-full shadow-xs p-2 hover:bg-white transition-all z-10 cursor-pointer"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-[#6c2f00] dark:text-[#ffdbc9] bg-white/90 dark:bg-[#28180d]/90 backdrop-blur-md rounded-full shadow-xs p-2 hover:bg-white dark:hover:bg-[#3f2c20] transition-all z-10 cursor-pointer"
               type="button"
               aria-label="Imagen siguiente"
             >
@@ -167,27 +167,27 @@ export default function MascotaCard({
       <div className="p-6 flex-1 flex flex-col justify-between">
         <div>
           {/* Título de la Mascota */}
-          <h2 className="font-display-editorial text-2xl font-bold text-[#6c2f00] mb-2 leading-tight">
+          <h2 className="font-display-editorial text-2xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] mb-2 leading-tight">
             {mascota.nombre || "Sin nombre"}
           </h2>
 
           {/* Descripción Breve */}
-          <p className="font-body-editorial text-sm text-[#54433a] leading-relaxed line-clamp-3 mb-4">
+          <p className="font-body-editorial text-sm text-[#54433a] dark:text-[#dac2b6] leading-relaxed line-clamp-3 mb-4">
             {mascota.descripcion || "Un compañero amoroso que busca una segunda oportunidad y un hogar lleno de cariño."}
           </p>
 
           {/* Progreso de Donación si aplica */}
           {modo === 'donacion' && detalleDonacion && (
-            <div className="mb-4 p-3 rounded-xl bg-[#fff1ea] border border-[#6c2f00]/10">
-              <div className="flex justify-between text-xs text-[#54433a] font-semibold mb-1 font-body-editorial">
+            <div className="mb-4 p-3 rounded-xl bg-[#fff1ea] dark:bg-[#1a0f08] border border-[#6c2f00]/10 dark:border-[#ffdbc9]/15">
+              <div className="flex justify-between text-xs text-[#54433a] dark:text-[#dac2b6] font-semibold mb-1 font-body-editorial">
                 <span>Recaudado: {detalleDonacion.estadoDonacionARS}</span>
                 <span>Meta: {detalleDonacion.metaDonacionARS}</span>
               </div>
 
-              <div className="relative w-full bg-[#6c2f00]/10 rounded-full h-3 overflow-hidden">
+              <div className="relative w-full bg-[#6c2f00]/10 dark:bg-[#ffdbc9]/15 rounded-full h-3 overflow-hidden">
                 <div
                   className={`h-full transition-all duration-500 ${
-                    metaAlcanzada ? 'bg-[#2e5d32]' : 'bg-[#a84320]'
+                    metaAlcanzada ? 'bg-[#2e5d32] dark:bg-[#4caf50]' : 'bg-[#a84320] dark:bg-[#c85a32]'
                   }`}
                   style={{ width: `${porcentaje}%` }}
                 />
@@ -199,13 +199,13 @@ export default function MascotaCard({
         {/* Bloque Inferior: Metadata y Botones de Acción */}
         <div>
           {/* Fila Informativa (Edad & Refugio/ONG) */}
-          <div className="border-t border-[#6c2f00]/10 pt-3 mb-4 flex items-center justify-between text-xs text-[#54433a] font-semibold font-body-editorial">
+          <div className="border-t border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 pt-3 mb-4 flex items-center justify-between text-xs text-[#54433a] dark:text-[#dac2b6] font-semibold font-body-editorial">
             <span className="flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-base text-[#6c2f00]">calendar_today</span>
+              <span className="material-symbols-outlined text-base text-[#6c2f00] dark:text-[#ffdbc9]">calendar_today</span>
               {mascota.tipo === 'gato' ? 'Joven' : 'Adulto'}
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-base text-[#6c2f00]">location_on</span>
+              <span className="material-symbols-outlined text-base text-[#6c2f00] dark:text-[#ffdbc9]">location_on</span>
               Refugio Aliado
             </span>
           </div>
@@ -223,9 +223,9 @@ export default function MascotaCard({
 
             <button
               onClick={handleAccion}
-              className={`flex-1 border border-[#6c2f00]/30 hover:bg-[#ffeade] text-[#6c2f00] font-body-editorial text-xs font-semibold py-2.5 px-3 rounded-full transition-all duration-300 flex items-center justify-center gap-1 cursor-pointer active:scale-95 ${
+              className={`flex-1 border border-[#6c2f00]/30 dark:border-[#ffdbc9]/30 hover:bg-[#ffeade] dark:hover:bg-[#3f2c20] text-[#6c2f00] dark:text-[#ffdbc9] font-body-editorial text-xs font-semibold py-2.5 px-3 rounded-full transition-all duration-300 flex items-center justify-center gap-1 cursor-pointer active:scale-95 ${
                 modo === 'donacion' && metaAlcanzada
-                  ? 'opacity-60 cursor-not-allowed border-gray-300'
+                  ? 'opacity-60 cursor-not-allowed border-gray-300 dark:border-neutral-700'
                   : ''
               }`}
               type="button"
