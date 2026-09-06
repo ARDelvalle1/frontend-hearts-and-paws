@@ -198,7 +198,7 @@ export default function DashboardSencillo() {
 
   if (!user && !usuario) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
+      <div className="flex justify-center items-center min-h-screen bg-[#fff8f5] dark:bg-[#1a0f08] text-[#28180d] dark:text-[#ffede4] font-body-editorial">
         Cargando usuario...
       </div>
     );
@@ -364,7 +364,7 @@ export default function DashboardSencillo() {
               </div>
             ))}
 
-            <div className="col-span-full flex justify-end gap-4 mt-6 pt-4 border-t border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
+            <div className="col-span-full flex justify-end gap-4 mt-6 pt-4 border-t border-[#6c2f00]/10 dark:border-[#ffdbc9]/15">
               {!isEditando ? (
                 <button
                   type="button"
