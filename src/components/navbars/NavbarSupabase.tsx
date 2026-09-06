@@ -134,8 +134,8 @@ const Navbar = ({ theme, toggleTheme }: ThemeProps) => {
       transition={{ duration: 0.4, ease: 'easeOut' }}
       className={`sticky top-0 w-full z-50 transition-all ${
         scrolled
-          ? 'bg-[#fff8f5]/95 backdrop-blur-md shadow-xs border-b border-[#6c2f00]/10'
-          : 'bg-[#fff8f5]/90 backdrop-blur-md border-b border-[#6c2f00]/10'
+          ? 'bg-[#fff8f5]/95 dark:bg-[#1a0f08]/95 backdrop-blur-md shadow-xs border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/15'
+          : 'bg-[#fff8f5]/90 dark:bg-[#1a0f08]/90 backdrop-blur-md border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/15'
       }`}
     >
       <div className="px-6 md:px-12 mx-auto max-w-[1280px]">
@@ -143,9 +143,9 @@ const Navbar = ({ theme, toggleTheme }: ThemeProps) => {
           {/* Logo Editorial */}
           <Link
             href="/"
-            className="font-display-editorial text-2xl font-bold text-[#6c2f00] flex items-center gap-2 whitespace-nowrap"
+            className="font-display-editorial text-2xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] flex items-center gap-2 whitespace-nowrap"
           >
-            <span className="material-symbols-outlined text-[#6c2f00] text-2xl">pets</span>
+            <span className="material-symbols-outlined text-[#6c2f00] dark:text-[#ffdbc9] text-2xl">pets</span>
             Hearts&amp;Paws
           </Link>
 
@@ -162,11 +162,11 @@ const Navbar = ({ theme, toggleTheme }: ThemeProps) => {
                       onClick={link.onClick}
                       className={`transition-colors flex items-center gap-1 cursor-pointer ${
                         active
-                          ? 'text-[#6c2f00] font-bold border-b-2 border-[#6c2f00] pb-0.5'
-                          : 'text-[#54433a] hover:text-[#6c2f00]'
+                          ? 'text-[#6c2f00] dark:text-[#ffdbc9] font-bold border-b-2 border-[#6c2f00] dark:border-[#ffdbc9] pb-0.5'
+                          : 'text-[#54433a] dark:text-[#dac2b6] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9]'
                       }`}
                     >
-                      {link.icon && <span className="text-base text-[#6c2f00]">{link.icon}</span>}
+                      {link.icon && <span className="text-base text-[#6c2f00] dark:text-[#ffdbc9]">{link.icon}</span>}
                       {link.label}
                     </button>
                   ) : (
@@ -175,11 +175,11 @@ const Navbar = ({ theme, toggleTheme }: ThemeProps) => {
                       href={link.href!}
                       className={`transition-colors flex items-center gap-1 cursor-pointer ${
                         active
-                          ? 'text-[#6c2f00] font-bold border-b-2 border-[#6c2f00] pb-0.5'
-                          : 'text-[#54433a] hover:text-[#6c2f00]'
+                          ? 'text-[#6c2f00] dark:text-[#ffdbc9] font-bold border-b-2 border-[#6c2f00] dark:border-[#ffdbc9] pb-0.5'
+                          : 'text-[#54433a] dark:text-[#dac2b6] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9]'
                       }`}
                     >
-                      {link.icon && <span className="text-base text-[#6c2f00]">{link.icon}</span>}
+                      {link.icon && <span className="text-base text-[#6c2f00] dark:text-[#ffdbc9]">{link.icon}</span>}
                       {link.label}
                     </Link>
                   );
@@ -191,9 +191,12 @@ const Navbar = ({ theme, toggleTheme }: ThemeProps) => {
               <button
                 type="button"
                 onClick={toggleTheme}
-                className="font-body-editorial text-xs font-semibold border border-[#6c2f00]/20 text-[#6c2f00] px-4 py-2 rounded-full hover:bg-[#ffeade] transition-all cursor-pointer hidden sm:block"
+                className="font-body-editorial text-xs font-semibold border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 text-[#6c2f00] dark:text-[#ffdbc9] px-4 py-2 rounded-full hover:bg-[#ffeade] dark:hover:bg-[#3f2c20] transition-all cursor-pointer hidden sm:flex items-center gap-1.5"
               >
-                {theme === 'dark' ? 'Modo oscuro' : 'Modo claro'}
+                <span className="material-symbols-outlined text-sm">
+                  {theme === 'dark' ? 'light_mode' : 'dark_mode'}
+                </span>
+                <span>{theme === 'dark' ? 'Modo claro' : 'Modo oscuro'}</span>
               </button>
 
               {menuLinks
@@ -221,7 +224,7 @@ const Navbar = ({ theme, toggleTheme }: ThemeProps) => {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-[#6c2f00] focus:outline-none p-2"
+              className="text-[#6c2f00] dark:text-[#ffdbc9] focus:outline-none p-2"
               aria-label="Abrir menú"
             >
               {isOpen ? <FaTimes className="text-2xl" /> : <FaBars className="text-2xl" />}
@@ -234,7 +237,7 @@ const Navbar = ({ theme, toggleTheme }: ThemeProps) => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="px-6 py-6 space-y-4 bg-[#fff8f5] border-b border-[#6c2f00]/10 shadow-md md:hidden font-body-editorial"
+            className="px-6 py-6 space-y-4 bg-[#fff8f5] dark:bg-[#1a0f08] border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 shadow-md md:hidden font-body-editorial"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -248,7 +251,7 @@ const Navbar = ({ theme, toggleTheme }: ThemeProps) => {
                     setIsOpen(false);
                     link.onClick?.(e);
                   }}
-                  className="w-full text-left font-semibold text-base text-[#6c2f00] py-1 flex items-center gap-2"
+                  className="w-full text-left font-semibold text-base text-[#6c2f00] dark:text-[#ffdbc9] py-1 flex items-center gap-2"
                 >
                   {link.label}
                 </button>
@@ -257,22 +260,25 @@ const Navbar = ({ theme, toggleTheme }: ThemeProps) => {
                   key={link.label}
                   href={link.href!}
                   onClick={() => setIsOpen(false)}
-                  className="block font-semibold text-base text-[#54433a] hover:text-[#6c2f00] py-1"
+                  className="block font-semibold text-base text-[#54433a] dark:text-[#dac2b6] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] py-1"
                 >
                   {link.label}
                 </Link>
               )
             )}
-            <div className="pt-2 border-t border-[#6c2f00]/10 flex flex-col gap-3">
+            <div className="pt-2 border-t border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 flex flex-col gap-3">
               <button
                 type="button"
                 onClick={() => {
                   toggleTheme();
                   setIsOpen(false);
                 }}
-                className="w-full font-body-editorial text-xs font-semibold border border-[#6c2f00]/20 text-[#6c2f00] py-2.5 rounded-full hover:bg-[#ffeade] transition-all text-center"
+                className="w-full font-body-editorial text-xs font-semibold border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 text-[#6c2f00] dark:text-[#ffdbc9] py-2.5 rounded-full hover:bg-[#ffeade] dark:hover:bg-[#3f2c20] transition-all text-center flex items-center justify-center gap-2"
               >
-                {theme === 'dark' ? 'Modo oscuro' : 'Modo claro'}
+                <span className="material-symbols-outlined text-sm">
+                  {theme === 'dark' ? 'light_mode' : 'dark_mode'}
+                </span>
+                <span>{theme === 'dark' ? 'Modo claro' : 'Modo oscuro'}</span>
               </button>
             </div>
           </motion.div>
