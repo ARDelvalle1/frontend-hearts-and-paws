@@ -95,25 +95,25 @@ export default function LoginUsuario() {
   <>
     <form
       onSubmit={handleLogin}
-      className="w-full bg-white p-8 sm:p-10 rounded-3xl shadow-2xl border border-[#6c2f00]/15 relative font-body-editorial"
+      className="w-full bg-white dark:bg-[#28180d] p-8 sm:p-10 rounded-3xl shadow-2xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 relative font-body-editorial"
     >
       <div className="text-center mb-8">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] border border-[#6c2f00]/15 text-[#6c2f00] text-xs font-semibold mb-4 mx-auto">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] dark:bg-[#1a0f08] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] text-xs font-semibold mb-4 mx-auto">
           <span className="material-symbols-outlined text-base">person</span>
           Cuenta de Usuario
         </div>
-        <h2 className="font-display-editorial text-3xl font-bold text-[#6c2f00] tracking-tight">
+        <h2 className="font-display-editorial text-3xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] tracking-tight">
           Iniciar sesión
         </h2>
       </div>
 
       <label className="block mb-4">
-        <span className="block mb-1.5 font-semibold text-xs text-[#54433a] uppercase tracking-wider">Email</span>
+        <span className="block mb-1.5 font-semibold text-xs text-[#54433a] dark:text-[#dac2b6] uppercase tracking-wider">Email</span>
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-5 py-2.5 border border-[#6c2f00]/20 bg-[#fff8f5] text-[#6c2f00] placeholder:text-[#54433a]/60 font-body-editorial text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] transition-all"
+          className="w-full px-5 py-2.5 border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-[#fff8f5] dark:bg-[#1a0f08] text-[#6c2f00] dark:text-[#ffdbc9] placeholder:text-[#54433a]/60 dark:placeholder:text-[#dac2b6]/50 font-body-editorial text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] dark:focus:ring-[#c85a32] transition-all"
           placeholder="ejemplo@correo.com"
           disabled={loading}
           required
@@ -121,12 +121,12 @@ export default function LoginUsuario() {
       </label>
 
       <label className="relative block mb-6">
-        <span className="block mb-1.5 font-semibold text-xs text-[#54433a] uppercase tracking-wider">Contraseña</span>
+        <span className="block mb-1.5 font-semibold text-xs text-[#54433a] dark:text-[#dac2b6] uppercase tracking-wider">Contraseña</span>
         <input
           type={showPassword ? "text" : "password"}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full px-5 py-2.5 pr-12 border border-[#6c2f00]/20 bg-[#fff8f5] text-[#6c2f00] placeholder:text-[#54433a]/60 font-body-editorial text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] transition-all"
+          className="w-full px-5 py-2.5 pr-12 border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-[#fff8f5] dark:bg-[#1a0f08] text-[#6c2f00] dark:text-[#ffdbc9] placeholder:text-[#54433a]/60 dark:placeholder:text-[#dac2b6]/50 font-body-editorial text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] dark:focus:ring-[#c85a32] transition-all"
           placeholder="Tu contraseña"
           disabled={loading}
           required
@@ -134,7 +134,7 @@ export default function LoginUsuario() {
         <button
           type="button"
           onClick={() => setShowPassword((prev) => !prev)}
-          className="absolute text-[#6c2f00] hover:text-[#c85a32] right-4 top-8 transition-colors p-1 cursor-pointer"
+          className="absolute text-[#6c2f00] dark:text-[#ffdbc9] hover:text-[#c85a32] dark:hover:text-[#c85a32] right-4 top-8 transition-colors p-1 cursor-pointer"
           tabIndex={-1}
         >
           {showPassword ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
@@ -152,12 +152,12 @@ export default function LoginUsuario() {
         {loading ? "Ingresando..." : "Entrar"}
       </button>
 
-      <div className="mt-6 text-center text-xs text-[#54433a] font-body-editorial">
+      <div className="mt-6 text-center text-xs text-[#54433a] dark:text-[#dac2b6] font-body-editorial">
         ¿No tenés una cuenta?{" "}
         <button
           type="button"
           onClick={() => router.push("/register")}
-          className="text-[#6c2f00] font-bold hover:text-[#c85a32] transition-colors ml-1 underline underline-offset-2 cursor-pointer"
+          className="text-[#6c2f00] dark:text-[#ffdbc9] font-bold hover:text-[#c85a32] dark:hover:text-[#c85a32] transition-colors ml-1 underline underline-offset-2 cursor-pointer"
         >
           Registrate acá
         </button>
@@ -165,14 +165,14 @@ export default function LoginUsuario() {
     </form>
 
     {loading && (
-      <div className="fixed inset-0 z-50 bg-white/90 backdrop-blur-xs flex items-center justify-center pointer-events-auto">
-        <div className="flex flex-col items-center gap-4 bg-[#fff8f5] border border-[#6c2f00]/15 p-8 rounded-3xl shadow-2xl max-w-xs text-center font-body-editorial">
+      <div className="fixed inset-0 z-50 bg-white/90 dark:bg-black/80 backdrop-blur-xs flex items-center justify-center pointer-events-auto">
+        <div className="flex flex-col items-center gap-4 bg-[#fff8f5] dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 p-8 rounded-3xl shadow-2xl max-w-xs text-center font-body-editorial">
           <div className="w-10 h-10 border-4 border-[#c85a32] border-t-transparent rounded-full animate-spin" />
           <div>
-            <p className="font-display-editorial font-bold text-lg text-[#6c2f00]">
+            <p className="font-display-editorial font-bold text-lg text-[#6c2f00] dark:text-[#ffdbc9]">
               Iniciando sesión...
             </p>
-            <p className="text-xs text-[#54433a] mt-1">
+            <p className="text-xs text-[#54433a] dark:text-[#dac2b6] mt-1">
               Redirigiéndote a tu perfil, por favor aguardá.
             </p>
           </div>
