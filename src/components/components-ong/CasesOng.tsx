@@ -47,31 +47,56 @@ export default function CasesOng() {
   const cerrarModal = () => setCasoSeleccionado(null);
 
   return (
-    <div className="flex flex-col items-center justify-start py-10 px-4 bg-[#fff5f2] min-h-screen">
-      <div className="w-full max-w-7xl">
-        <h1 className="text-4xl font-extrabold text-center text-[#FA8072] mb-2">
-          Mis casos publicados
+    <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-6 sm:p-8 shadow-xs font-body-editorial transition-colors">
+      {/* Encabezado */}
+      <div className="mb-6 pb-6 border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#fff1ea] dark:bg-[#3f2c20] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] text-xs font-semibold mb-3">
+          <span className="material-symbols-outlined text-base text-[#c85a32]">folder_open</span>
+          Publicaciones Activas
+        </div>
+        <h1 className="font-display-editorial text-3xl font-bold text-[#6c2f00] dark:text-[#ffdbc9]">
+          Mis Casos Publicados
         </h1>
-        <p className="text-gray-600 text-lg mb-6 text-center">
-          Acá podés ver todos los casos que registraste como ONG.
+        <p className="text-sm text-[#54433a] dark:text-[#dac2b6] mt-1">
+          Consulta y gestiona todos los casos de adopción y recaudación que registraste como organización.
         </p>
+      </div>
 
-        {loading && <p className="text-center text-gray-500">Cargando casos...</p>}
-        {error && <p className="text-center text-red-500">{error}</p>}
-        {!loading && casos.length === 0 && (
-          <p className="text-center text-gray-500 mt-4">
-            No tenés casos publicados aún.
+      {loading && (
+        <div className="p-12 text-center">
+          <div className="w-10 h-10 border-4 border-[#c85a32] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <p className="font-display-editorial text-lg text-[#6c2f00] dark:text-[#ffdbc9] font-bold">Cargando casos...</p>
+        </div>
+      )}
+
+      {error && (
+        <div className="p-8 text-center">
+          <span className="material-symbols-outlined text-5xl text-[#c85a32] mb-3">error</span>
+          <p className="text-sm text-red-500 font-semibold">{error}</p>
+        </div>
+      )}
+
+      {!loading && !error && casos.length === 0 && (
+        <div className="p-12 text-center bg-[#fff8f5] dark:bg-[#1a0f08] rounded-2xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
+          <span className="material-symbols-outlined text-5xl text-[#6c2f00]/30 dark:text-[#ffdbc9]/30 mb-3">pets</span>
+          <h3 className="font-display-editorial text-lg font-bold text-[#6c2f00] dark:text-[#ffdbc9] mb-1">
+            No tienes casos publicados aún
+          </h3>
+          <p className="text-xs sm:text-sm text-[#54433a] dark:text-[#dac2b6] max-w-md mx-auto mb-5">
+            Publica un caso de adopción o campaña de recaudación para conectar con potenciales adoptantes o donantes.
           </p>
-        )}
+        </div>
+      )}
 
-        <div className="flex flex-wrap gap-8 justify-center">
+      {!loading && casos.length > 0 && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
           {casos.map((caso) => (
-            <div key={caso.id} className="flex flex-col items-center w-full max-w-xs">
+            <div key={caso.id} className="flex flex-col items-stretch">
               <CasoCard caso={caso} onConocerHistoria={handleConocerHistoria} />
             </div>
           ))}
         </div>
-      </div>
+      )}
 
       {casoSeleccionado && (
         <CasoModal
