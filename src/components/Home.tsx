@@ -220,8 +220,8 @@ export default function Home() {
                   {/* Bloques de Obstáculo y Resultado Final */}
                   <div className="space-y-4 mb-8">
                     {/* Obstáculo */}
-                    <div className="p-4 rounded-xl bg-[#fff8f5] dark:bg-[#1a0f08] border border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 shadow-xs hover:border-[#6c2f00]/20 dark:hover:border-[#ffdbc9]/30 transition-colors">
-                      <div className="flex items-center gap-2 text-[#934b19] dark:text-[#c85a32] font-semibold text-sm mb-1 font-body-editorial">
+                    <div className="p-4 rounded-xl bg-[#fff8f5] dark:bg-[#170f0a] border border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 shadow-xs hover:border-[#6c2f00]/20 dark:hover:border-[#ffdbc9]/30 transition-colors">
+                      <div className="flex items-center gap-2 text-[#934b19] dark:text-[#e0825c] font-semibold text-sm mb-1 font-body-editorial">
                         <span className="material-symbols-outlined text-lg">healing</span>
                         El Obstáculo Inicial:
                       </div>
@@ -231,7 +231,7 @@ export default function Home() {
                     </div>
 
                     {/* Resultado Final */}
-                    <div className="p-4 rounded-xl bg-[#2e5d32]/10 dark:bg-[#2e5d32]/25 border border-[#2e5d32]/20 dark:border-[#2e5d32]/40 shadow-xs hover:border-[#2e5d32]/40 dark:hover:border-[#2e5d32]/60 transition-colors">
+                    <div className="p-4 rounded-xl bg-[#2e5d32]/10 dark:bg-[#122816]/60 border border-[#2e5d32]/20 dark:border-[#2e5d32]/40 shadow-xs hover:border-[#2e5d32]/40 dark:hover:border-[#2e5d32]/60 transition-colors">
                       <div className="flex items-center gap-2 text-[#2e5d32] dark:text-[#81c784] font-semibold text-sm mb-1 font-body-editorial">
                         <span className="material-symbols-outlined text-lg">workspace_premium</span>
                         El Resultado Final:
@@ -261,7 +261,7 @@ export default function Home() {
                         className={`transition-all duration-300 cursor-pointer rounded-full ${
                           idx === currentIndex
                             ? 'w-7 h-2.5 bg-[#6c2f00] dark:bg-[#ffdbc9]'
-                            : 'w-2.5 h-2.5 bg-[#6c2f00]/30 dark:bg-[#ffdbc9]/30 hover:bg-[#6c2f00]/60 dark:hover:bg-[#ffdbc9]/60'
+                            : 'w-2.5 h-2.5 bg-[#6c2f00]/30 dark:bg-[#ffdbc9]/25 hover:bg-[#6c2f00]/60 dark:hover:bg-[#ffdbc9]/60'
                         }`}
                       />
                     ))}
@@ -279,7 +279,7 @@ export default function Home() {
                   unoptimized
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:hidden" />
-                <div className="absolute top-4 right-4 bg-white/95 dark:bg-[#28180d]/95 backdrop-blur-md px-3 py-1.5 rounded-full shadow-md text-[#2e5d32] dark:text-[#81c784] font-body-editorial text-xs font-bold flex items-center gap-1.5">
+                <div className="absolute top-4 right-4 bg-white/95 dark:bg-[#170f0a]/95 border border-transparent dark:border-[#ffdbc9]/15 backdrop-blur-md px-3 py-1.5 rounded-full shadow-md text-[#2e5d32] dark:text-[#81c784] font-body-editorial text-xs font-bold flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-base">sentiment_very_satisfied</span>
                   Rehabilitado &amp; Feliz
                 </div>
