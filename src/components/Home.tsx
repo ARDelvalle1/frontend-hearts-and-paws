@@ -289,7 +289,7 @@ export default function Home() {
         </section>
 
         {/* 5. Timeline de Publicaciones de las ONGs */}
-        <section id="publicaciones" className="w-full py-16 px-6 md:px-12 border-t border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 bg-[#fff1ea]/40 dark:bg-[#1a0f08]/60">
+        <section id="publicaciones" className="w-full py-16 px-6 md:px-12 border-t border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 bg-[#fff1ea]/40 dark:bg-[#140c08]/70">
           <div className="max-w-[1280px] mx-auto">
             <div className="text-center mb-12">
               <span className="material-symbols-outlined text-[#a84320] dark:text-[#c85a32] text-4xl mb-2">
@@ -309,7 +309,7 @@ export default function Home() {
       </main>
 
       {/* 6. Footer (Idéntico a la imagen de referencia) */}
-      <footer className="bg-[#fbddca] dark:bg-[#120a05] w-full py-12 px-6 md:px-12 border-t border-[#dac2b6]/40 dark:border-[#ffdbc9]/15 text-[#28180d] dark:text-[#ffede4]">
+      <footer className="bg-[#fbddca] dark:bg-[#080503] w-full py-12 px-6 md:px-12 border-t border-[#dac2b6]/40 dark:border-[#ffdbc9]/15 text-[#28180d] dark:text-[#ffede4]">
         <div className="flex flex-col md:flex-row justify-between items-center max-w-[1280px] mx-auto gap-8">
           <div className="font-display-editorial text-2xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] flex items-center gap-2">
             <span className="material-symbols-outlined text-[#6c2f00] dark:text-[#ffdbc9]">pets</span>
