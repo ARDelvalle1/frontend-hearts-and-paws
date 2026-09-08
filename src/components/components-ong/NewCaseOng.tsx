@@ -9,6 +9,7 @@ import { createCase } from "@/services/createCases";
 import { CasoBody, FormInputs } from "@/types/formsOng";
 import { LoaderCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const NewCaseOng = () => {
   const { ong, loading: authLoading } = useOngAuth();
@@ -99,33 +100,58 @@ const NewCaseOng = () => {
 
   return (
     <>
-      <div className="min-h-screen pt-20 flex justify-center bg-[#fff5f2]">
-        <div className="max-w-2xl w-full bg-white p-8 rounded-2xl shadow-lg text-gray-800">
-          <h1 className="text-3xl font-bold mb-4 text-center text-[#FA8072]">
-            Crear nuevo caso
-          </h1>
+      <div className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex justify-center bg-[#fff8f5] dark:bg-[#1a0f08] transition-colors">
+        <div className="max-w-2xl w-full bg-white dark:bg-[#28180d] p-6 sm:p-10 rounded-3xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 shadow-xs transition-colors">
+          <div className="mb-6">
+            <Link
+              href="/dashboard/ong"
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#c85a32] hover:text-[#a84320] transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              Volver al Dashboard
+            </Link>
+          </div>
+
+          <div className="text-center mb-8">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#c85a32] mb-1">
+              Publicación y Difusión
+            </span>
+            <h1 className="text-3xl font-serif font-bold text-[#6c2f00] dark:text-[#ffdbc9]">
+              Crear Nuevo Caso
+            </h1>
+            <p className="text-sm text-[#54433a] dark:text-[#dac2b6] mt-2">
+              Publicá un caso de adopción o una campaña de recaudación económica para tu organización.
+            </p>
+          </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <CaseForm register={register} errors={errors} watch={watch} />
             <button
               type="submit"
               disabled={loading}
-              className={`w-full bg-[#FA8072] text-white py-3 rounded-xl font-semibold hover:bg-[#e87366] transition duration-300 ${
+              className={`w-full bg-[#c85a32] hover:bg-[#a84320] text-white py-3.5 rounded-xl font-semibold shadow-xs transition-colors duration-200 mt-6 cursor-pointer ${
                 loading ? "opacity-60 cursor-not-allowed" : ""
               }`}
             >
-              Publicar caso
+              Publicar Caso
             </button>
           </form>
         </div>
       </div>
 
       {loading && (
-        <div className="fixed inset-0 z-50 bg-white/80 backdrop-blur-sm flex flex-col items-center justify-center pointer-events-auto">
-          <LoaderCircle className="animate-spin w-10 h-10 text-[#FA8072] mb-4" />
-          <p className="text-[#FA8072] font-semibold text-lg text-center px-4">
-            Confirmando Registro del caso, por favor aguarde...
-          </p>
+        <div className="fixed inset-0 z-50 bg-[#28180d]/60 dark:bg-black/75 backdrop-blur-xs flex items-center justify-center pointer-events-auto p-4">
+          <div className="flex flex-col items-center gap-4 bg-white dark:bg-[#28180d] p-8 rounded-3xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 shadow-2xl max-w-sm text-center">
+            <LoaderCircle className="animate-spin w-10 h-10 text-[#c85a32]" />
+            <div className="text-[#6c2f00] dark:text-[#ffdbc9] font-serif font-bold text-lg">
+              Confirmando publicación...
+            </div>
+            <p className="text-sm text-[#54433a] dark:text-[#dac2b6]">
+              Por favor aguarde unos instantes mientras creamos el caso.
+            </p>
+          </div>
         </div>
       )}
     </>
