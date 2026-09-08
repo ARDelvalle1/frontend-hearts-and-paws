@@ -25,39 +25,37 @@ const MyAccount = () => {
   if (loading || !ong) return null;
 
   return (
-    <div className="min-h-screen bg-[#ffece8] dark:bg-black pt-28 pb-10">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-[30px] px-6">
-        <aside className="w-full md:w-56 flex-shrink-0">
-          <div className="bg-white dark:bg-[#FA8072] rounded-xl shadow-sm border border-[#ffece8] dark:border-transparent overflow-hidden sticky top-28">
-            <div className="bg-[#FA8072] dark:bg-[#e87366] px-5 py-4">
-              <h2 className="text-base font-bold text-white flex items-center gap-2">
-                <svg className="w-5 h-5 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-                Mi cuenta
+    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#1a0f08] text-[#28180d] dark:text-[#ffede4] font-body-editorial pt-28 pb-12 selection:bg-[#c85a32] selection:text-white">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 px-6">
+        <aside className="w-full md:w-64 flex-shrink-0">
+          <div className="bg-white dark:bg-[#28180d] rounded-2xl shadow-xs border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 overflow-hidden sticky top-28">
+            <div className="bg-[#fff1ea] dark:bg-[#3f2c20] px-5 py-4 border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
+              <h2 className="font-display-editorial text-lg font-bold text-[#6c2f00] dark:text-[#ffdbc9] flex items-center gap-2">
+                <span className="material-symbols-outlined text-[#c85a32]">corporate_fare</span>
+                Panel de ONG
               </h2>
             </div>
-            <div className="p-2 space-y-1">
+            <div className="p-3 space-y-1.5">
               {[
                 { 
                   label: "Mi Perfil", 
                   view: "profil",
-                  icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                  icon: <span className="material-symbols-outlined text-lg">domain</span>
                 },
                 { 
                   label: "Historial de Donaciones", 
                   view: "donations",
-                  icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                  icon: <span className="material-symbols-outlined text-lg">volunteer_activism</span>
                 },
                 { 
                   label: "Solicitudes de Adopción", 
                   view: "adoptions",
-                  icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+                  icon: <span className="material-symbols-outlined text-lg">assignment</span>
                 },
                 { 
                   label: "Mis Casos", 
                   view: "cases",
-                  icon: <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
+                  icon: <span className="material-symbols-outlined text-lg">folder_open</span>
                 },
               ].map((item) => {
                 const isActive = selectedView === item.view;
@@ -65,41 +63,67 @@ const MyAccount = () => {
                   <button
                     key={item.view}
                     onClick={() => setSelectedView(item.view as ViewType)}
-                    className={`w-full flex items-center justify-between px-3 py-2 text-xs font-semibold rounded-lg transition-all group ${
+                    className={`w-full flex items-center justify-between px-3.5 py-2.5 text-xs font-semibold rounded-xl transition-all cursor-pointer group ${
                       isActive
-                        ? "text-[#FA8072] dark:text-white bg-[#fff5f2] dark:bg-[#FA8072]"
-                        : "text-gray-700 dark:text-white bg-gray-50 dark:bg-[#e87366] hover:bg-[#fff5f2] dark:hover:bg-[#FA8072] hover:text-[#FA8072] dark:hover:text-white"
+                        ? "text-[#6c2f00] dark:text-[#ffdbc9] bg-[#fff1ea] dark:bg-[#3f2c20] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 shadow-xs"
+                        : "text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffeade] dark:hover:bg-[#3f2c20] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9]"
                     }`}
                   >
-                    <div className="flex items-center gap-2">
-                      <div className={`${isActive ? "text-[#FA8072] dark:text-white" : "text-gray-400 dark:text-white"} transition-colors`}>
+                    <div className="flex items-center gap-2.5">
+                      <div className={`${isActive ? "text-[#c85a32] dark:text-[#ffdbc9]" : "text-[#54433a] dark:text-[#dac2b6] group-hover:text-[#6c2f00] dark:group-hover:text-[#ffdbc9]"} transition-colors flex items-center`}>
                         {item.icon}
                       </div>
                       <span>{item.label}</span>
                     </div>
-                    <svg className={`w-3 h-3 transition-colors transform group-hover:translate-x-1 ${isActive ? "text-[#FA8072] dark:text-white" : "text-gray-400 dark:text-white"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                    <span className={`material-symbols-outlined text-base transition-transform group-hover:translate-x-1 ${isActive ? "text-[#6c2f00] dark:text-[#ffdbc9]" : "text-[#54433a] dark:text-[#dac2b6]"}`}>
+                      chevron_right
+                    </span>
                   </button>
                 );
               })}
               
               <button
                 onClick={() => router.push("/chat")}
-                className="w-full flex items-center justify-between px-3 py-2 text-xs font-semibold rounded-lg transition-all group text-gray-700 dark:text-white bg-gray-50 dark:bg-[#e87366] hover:bg-[#fff5f2] dark:hover:bg-[#FA8072] hover:text-[#FA8072] dark:hover:text-white"
+                className="w-full flex items-center justify-between px-3.5 py-2.5 text-xs font-semibold rounded-xl transition-all cursor-pointer group text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffeade] dark:hover:bg-[#3f2c20] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9]"
               >
-                <div className="flex items-center gap-2">
-                  <div className="text-gray-400 dark:text-white transition-colors">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                    </svg>
+                <div className="flex items-center gap-2.5">
+                  <div className="text-[#54433a] dark:text-[#dac2b6] group-hover:text-[#6c2f00] dark:group-hover:text-[#ffdbc9] transition-colors flex items-center">
+                    <span className="material-symbols-outlined text-lg">chat</span>
                   </div>
                   <span>Mensajes</span>
                 </div>
-                <svg className="w-3 h-3 transition-colors transform group-hover:translate-x-1 text-gray-400 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+                <span className="material-symbols-outlined text-base transition-transform group-hover:translate-x-1 text-[#54433a] dark:text-[#dac2b6]">
+                  chevron_right
+                </span>
               </button>
+
+              <div className="pt-2 border-t border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 space-y-1.5">
+                <button
+                  onClick={() => router.push("/dashboard/ong/nueva-mascota")}
+                  className="w-full flex items-center justify-between px-3.5 py-2.5 text-xs font-semibold rounded-xl transition-all cursor-pointer group text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffeade] dark:hover:bg-[#3f2c20] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9]"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <span className="material-symbols-outlined text-lg text-[#c85a32]">pets</span>
+                    <span>Nueva Mascota</span>
+                  </div>
+                  <span className="material-symbols-outlined text-base transition-transform group-hover:translate-x-1 text-[#54433a] dark:text-[#dac2b6]">
+                    add
+                  </span>
+                </button>
+
+                <button
+                  onClick={() => router.push("/dashboard/ong/crear-caso")}
+                  className="w-full flex items-center justify-between px-3.5 py-2.5 text-xs font-semibold rounded-xl transition-all cursor-pointer group text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffeade] dark:hover:bg-[#3f2c20] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9]"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <span className="material-symbols-outlined text-lg text-[#c85a32]">post_add</span>
+                    <span>Crear Caso</span>
+                  </div>
+                  <span className="material-symbols-outlined text-base transition-transform group-hover:translate-x-1 text-[#54433a] dark:text-[#dac2b6]">
+                    add
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </aside>
