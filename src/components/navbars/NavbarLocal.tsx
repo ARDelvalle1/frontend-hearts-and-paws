@@ -55,13 +55,13 @@ const Navbar = ({ theme, toggleTheme }: ThemeProps) => {
   const handleLogoutOng = () => {
     logoutOng();
     router.refresh();
-    router.push("/");
+    router.push("/sesion-cerrada");
   };
 
   const handleLogoutUsuario = () => {
     logoutUsuario();
     router.refresh();
-    router.push("/");
+    router.push("/sesion-cerrada");
   };
 
   type MenuLink = {

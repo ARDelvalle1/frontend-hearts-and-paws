@@ -76,7 +76,7 @@ export const UsuarioAuthProvider = ({ children }: { children: ReactNode }) => {
     if (success) {
       setUsuario(null);
       setUserLogged(false);
-      router.push('/');
+      router.push('/sesion-cerrada');
     }
     setLoading(false);
   };

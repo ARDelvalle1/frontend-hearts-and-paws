@@ -116,7 +116,7 @@ const Navbar = ({ theme, toggleTheme }: ThemeProps) => {
         e?.preventDefault();
         await supabase.auth.signOut();
         setUser(null);
-        router.push('/login');
+        router.push('/sesion-cerrada');
       },
     });
   }
