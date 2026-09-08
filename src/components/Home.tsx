@@ -84,7 +84,7 @@ export default function Home() {
   const currentStory = stories[currentIndex] || SUCCESS_STORIES[0];
 
   return (
-    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#1a0f08] text-[#28180d] dark:text-[#ffede4] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
+    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#0e0906] text-[#28180d] dark:text-[#ffede4] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
 
 
       {/* Main Content */}
@@ -101,7 +101,7 @@ export default function Home() {
             />
           </div>
           {/* Degradado inferior que funde con el fondo */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#fff8f5] dark:from-[#1a0f08] via-[#fff8f5]/25 dark:via-[#1a0f08]/25 to-black/35 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#fff8f5] dark:from-[#0e0906] via-[#fff8f5]/25 dark:via-[#0e0906]/25 to-black/35 z-10" />
 
           <div className="relative z-20 max-w-[1280px] mx-auto px-6 md:px-12 text-center flex flex-col items-center">
             <h1 className="font-display-editorial text-4xl sm:text-5xl md:text-6xl lg:text-[72px] text-white font-bold mb-6 drop-shadow-md max-w-4xl leading-[1.1]">
@@ -165,7 +165,7 @@ export default function Home() {
               <button
                 onClick={handleShuffle}
                 title="Mostrar historias en orden aleatorio"
-                className="flex items-center gap-2 border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-[#fff1ea] dark:bg-[#28180d] text-[#6c2f00] dark:text-[#ffdbc9] hover:bg-[#ffeade] dark:hover:bg-[#3f2c20] px-4 py-2 rounded-full font-body-editorial text-xs font-semibold transition-all cursor-pointer shadow-sm active:scale-95"
+                className="flex items-center gap-2 border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-[#fff1ea] dark:bg-[#241810] text-[#6c2f00] dark:text-[#ffdbc9] hover:bg-[#ffeade] dark:hover:bg-[#382419] px-4 py-2 rounded-full font-body-editorial text-xs font-semibold transition-all cursor-pointer shadow-sm active:scale-95"
               >
                 <span className="material-symbols-outlined text-base">shuffle</span>
                 <span>Mezclar historias</span>
@@ -175,14 +175,14 @@ export default function Home() {
                 <button
                   onClick={handlePrev}
                   aria-label="Historia anterior"
-                  className="w-10 h-10 rounded-full border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-[#fff1ea] dark:bg-[#28180d] text-[#6c2f00] dark:text-[#ffdbc9] hover:bg-[#6c2f00] dark:hover:bg-[#ffdbc9] hover:text-white dark:hover:text-[#1a0f08] flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
+                  className="w-10 h-10 rounded-full border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-[#fff1ea] dark:bg-[#241810] text-[#6c2f00] dark:text-[#ffdbc9] hover:bg-[#6c2f00] dark:hover:bg-[#ffdbc9] hover:text-white dark:hover:text-[#0e0906] flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
                 >
                   <span className="material-symbols-outlined text-xl">chevron_left</span>
                 </button>
                 <button
                   onClick={handleNext}
                   aria-label="Siguiente historia"
-                  className="w-10 h-10 rounded-full border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-[#fff1ea] dark:bg-[#28180d] text-[#6c2f00] dark:text-[#ffdbc9] hover:bg-[#6c2f00] dark:hover:bg-[#ffdbc9] hover:text-white dark:hover:text-[#1a0f08] flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
+                  className="w-10 h-10 rounded-full border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-[#fff1ea] dark:bg-[#241810] text-[#6c2f00] dark:text-[#ffdbc9] hover:bg-[#6c2f00] dark:hover:bg-[#ffdbc9] hover:text-white dark:hover:text-[#0e0906] flex items-center justify-center transition-all cursor-pointer shadow-sm active:scale-95"
                 >
                   <span className="material-symbols-outlined text-xl">chevron_right</span>
                 </button>
@@ -191,7 +191,7 @@ export default function Home() {
           </div>
 
           {/* Tarjeta del Carrusel de Historia de Éxito */}
-          <div className="relative overflow-hidden rounded-2xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 bg-[#fff1ea] dark:bg-[#28180d] shadow-md hover:shadow-lg transition-all duration-500">
+          <div className="relative overflow-hidden rounded-2xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/20 bg-[#fff1ea] dark:bg-[#241810] shadow-md hover:shadow-lg transition-all duration-500">
             <div key={currentStory.id} className="grid grid-cols-1 lg:grid-cols-12 min-h-[480px] transition-all duration-500 animate-in fade-in slide-in-from-right-4 duration-300">
               {/* Columna de Texto/Detalles (7 columnas) */}
               <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between z-10">
