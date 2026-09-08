@@ -12,6 +12,7 @@ import { ongLoginService } from "@/services/ongLogin";
 
 import { useRouter } from "next/navigation";
 import { getMyOng } from "@/services/getMyOng";
+import { logoutService } from "@/services/logout";
 
 
 const OngAuthContext = createContext<ContextType | undefined>(undefined);
@@ -63,17 +64,14 @@ export const OngAuthProvider = ({ children }: { children: ReactNode }) => {
   const logout = async () => {
     setLoading(true);
     try {
-      await fetch("/auth/cerrarSesion", {
-        method: "POST",
-        credentials: "include",
-      });
+      await logoutService();
     } catch (error) {
       console.error("Error al cerrar sesión:", error);
     } finally {
       setOng(null);
       setLogged(false);
       setLoading(false);
-      router.push("/");
+      router.push("/sesion-cerrada");
     }
   };
 

@@ -52,14 +52,14 @@ const Navbar = ({ theme, toggleTheme }: ThemeProps) => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const handleLogoutOng = () => {
-    logoutOng();
+  const handleLogoutOng = async () => {
+    await logoutOng();
     router.refresh();
     router.push("/sesion-cerrada");
   };
 
-  const handleLogoutUsuario = () => {
-    logoutUsuario();
+  const handleLogoutUsuario = async () => {
+    await logoutUsuario();
     router.refresh();
     router.push("/sesion-cerrada");
   };
