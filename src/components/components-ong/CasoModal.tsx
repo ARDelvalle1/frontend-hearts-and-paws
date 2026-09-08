@@ -39,56 +39,65 @@ export default function CasoModal({ caso, visible, onClose }: CasoModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#ffece8] bg-opacity-30"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#28180d]/60 dark:bg-black/75 backdrop-blur-xs transition-opacity"
       onClick={onClose}
     >
       <div
-        className="relative bg-[#fff5f2] rounded-2xl shadow-lg max-w-md w-full p-6 border border-[#ffcfc7] overflow-hidden"
+        className="relative bg-white dark:bg-[#28180d] rounded-3xl shadow-2xl max-w-md w-full p-6 sm:p-7 border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 overflow-hidden transition-colors"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-1 right-1 text-[#FA8072] hover:text-[#FA8072] text-3xl font-bold z-10"
+          className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full text-[#6c2f00] dark:text-[#ffdbc9] hover:bg-[#ffeade] dark:hover:bg-[#3f2c20] transition-colors"
           aria-label="Cerrar"
         >
-          &times;
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
         </button>
 
-        <div className="mb-4 flex justify-center">
+        <div className="mb-5 flex justify-center overflow-hidden rounded-2xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 shadow-xs">
           <Image
             src={imagenUrl}
             alt={caso.mascota.nombre}
             width={400}
-            height={300}
-            className="rounded-md object-cover"
+            height={260}
+            className="w-full h-52 object-cover"
           />
         </div>
 
-        <h2 className="text-3xl font-extrabold text-[#FA8072] mb-4 text-center">
+        <h2 className="text-2xl font-bold font-serif text-[#6c2f00] dark:text-[#ffdbc9] mb-3 text-center">
           {caso.titulo}
         </h2>
 
-        <div className="max-h-48 overflow-y-auto whitespace-pre-wrap leading-relaxed text-gray-700 text-center mb-4">
+        <div className="max-h-44 overflow-y-auto whitespace-pre-wrap leading-relaxed text-sm text-[#54433a] dark:text-[#dac2b6] text-center mb-5 px-1">
           {caso.descripcion}
         </div>
 
-        <div className="border-t border-[#ffcfc7] pt-4">
-          <label htmlFor="estado-mascota" className="block text-sm font-semibold text-[#FA8072] mb-2 text-center">
+        <div className="border-t border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 pt-4">
+          <label htmlFor="estado-mascota" className="block text-xs font-bold uppercase tracking-wider text-[#6c2f00] dark:text-[#ffdbc9] mb-2 text-center">
             Estado de {caso.mascota.nombre}
           </label>
-          <select
-            id="estado-mascota"
-            value={estado}
-            disabled={guardando}
-            onChange={(e) => handleCambiarEstado(e.target.value as EstadoMascotaKey)}
-            className="w-full appearance-none px-4 py-2 border border-gray-300 rounded-full shadow-sm text-center focus:outline-none focus:ring-2 focus:ring-[#FA8072] disabled:opacity-50"
-          >
-            {Object.entries(ESTADOS_MASCOTA).map(([key, { label }]) => (
-              <option key={key} value={key}>
-                {label}
-              </option>
-            ))}
-          </select>
+          <div className="relative">
+            <select
+              id="estado-mascota"
+              value={estado}
+              disabled={guardando}
+              onChange={(e) => handleCambiarEstado(e.target.value as EstadoMascotaKey)}
+              className="w-full appearance-none px-4 py-2.5 bg-[#fff8f5] dark:bg-[#1a0f08] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-center font-medium text-[#28180d] dark:text-[#ffdbc9] focus:outline-none focus:ring-2 focus:ring-[#c85a32] disabled:opacity-50 transition-colors cursor-pointer"
+            >
+              {Object.entries(ESTADOS_MASCOTA).map(([key, { label }]) => (
+                <option key={key} value={key} className="bg-white dark:bg-[#28180d] text-[#28180d] dark:text-[#ffdbc9]">
+                  {label}
+                </option>
+              ))}
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-[#54433a] dark:text-[#dac2b6]">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
     </div>
