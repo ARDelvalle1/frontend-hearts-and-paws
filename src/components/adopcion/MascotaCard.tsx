@@ -24,6 +24,7 @@ interface Props extends MascotaCardConModoProps {
 export default function MascotaCard({
   mascota,
   onConocerHistoria,
+  onVerPerfil,
   onAdoptar,
   modo,
   mostrarFavorito = true,
@@ -213,12 +214,15 @@ export default function MascotaCard({
           {/* Botones de Acción Solicitados */}
           <div className="flex items-center gap-3">
             <button
-              onClick={() => onConocerHistoria?.(mascota)}
-              className="flex-1 bg-[#c85a32] hover:bg-[#a84320] text-white font-body-editorial text-xs font-semibold py-2.5 px-3 rounded-full transition-all duration-300 shadow-xs flex items-center justify-center gap-1 cursor-pointer active:scale-95"
+              onClick={() => {
+                if (onVerPerfil) onVerPerfil(mascota);
+                else onConocerHistoria?.(mascota);
+              }}
+              className="flex-1 bg-[#c85a32] hover:bg-[#a84320] text-white font-body-editorial text-xs font-semibold py-2.5 px-3 rounded-full transition-all duration-300 shadow-xs flex items-center justify-center gap-1.5 cursor-pointer active:scale-95"
               type="button"
             >
-              <span className="material-symbols-outlined text-base">menu_book</span>
-              <span>Conocer historia</span>
+              <span className="material-symbols-outlined text-base">visibility</span>
+              <span>Ver perfil</span>
             </button>
 
             <button

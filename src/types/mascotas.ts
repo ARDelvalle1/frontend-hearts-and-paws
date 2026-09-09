@@ -17,6 +17,7 @@ export interface Mascota {
 export interface MascotaCardProps {
   mascota: Mascota
   onConocerHistoria?: (mascota: Mascota) => void
+  onVerPerfil?: (mascota: Mascota) => void
   onAdoptar?: (id: string) => void
 }
 
