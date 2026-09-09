@@ -141,7 +141,7 @@ const Navbar = ({ theme, toggleTheme }: ThemeProps) => {
       ];
     } else {
       menuLinks = [
-        { label: "Historias", href: "/#historias" },
+        { label: "Inicio", href: "/" },
         { label: "Adoptar", href: "/adoptar/adopcion" },
         { label: "Donar", href: "/donacion" },
         { label: "Perfil", href: "/dashboard/usuario" },
