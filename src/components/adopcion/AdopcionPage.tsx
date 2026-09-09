@@ -3,8 +3,6 @@
 import { useState, useEffect, useCallback } from 'react'
 
 import MascotaCard from './MascotaCard'
-import MascotaModal from './MascotaModal'
-import { Mascota } from '@/types/mascotas'
 import { Caso } from '@/types/casos'
 import { toast } from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
@@ -18,9 +16,6 @@ export default function AdopcionPage() {
   const [resultados, setResultados] = useState<Caso[]>([])
   const [cargando, setCargando] = useState(false)
   const [error, setError] = useState('')
-  const [mascotaSeleccionada, setMascotaSeleccionada] = useState<Mascota | null>(null)
-  const [mostrandoHistoria, setMostrandoHistoria] = useState(false)
-  const [cargandoHistoria] = useState(false)
   const [orden, setOrden] = useState<'mas_reciente' | 'mas_antiguo'>('mas_reciente')
 
   const fetchMascotas = useCallback(async (filtros: { tipo?: string }) => {
@@ -56,17 +51,11 @@ export default function AdopcionPage() {
     }
   })
 
-  const handleConocerHistoria = (mascota: Mascota) => {
-    setMascotaSeleccionada(mascota)
-    setMostrandoHistoria(true)
-  }
-
   const handleAdoptar = (id: string) => {
     const caso = resultados.find(c => c.mascota.id === id)
     if (!caso) return
 
     toast.success(`¡Gracias por querer adoptar a ${caso.mascota.nombre}! 🐶🐱`)
-    setMostrandoHistoria(false)
     router.push(`/adoptar/formulario-adopcion?id=${caso.mascota.id}`)
   }
 
@@ -158,7 +147,8 @@ export default function AdopcionPage() {
                 <MascotaCard
                   key={caso.id}
                   mascota={mascota}
-                  onConocerHistoria={() => handleConocerHistoria(mascota)}
+                  onVerPerfil={() => router.push(`/user/mascota/${mascota.id}`)}
+                  onConocerHistoria={() => router.push(`/user/mascota/${mascota.id}`)}
                   onAdoptar={() => handleAdoptar(mascota.id)}
                   modo="adopcion"
                 />
@@ -167,18 +157,6 @@ export default function AdopcionPage() {
           </div>
         )}
       </main>
-
-      {/* Modal de Historia / Detalles de la Mascota */}
-      {mascotaSeleccionada && (
-        <MascotaModal
-          mascota={mascotaSeleccionada}
-          visible={mostrandoHistoria}
-          cargando={cargandoHistoria}
-          onClose={() => setMostrandoHistoria(false)}
-          onAccion={() => handleAdoptar(mascotaSeleccionada.id)}
-          modo="adopcion"
-        />
-      )}
 
       {/* 5. Footer Editorial (Idéntico a la referencia) */}
       <footer className="bg-[#fbddca] dark:bg-[#120a05] w-full py-12 px-6 md:px-12 border-t border-[#dac2b6]/40 dark:border-[#ffdbc9]/15 mt-auto text-[#28180d] dark:text-[#ffede4]">
