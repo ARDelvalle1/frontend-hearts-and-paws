@@ -5,15 +5,10 @@ import { useOngAuth } from "@/context/OngAuthContext";
 import { useUsuarioAuth } from "@/context/UsuarioAuthContext";
 import dynamic from "next/dynamic";
 import { User } from "@supabase/supabase-js";
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from "@/lib/supabaseClient";
 
 const NavbarSupabase = dynamic(() => import("./navbars/NavbarSupabase"), { ssr: false });
 const NavbarLocal = dynamic(() => import("./navbars/NavbarLocal"), { ssr: false });
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
 
 type ThemeMode = "light" | "dark";
 
