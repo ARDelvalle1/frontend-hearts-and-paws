@@ -4,19 +4,18 @@ import type { JSX } from "react";
 import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaBuilding, FaChartPie, FaChevronDown, FaInbox } from "react-icons/fa";
 import Link from "next/link";
 import {
-  FaPaw,
+  FaBuilding,
+  FaChartPie,
+  FaChevronDown,
+  FaInbox,
   FaBars,
   FaTimes,
   FaExclamationTriangle,
-  FaRegClipboard,
-  FaSignInAlt,
   FaUserShield,
   FaSignOutAlt,
   FaHome,
-  FaHandsHelping,
   FaUser,
   FaCat,
 } from "react-icons/fa";

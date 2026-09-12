@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useOngAuth } from "@/context/OngAuthContext";
 import { useUsuarioAuth } from "@/context/UsuarioAuthContext";
-import { usePathname } from "next/navigation";
 import dynamic from "next/dynamic";
 import { User } from "@supabase/supabase-js";
 import { createClient } from '@supabase/supabase-js';
@@ -19,7 +18,6 @@ const supabase = createClient(
 type ThemeMode = "light" | "dark";
 
 const NavbarWrapper = () => {
-  const pathname = usePathname();
   const [theme, setTheme] = useState<ThemeMode>("light");
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);

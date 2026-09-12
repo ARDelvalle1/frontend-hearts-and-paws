@@ -106,11 +106,6 @@ export default function MascotaPerfilDetalle({ id }: { id: string }) {
     );
   }, [mascota]);
 
-  // Caso de adopción (si existe)
-  const casoAdopcion = useMemo(() => {
-    return mascota?.casos?.find((c) => c.tipo === 'ADOPCION');
-  }, [mascota]);
-
   const handleAdoptar = () => {
     if (!usuario && !user) {
       toast.error('Necesitás iniciar sesión para postularte a la adopción.');

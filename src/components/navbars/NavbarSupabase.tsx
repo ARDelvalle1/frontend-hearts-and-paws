@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import {
-  FaPaw,
   FaBars,
   FaTimes,
   FaExclamationTriangle,
