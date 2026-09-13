@@ -57,38 +57,69 @@ export default function OngTimeline({ ongId }: { ongId: string }) {
   const hayMas = casos.length < total
 
   return (
-    <div className="flex flex-col gap-5">
-      <h2 className="text-xl font-bold text-[#FA8072]">Publicaciones</h2>
+    <div className="flex flex-col gap-6">
+      <div className="flex items-center justify-between pb-2 border-b border-[#6c2f00]/10 dark:border-[#c85a32]/15">
+        <h2 className="font-serif text-2xl font-bold text-[#6c2f00] dark:text-[#ffdbc9]">
+          Publicaciones
+        </h2>
+        {total > 0 && (
+          <span className="text-xs font-semibold uppercase tracking-wider text-[#c85a32] bg-[#fff1ea] dark:bg-[#26262e] px-3 py-1 rounded-full border border-[#6c2f00]/10 dark:border-[#c85a32]/25">
+            {total} {total === 1 ? 'caso' : 'casos'}
+          </span>
+        )}
+      </div>
 
       {cargando && (
-        <div className="flex flex-col gap-5 animate-pulse">
+        <div className="flex flex-col gap-4 animate-pulse">
           {[1, 2, 3].map((i) => (
             <div
               key={i}
-              className="h-48 bg-white dark:bg-zinc-900 rounded-2xl border border-[#ffcfc7] dark:border-zinc-700"
-            />
+              className="h-44 sm:h-48 bg-white dark:bg-[#1c1c21] rounded-2xl border border-[#6c2f00]/15 dark:border-[#c85a32]/25 p-4 flex flex-col sm:flex-row gap-4 shadow-sm"
+            >
+              <div className="w-full sm:w-52 h-36 sm:h-full bg-[#fff1ea] dark:bg-[#26262e] rounded-xl shrink-0" />
+              <div className="flex-1 flex flex-col justify-between py-1 gap-2">
+                <div className="space-y-2">
+                  <div className="h-4 w-24 bg-[#fff1ea] dark:bg-[#26262e] rounded-full" />
+                  <div className="h-6 w-3/4 bg-[#fff1ea] dark:bg-[#26262e] rounded-lg" />
+                  <div className="h-3 w-full bg-[#fff1ea] dark:bg-[#26262e] rounded" />
+                  <div className="h-3 w-4/5 bg-[#fff1ea] dark:bg-[#26262e] rounded" />
+                </div>
+                <div className="h-4 w-28 bg-[#fff1ea] dark:bg-[#26262e] rounded" />
+              </div>
+            </div>
           ))}
         </div>
       )}
-      {error && <p className="text-center text-red-500">{error}</p>}
 
-      {!cargando && !error && casos.length === 0 && (
-        <p className="text-center text-gray-500">
-          Esta organización todavía no publicó ningún caso.
-        </p>
+      {error && (
+        <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-center text-red-600 dark:text-red-400 text-sm font-medium">
+          {error}
+        </div>
       )}
 
-      {casos.map((caso) => (
-        <TimelinePostCard key={caso.id} caso={caso} />
-      ))}
+      {!cargando && !error && casos.length === 0 && (
+        <div className="text-center py-12 px-4 rounded-2xl bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/10 dark:border-[#c85a32]/20">
+          <p className="text-base text-[#54433a] dark:text-[#dac2b6]">
+            Esta organización todavía no publicó ningún caso.
+          </p>
+        </div>
+      )}
+
+      {!cargando && casos.length > 0 && (
+        <div className="flex flex-col gap-4">
+          {casos.map((caso) => (
+            <TimelinePostCard key={caso.id} caso={caso} />
+          ))}
+        </div>
+      )}
 
       {hayMas && (
         <button
           onClick={handleCargarMas}
           disabled={cargandoMas}
-          className="self-center bg-white hover:bg-[#ffece8] text-[#FA8072] border border-[#FA8072] py-2 px-6 rounded-full transition disabled:opacity-50"
+          className="self-center mt-2 bg-white dark:bg-[#1c1c21] hover:bg-[#ffeade] dark:hover:bg-[#26262e] text-[#c85a32] border border-[#c85a32]/30 dark:border-[#c85a32]/40 font-semibold py-2.5 px-8 rounded-full shadow-sm transition disabled:opacity-50"
         >
-          {cargandoMas ? 'Cargando...' : 'Cargar más'}
+          {cargandoMas ? 'Cargando...' : 'Cargar más publicaciones'}
         </button>
       )}
     </div>
