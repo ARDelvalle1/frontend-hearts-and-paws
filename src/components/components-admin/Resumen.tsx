@@ -100,7 +100,7 @@ export default function DashboardResumen() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#fff8f5] dark:bg-[#1a0f08] flex items-center justify-center p-6 font-body-editorial text-[#28180d] dark:text-[#ffede4]">
+      <div className="min-h-screen bg-[#fff8f5] dark:bg-[#121214] flex items-center justify-center p-6 font-body-editorial text-[#1c1c21] dark:text-[#ffede4]">
         <div className="flex flex-col items-center gap-3 text-[#6c2f00] dark:text-[#ffdbc9]">
           <span className="material-symbols-outlined text-4xl animate-spin">progress_activity</span>
           <p className="font-semibold text-sm">Cargando datos del panel...</p>
@@ -111,8 +111,8 @@ export default function DashboardResumen() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-[#fff8f5] dark:bg-[#1a0f08] flex items-center justify-center p-6 font-body-editorial text-[#28180d] dark:text-[#ffede4]">
-        <div className="bg-white dark:bg-[#28180d] border border-[#a84320]/20 dark:border-[#ffdbc9]/15 p-8 rounded-2xl shadow-xs max-w-md text-center">
+      <div className="min-h-screen bg-[#fff8f5] dark:bg-[#121214] flex items-center justify-center p-6 font-body-editorial text-[#1c1c21] dark:text-[#ffede4]">
+        <div className="bg-white dark:bg-[#1c1c21] border border-[#a84320]/20 dark:border-[#ffdbc9]/15 p-8 rounded-2xl shadow-xs max-w-md text-center">
           <span className="material-symbols-outlined text-[#a84320] dark:text-[#c85a32] text-4xl mb-2">error</span>
           <h3 className="font-display-editorial text-xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] mb-2">Error de Carga</h3>
           <p className="text-[#54433a] dark:text-[#dac2b6] text-sm mb-4">{error}</p>
@@ -128,11 +128,11 @@ export default function DashboardResumen() {
   }
 
   return (
-    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#1a0f08] text-[#28180d] dark:text-[#ffede4] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
+    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#121214] text-[#1c1c21] dark:text-[#ffede4] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
       <div className="flex-grow max-w-[1280px] mx-auto px-6 md:px-12 py-12 w-full">
         {/* Encabezado Hero Editorial */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] font-body-editorial text-xs font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] font-body-editorial text-xs font-semibold mb-4">
             <span className="material-symbols-outlined text-base text-[#c85a32]">dashboard</span>
             Panel de Administración
           </div>
@@ -199,7 +199,7 @@ type ResumenCardProps = {
 
 function ResumenCard({ title, value, iconName }: ResumenCardProps) {
   return (
-    <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl p-6 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+    <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl p-6 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
       <div className="flex items-center justify-between mb-4">
         <h4 className="font-body-editorial text-xs font-bold uppercase tracking-wider text-[#54433a] dark:text-[#dac2b6]">
           {title}
@@ -224,7 +224,7 @@ type TablaSimpleProps = {
 function TablaSimple({ data }: TablaSimpleProps) {
   if (!data || data.length === 0) {
     return (
-      <div className="p-8 text-center text-[#54433a] dark:text-[#dac2b6] bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl shadow-xs font-body-editorial text-sm font-semibold">
+      <div className="p-8 text-center text-[#54433a] dark:text-[#dac2b6] bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl shadow-xs font-body-editorial text-sm font-semibold">
         No hay datos registrados para mostrar en esta sección.
       </div>
     );
@@ -233,9 +233,9 @@ function TablaSimple({ data }: TablaSimpleProps) {
   const tieneRol = "rol" in data[0];
 
   return (
-    <div className="overflow-x-auto bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl shadow-xs">
+    <div className="overflow-x-auto bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl shadow-xs">
       <table className="min-w-full divide-y divide-[#6c2f00]/10 dark:divide-[#ffdbc9]/15 font-body-editorial">
-        <thead className="bg-[#fff1ea] dark:bg-[#1a0f08]">
+        <thead className="bg-[#fff1ea] dark:bg-[#121214]">
           <tr>
             <th className="px-6 py-4 text-left text-xs font-bold text-[#6c2f00] dark:text-[#ffdbc9] uppercase tracking-wider">
               Nombre
@@ -255,10 +255,10 @@ function TablaSimple({ data }: TablaSimpleProps) {
             )}
           </tr>
         </thead>
-        <tbody className="divide-y divide-[#6c2f00]/5 dark:divide-[#ffdbc9]/10 bg-white dark:bg-[#28180d]">
+        <tbody className="divide-y divide-[#6c2f00]/5 dark:divide-[#ffdbc9]/10 bg-white dark:bg-[#1c1c21]">
           {data.map((item) => (
-            <tr key={item.id} className="hover:bg-[#fff8f5] dark:hover:bg-[#3f2c20] transition-colors">
-              <td className="px-6 py-4 text-sm font-semibold text-[#28180d] dark:text-[#ffede4] whitespace-nowrap">
+            <tr key={item.id} className="hover:bg-[#fff8f5] dark:hover:bg-[#26262e] transition-colors">
+              <td className="px-6 py-4 text-sm font-semibold text-[#1c1c21] dark:text-[#ffede4] whitespace-nowrap">
                 {item.nombre || "Sin nombre"}
               </td>
               <td className="px-6 py-4 text-sm text-[#54433a] dark:text-[#dac2b6] whitespace-nowrap">
@@ -277,7 +277,7 @@ function TablaSimple({ data }: TablaSimpleProps) {
                       Supabase
                     </span>
                   ) : (
-                    <span className="bg-[#fff1ea] dark:bg-[#1a0f08] text-[#6c2f00] dark:text-[#ffdbc9] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 text-xs font-semibold px-3 py-1 rounded-full inline-flex items-center gap-1">
+                    <span className="bg-[#fff1ea] dark:bg-[#121214] text-[#6c2f00] dark:text-[#ffdbc9] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 text-xs font-semibold px-3 py-1 rounded-full inline-flex items-center gap-1">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#6c2f00] dark:bg-[#c85a32]" />
                       Local
                     </span>

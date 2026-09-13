@@ -198,17 +198,17 @@ export default function DashboardSencillo() {
 
   if (!user && !usuario) {
     return (
-      <div className="flex justify-center items-center min-h-screen bg-[#fff8f5] dark:bg-[#1a0f08] text-[#28180d] dark:text-[#ffede4] font-body-editorial">
+      <div className="flex justify-center items-center min-h-screen bg-[#fff8f5] dark:bg-[#121214] text-[#1c1c21] dark:text-[#ffede4] font-body-editorial">
         Cargando usuario...
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#1a0f08] text-[#28180d] dark:text-[#ffede4] font-body-editorial flex justify-center py-10 md:py-16 px-4 md:px-8">
+    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#121214] text-[#1c1c21] dark:text-[#ffede4] font-body-editorial flex justify-center py-10 md:py-16 px-4 md:px-8">
       <div className="flex flex-col md:flex-row items-start justify-center gap-6 lg:gap-8 max-w-5xl w-full">
         {/* Navegación lateral estilo Earth & Heart centrada junto al contenedor */}
-        <nav className="flex flex-col p-6 bg-[#ffeade] dark:bg-[#28180d] rounded-xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 w-full md:w-64 shadow-none flex-shrink-0">
+        <nav className="flex flex-col p-6 bg-[#ffeade] dark:bg-[#1c1c21] rounded-xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 w-full md:w-64 shadow-none flex-shrink-0">
           <div className="font-display-editorial text-2xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] mb-6 flex items-center gap-2">
             <span className="material-symbols-outlined text-[#6c2f00] dark:text-[#ffdbc9]">person</span>
             <span>Perfil</span>
@@ -217,35 +217,35 @@ export default function DashboardSencillo() {
           <div className="flex flex-col gap-2">
             <button
               onClick={() => router.push("/dashboard/usuario")}
-              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold bg-[#fff1ea] dark:bg-[#3f2c20] text-[#6c2f00] dark:text-[#ffdbc9] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 transition-all duration-300 flex items-center gap-3"
+              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold bg-[#fff1ea] dark:bg-[#26262e] text-[#6c2f00] dark:text-[#ffdbc9] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 transition-all duration-300 flex items-center gap-3"
             >
               <span className="material-symbols-outlined text-lg">home</span>
               <span>Principal</span>
             </button>
             <button
               onClick={() => router.push("/usuario/adopciones")}
-              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#3f2c20] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
+              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#26262e] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
             >
               <span className="material-symbols-outlined text-lg">pets</span>
               <span>Mis Adopciones</span>
             </button>
             <button
               onClick={() => router.push("/usuario/donaciones")}
-              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#3f2c20] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
+              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#26262e] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
             >
               <span className="material-symbols-outlined text-lg">volunteer_activism</span>
               <span>Mis Donaciones</span>
             </button>
             <button
               onClick={() => router.push("/usuario/favoritos")}
-              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#3f2c20] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
+              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#26262e] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
             >
               <span className="material-symbols-outlined text-lg">favorite</span>
               <span>Mis Favoritos</span>
             </button>
             <button
               onClick={() => router.push("/chat")}
-              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#3f2c20] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
+              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#26262e] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
             >
               <span className="material-symbols-outlined text-lg">chat</span>
               <span>Mensajes</span>
@@ -255,11 +255,11 @@ export default function DashboardSencillo() {
 
         {/* Contenido principal editorial */}
         <main className="flex-1 w-full max-w-3xl">
-          <section className="w-full bg-[#fff1ea] dark:bg-[#28180d] rounded-xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 p-8 md:p-10 shadow-none">
+          <section className="w-full bg-[#fff1ea] dark:bg-[#1c1c21] rounded-xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 p-8 md:p-10 shadow-none">
           {/* Avatar y Encabezado */}
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 pb-8 border-b border-[#6c2f00]/15 dark:border-[#ffdbc9]/15">
             <div className="relative w-28 h-28 flex-shrink-0">
-              <div className="w-28 h-28 rounded-full border-2 border-[#6c2f00]/30 dark:border-[#ffdbc9]/30 shadow-none overflow-hidden relative bg-[#fff8f5] dark:bg-[#3f2c20] flex items-center justify-center">
+              <div className="w-28 h-28 rounded-full border-2 border-[#6c2f00]/30 dark:border-[#ffdbc9]/30 shadow-none overflow-hidden relative bg-[#fff8f5] dark:bg-[#26262e] flex items-center justify-center">
                 {uploading ? (
                   <span className="text-xs text-[#6c2f00] dark:text-[#ffdbc9] font-semibold animate-pulse flex items-center justify-center h-full">
                     Cargando...
@@ -355,7 +355,7 @@ export default function DashboardSencillo() {
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg text-sm transition-all duration-300 ${
                       isEditando
-                        ? "bg-white dark:bg-[#3f2c20] border border-[#6c2f00]/40 dark:border-[#ffdbc9]/40 text-[#28180d] dark:text-[#ffede4] focus:outline-none focus:border-[#c85a32] focus:ring-1 focus:ring-[#c85a32]"
+                        ? "bg-white dark:bg-[#26262e] border border-[#6c2f00]/40 dark:border-[#ffdbc9]/40 text-[#1c1c21] dark:text-[#ffede4] focus:outline-none focus:border-[#c85a32] focus:ring-1 focus:ring-[#c85a32]"
                         : "bg-black/5 dark:bg-white/5 border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#54433a] dark:text-[#dac2b6] cursor-not-allowed"
                     }`}
                     required={campo === "nombre"}
@@ -379,7 +379,7 @@ export default function DashboardSencillo() {
                   <button
                     type="button"
                     onClick={() => setIsEditando(false)}
-                    className="bg-transparent border border-[#6c2f00]/30 dark:border-[#ffdbc9]/30 text-[#6c2f00] dark:text-[#ffdbc9] hover:bg-[#ffe3d2] dark:hover:bg-[#3f2c20] font-body-editorial font-semibold px-6 py-3 rounded-full transition-all duration-300 flex items-center justify-center gap-2"
+                    className="bg-transparent border border-[#6c2f00]/30 dark:border-[#ffdbc9]/30 text-[#6c2f00] dark:text-[#ffdbc9] hover:bg-[#ffe3d2] dark:hover:bg-[#26262e] font-body-editorial font-semibold px-6 py-3 rounded-full transition-all duration-300 flex items-center justify-center gap-2"
                   >
                     <span>Cancelar</span>
                   </button>

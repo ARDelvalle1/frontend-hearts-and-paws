@@ -100,8 +100,8 @@ const NewCaseOng = () => {
 
   return (
     <>
-      <div className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex justify-center bg-[#fff8f5] dark:bg-[#1a0f08] transition-colors">
-        <div className="max-w-2xl w-full bg-white dark:bg-[#28180d] p-6 sm:p-10 rounded-3xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 shadow-xs transition-colors">
+      <div className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex justify-center bg-[#fff8f5] dark:bg-[#121214] transition-colors">
+        <div className="max-w-2xl w-full bg-white dark:bg-[#1c1c21] p-6 sm:p-10 rounded-3xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 shadow-xs transition-colors">
           <div className="mb-6">
             <Link
               href="/dashboard/ong"
@@ -142,8 +142,8 @@ const NewCaseOng = () => {
       </div>
 
       {loading && (
-        <div className="fixed inset-0 z-50 bg-[#28180d]/60 dark:bg-black/75 backdrop-blur-xs flex items-center justify-center pointer-events-auto p-4">
-          <div className="flex flex-col items-center gap-4 bg-white dark:bg-[#28180d] p-8 rounded-3xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 shadow-2xl max-w-sm text-center">
+        <div className="fixed inset-0 z-50 bg-[#1c1c21]/60 dark:bg-black/75 backdrop-blur-xs flex items-center justify-center pointer-events-auto p-4">
+          <div className="flex flex-col items-center gap-4 bg-white dark:bg-[#1c1c21] p-8 rounded-3xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 shadow-2xl max-w-sm text-center">
             <LoaderCircle className="animate-spin w-10 h-10 text-[#c85a32]" />
             <div className="text-[#6c2f00] dark:text-[#ffdbc9] font-serif font-bold text-lg">
               Confirmando publicación...

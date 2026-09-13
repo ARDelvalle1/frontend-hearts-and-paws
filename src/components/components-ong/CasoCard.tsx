@@ -28,9 +28,9 @@ export default function CasoCard({ caso, onConocerHistoria }: Props) {
     imagenes[imagenActual]?.url ?? "https://via.placeholder.com/400x300?text=Mascota";
 
   return (
-    <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl shadow-xs hover:shadow-md transition-all duration-300 flex flex-col w-full overflow-hidden font-body-editorial group">
+    <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl shadow-xs hover:shadow-md transition-all duration-300 flex flex-col w-full overflow-hidden font-body-editorial group">
       {/* 🖼 Carrusel de imágenes */}
-      <div className="relative w-full h-52 p-4 bg-[#fff8f5] dark:bg-[#1a0f08] border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 flex items-center justify-center overflow-hidden">
+      <div className="relative w-full h-52 p-4 bg-[#fff8f5] dark:bg-[#121214] border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 flex items-center justify-center overflow-hidden">
         <Image
           src={imagenUrl}
           alt={caso.mascota.nombre}
@@ -44,7 +44,7 @@ export default function CasoCard({ caso, onConocerHistoria }: Props) {
           <>
             <button
               onClick={irAAnterior}
-              className="absolute left-2 text-[#6c2f00] dark:text-[#ffdbc9] bg-white/90 dark:bg-[#28180d]/90 rounded-full shadow-xs p-1 hover:bg-[#ffeade] dark:hover:bg-[#3f2c20] transition-colors z-10 cursor-pointer flex items-center justify-center border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10"
+              className="absolute left-2 text-[#6c2f00] dark:text-[#ffdbc9] bg-white/90 dark:bg-[#1c1c21]/90 rounded-full shadow-xs p-1 hover:bg-[#ffeade] dark:hover:bg-[#26262e] transition-colors z-10 cursor-pointer flex items-center justify-center border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10"
               type="button"
               aria-label="Imagen anterior"
             >
@@ -52,7 +52,7 @@ export default function CasoCard({ caso, onConocerHistoria }: Props) {
             </button>
             <button
               onClick={irASiguiente}
-              className="absolute right-2 text-[#6c2f00] dark:text-[#ffdbc9] bg-white/90 dark:bg-[#28180d]/90 rounded-full shadow-xs p-1 hover:bg-[#ffeade] dark:hover:bg-[#3f2c20] transition-colors z-10 cursor-pointer flex items-center justify-center border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10"
+              className="absolute right-2 text-[#6c2f00] dark:text-[#ffdbc9] bg-white/90 dark:bg-[#1c1c21]/90 rounded-full shadow-xs p-1 hover:bg-[#ffeade] dark:hover:bg-[#26262e] transition-colors z-10 cursor-pointer flex items-center justify-center border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10"
               type="button"
               aria-label="Imagen siguiente"
             >
@@ -77,7 +77,7 @@ export default function CasoCard({ caso, onConocerHistoria }: Props) {
         <div className="mt-auto pt-2">
           <button
             onClick={() => onConocerHistoria?.(caso.id)}
-            className="w-full bg-[#fff1ea] dark:bg-[#3f2c20] hover:bg-[#c85a32] hover:text-white dark:hover:bg-[#c85a32] text-[#6c2f00] dark:text-[#ffdbc9] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 font-semibold text-xs py-2.5 px-4 rounded-full transition-colors cursor-pointer flex items-center justify-center gap-1.5"
+            className="w-full bg-[#fff1ea] dark:bg-[#26262e] hover:bg-[#c85a32] hover:text-white dark:hover:bg-[#c85a32] text-[#6c2f00] dark:text-[#ffdbc9] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 font-semibold text-xs py-2.5 px-4 rounded-full transition-colors cursor-pointer flex items-center justify-center gap-1.5"
           >
             <span className="material-symbols-outlined text-base">info</span>
             Más información

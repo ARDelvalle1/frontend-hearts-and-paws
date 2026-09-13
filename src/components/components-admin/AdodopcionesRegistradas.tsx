@@ -51,11 +51,11 @@ export default function AdopcionesRegistradas() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#1a0f08] text-[#28180d] dark:text-[#ffede4] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
+    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#121214] text-[#1c1c21] dark:text-[#ffede4] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
       <div className="flex-grow max-w-[1280px] mx-auto px-6 md:px-12 py-12 w-full">
         {/* Encabezado Hero Editorial */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] font-body-editorial text-xs font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] font-body-editorial text-xs font-semibold mb-4">
             <span className="material-symbols-outlined text-base text-[#c85a32]">favorite</span>
             Registro de Adopciones
           </div>
@@ -70,7 +70,7 @@ export default function AdopcionesRegistradas() {
         <div className="flex flex-col md:flex-row gap-8 items-start">
           {/* Sidebar */}
           <aside className="w-full md:w-64 shrink-0 space-y-4 sticky top-6 font-body-editorial">
-            <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl p-5 shadow-xs text-center">
+            <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl p-5 shadow-xs text-center">
               <p className="font-body-editorial text-xs font-bold uppercase tracking-wider text-[#54433a] dark:text-[#dac2b6] mb-1 flex items-center justify-center gap-1.5">
                 <span className="material-symbols-outlined text-lg text-[#c85a32]">favorite</span>
                 Total Adopciones
@@ -84,17 +84,17 @@ export default function AdopcionesRegistradas() {
           {/* Main Grid */}
           <main className="flex-1 w-full">
             {loading ? (
-              <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-12 text-center shadow-xs">
+              <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-12 text-center shadow-xs">
                 <div className="w-10 h-10 border-4 border-[#c85a32] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
                 <p className="font-display-editorial text-lg text-[#6c2f00] dark:text-[#ffdbc9] font-bold">Cargando registros de adopción...</p>
               </div>
             ) : error ? (
-              <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-12 text-center shadow-xs">
+              <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-12 text-center shadow-xs">
                 <span className="material-symbols-outlined text-5xl text-[#c85a32] mb-3">error</span>
                 <p className="text-sm text-red-500 font-semibold">{error}</p>
               </div>
             ) : adopciones.length === 0 ? (
-              <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-12 text-center shadow-xs">
+              <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-12 text-center shadow-xs">
                 <span className="material-symbols-outlined text-5xl text-[#6c2f00]/40 dark:text-[#ffdbc9]/40 mb-3">favorite</span>
                 <h3 className="font-display-editorial text-xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] mb-2">No hay adopciones registradas</h3>
                 <p className="text-sm text-[#54433a] dark:text-[#dac2b6]">Aún no existen casos de adopción registrados.</p>
@@ -104,7 +104,7 @@ export default function AdopcionesRegistradas() {
                 {adopciones.map((adopcion) => (
                   <div
                     key={adopcion.id}
-                    className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl p-6 shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
+                    className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl p-6 shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex items-start gap-4 mb-4">
@@ -115,7 +115,7 @@ export default function AdopcionesRegistradas() {
                         />
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-1 flex-wrap">
-                            <span className="px-2.5 py-0.5 rounded-full bg-[#fff1ea] dark:bg-[#3f2c20] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] text-[10px] font-bold uppercase tracking-wider">
+                            <span className="px-2.5 py-0.5 rounded-full bg-[#fff1ea] dark:bg-[#26262e] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] text-[10px] font-bold uppercase tracking-wider">
                               Estado: {adopcion.estado || "Registrada"}
                             </span>
                           </div>
@@ -130,7 +130,7 @@ export default function AdopcionesRegistradas() {
                       </div>
 
                       {adopcion.caso.descripcion && (
-                        <p className="text-xs text-[#54433a] dark:text-[#dac2b6] line-clamp-3 leading-relaxed bg-[#fff8f5] dark:bg-[#1a0f08] p-3 rounded-xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 mb-4">
+                        <p className="text-xs text-[#54433a] dark:text-[#dac2b6] line-clamp-3 leading-relaxed bg-[#fff8f5] dark:bg-[#121214] p-3 rounded-xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 mb-4">
                           {adopcion.caso.descripcion}
                         </p>
                       )}

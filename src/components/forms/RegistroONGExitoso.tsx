@@ -16,8 +16,8 @@ export default function RegistroConfirmadoPage() {
   }, [])
 
   return (
-   <div className="min-h-screen flex items-start justify-center bg-[#fff8f5] dark:bg-[#1a0f08] text-[#28180d] dark:text-[#ffede4] font-body-editorial px-4 pt-24 selection:bg-[#c85a32] selection:text-white">
-      <div className="bg-white dark:bg-[#28180d] rounded-3xl shadow-2xl p-8 sm:p-10 max-w-xl w-full text-center border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15">
+   <div className="min-h-screen flex items-start justify-center bg-[#fff8f5] dark:bg-[#121214] text-[#1c1c21] dark:text-[#ffede4] font-body-editorial px-4 pt-24 selection:bg-[#c85a32] selection:text-white">
+      <div className="bg-white dark:bg-[#1c1c21] rounded-3xl shadow-2xl p-8 sm:p-10 max-w-xl w-full text-center border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15">
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#c85a32]/10 dark:bg-[#c85a32]/20 text-[#c85a32] mb-6">
           <span className="material-symbols-outlined text-3xl">mark_email_read</span>
         </div>

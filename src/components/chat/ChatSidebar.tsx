@@ -173,7 +173,7 @@ export default function ChatSidebar({ esOng, userId, onSelectChat }: ChatSidebar
   };
 
   return (
-    <aside className="w-full md:w-72 border-b md:border-b-0 md:border-r border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 p-4 flex flex-col bg-[#fff8f5]/60 dark:bg-[#1a0f08]/60 h-full flex-shrink-0">
+    <aside className="w-full md:w-72 border-b md:border-b-0 md:border-r border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 p-4 flex flex-col bg-[#fff8f5]/60 dark:bg-[#121214]/60 h-full flex-shrink-0">
       <button
         onClick={handleToggleDropdown}
         className="mb-3 w-full bg-[#c85a32] hover:bg-[#a84320] text-white font-semibold py-2.5 px-4 rounded-full transition-all duration-300 shadow-sm flex items-center justify-center gap-2 text-sm"
@@ -187,7 +187,7 @@ export default function ChatSidebar({ esOng, userId, onSelectChat }: ChatSidebar
       {mostrarDropdown && (
         <div
           ref={dropdownRef}
-          className="mb-3 max-h-56 overflow-y-auto border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl shadow-lg bg-[#fff1ea] dark:bg-[#28180d] divide-y divide-[#6c2f00]/10 dark:divide-[#ffdbc9]/10"
+          className="mb-3 max-h-56 overflow-y-auto border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl shadow-lg bg-[#fff1ea] dark:bg-[#1c1c21] divide-y divide-[#6c2f00]/10 dark:divide-[#ffdbc9]/10"
         >
           {destinatarios.length === 0 ? (
             <p className="p-4 text-center text-[#54433a] dark:text-[#dac2b6] text-sm">
@@ -198,10 +198,10 @@ export default function ChatSidebar({ esOng, userId, onSelectChat }: ChatSidebar
               {destinatarios.map((dest) => (
                 <li
                   key={dest.id}
-                  className="flex items-center justify-between px-4 py-2.5 hover:bg-[#ffe3d2] dark:hover:bg-[#3f2c20] cursor-pointer transition-colors"
+                  className="flex items-center justify-between px-4 py-2.5 hover:bg-[#ffe3d2] dark:hover:bg-[#26262e] cursor-pointer transition-colors"
                   onClick={() => handleSeleccionarDestinatario(dest.id)}
                 >
-                  <span className="text-sm font-medium text-[#28180d] dark:text-[#ffede4]">
+                  <span className="text-sm font-medium text-[#1c1c21] dark:text-[#ffede4]">
                     {dest.nombre}
                   </span>
                   <span
@@ -226,7 +226,7 @@ export default function ChatSidebar({ esOng, userId, onSelectChat }: ChatSidebar
           value={filtro}
           onChange={(e) => setFiltro(e.target.value)}
           placeholder="Buscar por nombre..."
-          className="w-full pl-9 pr-3 py-2 text-sm bg-white dark:bg-[#28180d] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#28180d] dark:text-[#ffede4] placeholder-[#54433a]/60 dark:placeholder-[#dac2b6]/60 focus:outline-none focus:border-[#c85a32] transition-all"
+          className="w-full pl-9 pr-3 py-2 text-sm bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#1c1c21] dark:text-[#ffede4] placeholder-[#54433a]/60 dark:placeholder-[#dac2b6]/60 focus:outline-none focus:border-[#c85a32] transition-all"
         />
       </div>
 
@@ -265,7 +265,7 @@ export default function ChatSidebar({ esOng, userId, onSelectChat }: ChatSidebar
               return (
                 <li
                   key={chat.id}
-                  className="flex items-center gap-3 p-3 bg-white/70 dark:bg-[#3f2c20]/60 hover:bg-[#ffe3d2] dark:hover:bg-[#3f2c20] border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 rounded-xl cursor-pointer transition-all duration-200"
+                  className="flex items-center gap-3 p-3 bg-white/70 dark:bg-[#26262e]/60 hover:bg-[#ffe3d2] dark:hover:bg-[#26262e] border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 rounded-xl cursor-pointer transition-all duration-200"
                   onClick={() => onSelectChat(chat.id)}
                 >
                   <div className="w-10 h-10 rounded-full bg-[#ffeade] dark:bg-[#6c2f00]/40 text-[#6c2f00] dark:text-[#ffdbc9] font-bold text-sm flex items-center justify-center flex-shrink-0 border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15">
@@ -273,7 +273,7 @@ export default function ChatSidebar({ esOng, userId, onSelectChat }: ChatSidebar
                   </div>
 
                   <div className="flex flex-col min-w-0 flex-1">
-                    <strong className="truncate text-sm text-[#28180d] dark:text-[#ffede4] font-semibold">
+                    <strong className="truncate text-sm text-[#1c1c21] dark:text-[#ffede4] font-semibold">
                       {otroNombre}
                     </strong>
                     <p className="text-xs text-[#54433a] dark:text-[#dac2b6] truncate mt-0.5">

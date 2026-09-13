@@ -66,7 +66,7 @@ export default function ChatWindow({ chatId, autorId, autorNombre }: ChatWindowP
               className={`max-w-[85%] sm:max-w-[75%] break-words px-4 py-2.5 shadow-sm text-sm ${
                 esAutor
                   ? 'bg-[#c85a32] text-white self-end text-right rounded-2xl rounded-tr-none'
-                  : 'bg-[#ffeade] dark:bg-[#3f2c20] text-[#28180d] dark:text-[#ffede4] self-start text-left rounded-2xl rounded-tl-none border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10'
+                  : 'bg-[#ffeade] dark:bg-[#26262e] text-[#1c1c21] dark:text-[#ffede4] self-start text-left rounded-2xl rounded-tl-none border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10'
               }`}
             >
               <div
@@ -104,7 +104,7 @@ export default function ChatWindow({ chatId, autorId, autorNombre }: ChatWindowP
           value={contenido}
           onChange={(e) => setContenido(e.target.value)}
           placeholder="Escribe un mensaje..."
-          className="flex-grow bg-white dark:bg-[#28180d] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-full px-4 py-2.5 text-sm text-[#28180d] dark:text-[#ffede4] placeholder-[#54433a]/60 dark:placeholder-[#dac2b6]/60 focus:outline-none focus:border-[#c85a32] transition-all shadow-sm"
+          className="flex-grow bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-full px-4 py-2.5 text-sm text-[#1c1c21] dark:text-[#ffede4] placeholder-[#54433a]/60 dark:placeholder-[#dac2b6]/60 focus:outline-none focus:border-[#c85a32] transition-all shadow-sm"
         />
         <button
           type="submit"

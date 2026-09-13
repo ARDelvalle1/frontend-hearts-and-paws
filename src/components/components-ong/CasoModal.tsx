@@ -39,16 +39,16 @@ export default function CasoModal({ caso, visible, onClose }: CasoModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#28180d]/60 dark:bg-black/75 backdrop-blur-xs transition-opacity"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1c1c21]/60 dark:bg-black/75 backdrop-blur-xs transition-opacity"
       onClick={onClose}
     >
       <div
-        className="relative bg-white dark:bg-[#28180d] rounded-3xl shadow-2xl max-w-md w-full p-6 sm:p-7 border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 overflow-hidden transition-colors"
+        className="relative bg-white dark:bg-[#1c1c21] rounded-3xl shadow-2xl max-w-md w-full p-6 sm:p-7 border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 overflow-hidden transition-colors"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full text-[#6c2f00] dark:text-[#ffdbc9] hover:bg-[#ffeade] dark:hover:bg-[#3f2c20] transition-colors"
+          className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full text-[#6c2f00] dark:text-[#ffdbc9] hover:bg-[#ffeade] dark:hover:bg-[#26262e] transition-colors"
           aria-label="Cerrar"
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -84,10 +84,10 @@ export default function CasoModal({ caso, visible, onClose }: CasoModalProps) {
               value={estado}
               disabled={guardando}
               onChange={(e) => handleCambiarEstado(e.target.value as EstadoMascotaKey)}
-              className="w-full appearance-none px-4 py-2.5 bg-[#fff8f5] dark:bg-[#1a0f08] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-center font-medium text-[#28180d] dark:text-[#ffdbc9] focus:outline-none focus:ring-2 focus:ring-[#c85a32] disabled:opacity-50 transition-colors cursor-pointer"
+              className="w-full appearance-none px-4 py-2.5 bg-[#fff8f5] dark:bg-[#121214] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-center font-medium text-[#1c1c21] dark:text-[#ffdbc9] focus:outline-none focus:ring-2 focus:ring-[#c85a32] disabled:opacity-50 transition-colors cursor-pointer"
             >
               {Object.entries(ESTADOS_MASCOTA).map(([key, { label }]) => (
-                <option key={key} value={key} className="bg-white dark:bg-[#28180d] text-[#28180d] dark:text-[#ffdbc9]">
+                <option key={key} value={key} className="bg-white dark:bg-[#1c1c21] text-[#1c1c21] dark:text-[#ffdbc9]">
                   {label}
                 </option>
               ))}

@@ -60,7 +60,7 @@ export default function AdopcionPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#1a0f08] text-[#28180d] dark:text-[#ffede4] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
+    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#121214] text-[#1c1c21] dark:text-[#ffede4] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
 
 
       {/* 2. Main Content */}
@@ -80,14 +80,14 @@ export default function AdopcionPage() {
           {/* Filtro por Tipo */}
           <div className="relative w-full sm:w-1/2">
             <select
-              className="appearance-none w-full px-5 py-3 pr-10 border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-white dark:bg-[#28180d] text-[#6c2f00] dark:text-[#ffdbc9] font-body-editorial text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] dark:focus:ring-[#c85a32] transition-all cursor-pointer"
+              className="appearance-none w-full px-5 py-3 pr-10 border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-white dark:bg-[#1c1c21] text-[#6c2f00] dark:text-[#ffdbc9] font-body-editorial text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] dark:focus:ring-[#c85a32] transition-all cursor-pointer"
               value={tipo}
               onChange={(e) => setTipo(e.target.value as 'perro' | 'gato' | '')}
               aria-label="Filtrar por tipo de mascota"
             >
-              <option value="" className="bg-white dark:bg-[#28180d] text-[#6c2f00] dark:text-[#ffdbc9]">Todos los animales</option>
-              <option value="perro" className="bg-white dark:bg-[#28180d] text-[#6c2f00] dark:text-[#ffdbc9]">Perros</option>
-              <option value="gato" className="bg-white dark:bg-[#28180d] text-[#6c2f00] dark:text-[#ffdbc9]">Gatos</option>
+              <option value="" className="bg-white dark:bg-[#1c1c21] text-[#6c2f00] dark:text-[#ffdbc9]">Todos los animales</option>
+              <option value="perro" className="bg-white dark:bg-[#1c1c21] text-[#6c2f00] dark:text-[#ffdbc9]">Perros</option>
+              <option value="gato" className="bg-white dark:bg-[#1c1c21] text-[#6c2f00] dark:text-[#ffdbc9]">Gatos</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-[#6c2f00] dark:text-[#ffdbc9]">
               <span className="material-symbols-outlined text-xl">expand_more</span>
@@ -97,13 +97,13 @@ export default function AdopcionPage() {
           {/* Filtro por Orden */}
           <div className="relative w-full sm:w-1/2">
             <select
-              className="appearance-none w-full px-5 py-3 pr-10 border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-white dark:bg-[#28180d] text-[#6c2f00] dark:text-[#ffdbc9] font-body-editorial text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] dark:focus:ring-[#c85a32] transition-all cursor-pointer"
+              className="appearance-none w-full px-5 py-3 pr-10 border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-white dark:bg-[#1c1c21] text-[#6c2f00] dark:text-[#ffdbc9] font-body-editorial text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] dark:focus:ring-[#c85a32] transition-all cursor-pointer"
               value={orden}
               onChange={(e) => setOrden(e.target.value as 'mas_reciente' | 'mas_antiguo')}
               aria-label="Ordenar mascotas"
             >
-              <option value="mas_reciente" className="bg-white dark:bg-[#28180d] text-[#6c2f00] dark:text-[#ffdbc9]">Más reciente</option>
-              <option value="mas_antiguo" className="bg-white dark:bg-[#28180d] text-[#6c2f00] dark:text-[#ffdbc9]">Más antiguo</option>
+              <option value="mas_reciente" className="bg-white dark:bg-[#1c1c21] text-[#6c2f00] dark:text-[#ffdbc9]">Más reciente</option>
+              <option value="mas_antiguo" className="bg-white dark:bg-[#1c1c21] text-[#6c2f00] dark:text-[#ffdbc9]">Más antiguo</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-[#6c2f00] dark:text-[#ffdbc9]">
               <span className="material-symbols-outlined text-xl">swap_vert</span>
@@ -126,7 +126,7 @@ export default function AdopcionPage() {
         )}
 
         {!cargando && resultados.length === 0 && (
-          <div className="text-center py-16 bg-[#fff1ea] dark:bg-[#28180d] rounded-2xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/15">
+          <div className="text-center py-16 bg-[#fff1ea] dark:bg-[#1c1c21] rounded-2xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/15">
             <span className="material-symbols-outlined text-5xl text-[#6c2f00]/40 dark:text-[#ffdbc9]/40 mb-3">pets</span>
             <p className="font-body-editorial text-lg text-[#54433a] dark:text-[#dac2b6] font-medium">No se encontraron mascotas con el filtro seleccionado.</p>
           </div>
@@ -159,7 +159,7 @@ export default function AdopcionPage() {
       </main>
 
       {/* 5. Footer Editorial (Idéntico a la referencia) */}
-      <footer className="bg-[#fbddca] dark:bg-[#120a05] w-full py-12 px-6 md:px-12 border-t border-[#dac2b6]/40 dark:border-[#ffdbc9]/15 mt-auto text-[#28180d] dark:text-[#ffede4]">
+      <footer className="bg-[#fbddca] dark:bg-[#0d0d0f] w-full py-12 px-6 md:px-12 border-t border-[#dac2b6]/40 dark:border-[#ffdbc9]/15 mt-auto text-[#1c1c21] dark:text-[#ffede4]">
         <div className="flex flex-col md:flex-row justify-between items-center max-w-[1280px] mx-auto gap-8">
           <div className="font-display-editorial text-2xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] flex items-center gap-2">
             <span className="material-symbols-outlined text-[#6c2f00] dark:text-[#ffdbc9]">pets</span>

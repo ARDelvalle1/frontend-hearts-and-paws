@@ -70,12 +70,12 @@ export default function MascotaModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs font-body-editorial">
-      <div className="relative bg-white dark:bg-[#28180d] rounded-3xl shadow-2xl max-w-md w-full p-6 sm:p-8 border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 overflow-hidden text-[#28180d] dark:text-[#ffede4]">
+      <div className="relative bg-white dark:bg-[#1c1c21] rounded-3xl shadow-2xl max-w-md w-full p-6 sm:p-8 border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 overflow-hidden text-[#1c1c21] dark:text-[#ffede4]">
         {/* Botón cerrar */}
         <button
           onClick={onClose}
           aria-label="Cerrar modal"
-          className="absolute top-4 right-4 text-[#6c2f00] dark:text-[#ffdbc9] hover:text-[#c85a32] dark:hover:text-[#c85a32] transition-colors p-2 rounded-full hover:bg-[#fff8f5] dark:hover:bg-[#3f2c20] cursor-pointer flex items-center justify-center z-20"
+          className="absolute top-4 right-4 text-[#6c2f00] dark:text-[#ffdbc9] hover:text-[#c85a32] dark:hover:text-[#c85a32] transition-colors p-2 rounded-full hover:bg-[#fff8f5] dark:hover:bg-[#26262e] cursor-pointer flex items-center justify-center z-20"
         >
           <span className="material-symbols-outlined text-xl">close</span>
         </button>

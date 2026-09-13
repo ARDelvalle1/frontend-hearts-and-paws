@@ -47,10 +47,10 @@ export default function CasesOng() {
   const cerrarModal = () => setCasoSeleccionado(null);
 
   return (
-    <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-6 sm:p-8 shadow-xs font-body-editorial transition-colors">
+    <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-6 sm:p-8 shadow-xs font-body-editorial transition-colors">
       {/* Encabezado */}
       <div className="mb-6 pb-6 border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#fff1ea] dark:bg-[#3f2c20] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] text-xs font-semibold mb-3">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#fff1ea] dark:bg-[#26262e] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] text-xs font-semibold mb-3">
           <span className="material-symbols-outlined text-base text-[#c85a32]">folder_open</span>
           Publicaciones Activas
         </div>
@@ -77,7 +77,7 @@ export default function CasesOng() {
       )}
 
       {!loading && !error && casos.length === 0 && (
-        <div className="p-12 text-center bg-[#fff8f5] dark:bg-[#1a0f08] rounded-2xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
+        <div className="p-12 text-center bg-[#fff8f5] dark:bg-[#121214] rounded-2xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
           <span className="material-symbols-outlined text-5xl text-[#6c2f00]/30 dark:text-[#ffdbc9]/30 mb-3">pets</span>
           <h3 className="font-display-editorial text-lg font-bold text-[#6c2f00] dark:text-[#ffdbc9] mb-1">
             No tienes casos publicados aún

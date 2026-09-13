@@ -75,11 +75,11 @@ export default function AdminDashboard() {
 
   
   return (
-    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#1a0f08] text-[#28180d] dark:text-[#ffede4] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
+    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#121214] text-[#1c1c21] dark:text-[#ffede4] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
       <div className="flex-grow max-w-[1280px] mx-auto px-6 md:px-12 py-12 w-full">
         {/* Encabezado Hero Editorial */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] font-body-editorial text-xs font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] font-body-editorial text-xs font-semibold mb-4">
             <span className="material-symbols-outlined text-base text-[#c85a32]">verified</span>
             Panel de Verificación
           </div>
@@ -97,7 +97,7 @@ export default function AdminDashboard() {
             <p className="font-semibold text-sm">Cargando solicitudes pendientes...</p>
           </div>
         ) : requests.length === 0 ? (
-          <div className="p-12 text-center text-[#54433a] dark:text-[#dac2b6] bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl shadow-xs max-w-xl mx-auto font-body-editorial">
+          <div className="p-12 text-center text-[#54433a] dark:text-[#dac2b6] bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl shadow-xs max-w-xl mx-auto font-body-editorial">
             <span className="material-symbols-outlined text-[#6c2f00] dark:text-[#ffdbc9] text-4xl mb-3">task_alt</span>
             <h3 className="font-display-editorial text-xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] mb-2">Todo al día</h3>
             <p className="text-sm text-[#54433a] dark:text-[#dac2b6]">No hay solicitudes de verificación de ONGs pendientes en este momento.</p>
@@ -107,13 +107,13 @@ export default function AdminDashboard() {
             {requests.map((req: OngUser) => (
               <div
                 key={req.id}
-                className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 font-body-editorial"
+                className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-6 md:p-8 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 font-body-editorial"
               >
                 {/* Imagen de perfil */}
                 <img
                   src={req.imagenPerfil || "https://ui-avatars.com/api/?name=ONG&background=FFC0CB&color=fff"}
                   alt={`Foto de perfil de ${req.nombre}`}
-                  className="w-32 h-32 md:w-36 md:h-36 object-cover border-4 border-[#fff1ea] dark:border-[#1a0f08] rounded-2xl shadow-xs shrink-0"
+                  className="w-32 h-32 md:w-36 md:h-36 object-cover border-4 border-[#fff1ea] dark:border-[#121214] rounded-2xl shadow-xs shrink-0"
                 />
 
                 {/* Información textual y Botones */}
@@ -162,7 +162,7 @@ export default function AdminDashboard() {
 
                     <button
                       onClick={() => handleVerificacion(String(req.id))}
-                      className="border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 text-[#6c2f00] dark:text-[#ffdbc9] hover:bg-[#ffeade] dark:hover:bg-[#3f2c20] font-body-editorial text-xs font-semibold px-5 py-2.5 rounded-full transition-all cursor-pointer flex items-center justify-center gap-1.5 w-full sm:w-auto"
+                      className="border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 text-[#6c2f00] dark:text-[#ffdbc9] hover:bg-[#ffeade] dark:hover:bg-[#26262e] font-body-editorial text-xs font-semibold px-5 py-2.5 rounded-full transition-all cursor-pointer flex items-center justify-center gap-1.5 w-full sm:w-auto"
                     >
                       <span className="material-symbols-outlined text-base">description</span>
                       Ver Documentación

@@ -68,7 +68,7 @@ export default function DonacionesRegistradas() {
     return (
       <div
         key={caso.id}
-        className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between mb-4 font-body-editorial"
+        className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between mb-4 font-body-editorial"
       >
         <div className="flex items-start gap-4 mb-3">
           <img
@@ -97,12 +97,12 @@ export default function DonacionesRegistradas() {
         </div>
 
         {caso.donacion && (
-          <div className="pt-3 border-t border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 bg-[#fff8f5] dark:bg-[#1a0f08] p-3 rounded-xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
+          <div className="pt-3 border-t border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 bg-[#fff8f5] dark:bg-[#121214] p-3 rounded-xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
             <div className="flex justify-between items-center text-xs font-semibold text-[#6c2f00] dark:text-[#ffdbc9] mb-1">
               <span>Recaudado: ${estado.toLocaleString("es-AR")}</span>
               <span className="text-[#54433a] dark:text-[#dac2b6]">Meta: ${meta.toLocaleString("es-AR")}</span>
             </div>
-            <div className="w-full bg-[#fff1ea] dark:bg-[#3f2c20] h-2.5 rounded-full overflow-hidden border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
+            <div className="w-full bg-[#fff1ea] dark:bg-[#26262e] h-2.5 rounded-full overflow-hidden border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
               <div
                 className="h-full bg-[#c85a32] rounded-full transition-all duration-500"
                 style={{ width: `${porcentaje}%` }}
@@ -122,11 +122,11 @@ export default function DonacionesRegistradas() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#1a0f08] text-[#28180d] dark:text-[#ffede4] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
+    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#121214] text-[#1c1c21] dark:text-[#ffede4] font-body-editorial flex flex-col selection:bg-[#c85a32] selection:text-white">
       <div className="flex-grow max-w-[1280px] mx-auto px-6 md:px-12 py-12 w-full">
         {/* Encabezado Hero Editorial */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] font-body-editorial text-xs font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] font-body-editorial text-xs font-semibold mb-4">
             <span className="material-symbols-outlined text-base text-[#6c2f00] dark:text-[#ffdbc9]">payments</span>
             Recaudación de Fondos
           </div>
@@ -141,7 +141,7 @@ export default function DonacionesRegistradas() {
         <div className="flex flex-col md:flex-row gap-8 items-start">
           {/* Sidebar de Métricas */}
           <aside className="w-full md:w-64 shrink-0 space-y-4 sticky top-6 font-body-editorial">
-            <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl p-5 shadow-xs text-center">
+            <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl p-5 shadow-xs text-center">
               <p className="font-body-editorial text-xs font-bold uppercase tracking-wider text-[#54433a] dark:text-[#dac2b6] mb-1 flex items-center justify-center gap-1.5">
                 <span className="material-symbols-outlined text-lg text-[#6c2f00] dark:text-[#ffdbc9]">monetization_on</span>
                 Total Recaudado
@@ -151,7 +151,7 @@ export default function DonacionesRegistradas() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl p-5 shadow-xs text-center">
+            <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl p-5 shadow-xs text-center">
               <p className="font-body-editorial text-xs font-bold uppercase tracking-wider text-[#54433a] dark:text-[#dac2b6] mb-1 flex items-center justify-center gap-1.5">
                 <span className="material-symbols-outlined text-lg text-[#c85a32]">check_circle</span>
                 Con Ingresos
@@ -161,7 +161,7 @@ export default function DonacionesRegistradas() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl p-5 shadow-xs text-center">
+            <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl p-5 shadow-xs text-center">
               <p className="font-body-editorial text-xs font-bold uppercase tracking-wider text-[#54433a] dark:text-[#dac2b6] mb-1 flex items-center justify-center gap-1.5">
                 <span className="material-symbols-outlined text-lg text-[#54433a] dark:text-[#dac2b6]">hourglass_empty</span>
                 Sin Ingresos
@@ -175,19 +175,19 @@ export default function DonacionesRegistradas() {
           {/* Main Content: 2 Columnas */}
           <main className="flex-1 w-full">
             {loading ? (
-              <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-12 text-center shadow-xs">
+              <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-12 text-center shadow-xs">
                 <div className="w-10 h-10 border-4 border-[#c85a32] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
                 <p className="font-display-editorial text-lg text-[#6c2f00] dark:text-[#ffdbc9] font-bold">Cargando campañas de donación...</p>
               </div>
             ) : error ? (
-              <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-12 text-center shadow-xs">
+              <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-12 text-center shadow-xs">
                 <span className="material-symbols-outlined text-5xl text-[#c85a32] mb-3">error</span>
                 <p className="text-sm text-red-500 font-semibold">{error}</p>
               </div>
             ) : (
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Columna 1: Con Ingresos */}
-                <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-6 shadow-xs">
+                <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-6 shadow-xs">
                   <h2 className="font-display-editorial text-xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] mb-6 flex items-center gap-2 pb-3 border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
                     <span className="material-symbols-outlined text-xl text-[#6c2f00] dark:text-[#ffdbc9]">verified</span>
                     Con Ingresos Registrados
@@ -200,7 +200,7 @@ export default function DonacionesRegistradas() {
                 </div>
 
                 {/* Columna 2: Sin Ingresos */}
-                <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-6 shadow-xs">
+                <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-6 shadow-xs">
                   <h2 className="font-display-editorial text-xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] mb-6 flex items-center gap-2 pb-3 border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
                     <span className="material-symbols-outlined text-xl text-[#c85a32]">hourglass_empty</span>
                     Sin Ingresos Registrados

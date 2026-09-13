@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#fbddca] dark:bg-[#120a05] w-full py-12 px-6 md:px-12 border-t border-[#dac2b6]/40 dark:border-[#ffdbc9]/15 font-body-editorial text-[#28180d] dark:text-[#ffede4]">
+    <footer className="bg-[#fbddca] dark:bg-[#0d0d0f] w-full py-12 px-6 md:px-12 border-t border-[#dac2b6]/40 dark:border-[#ffdbc9]/15 font-body-editorial text-[#1c1c21] dark:text-[#ffede4]">
       <div className="flex flex-col md:flex-row justify-between items-center max-w-[1280px] mx-auto gap-8">
         <div className="font-display-editorial text-2xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] flex items-center gap-2">
           <span className="material-symbols-outlined text-[#6c2f00] dark:text-[#ffdbc9]">pets</span>

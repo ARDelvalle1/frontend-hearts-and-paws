@@ -23,7 +23,7 @@ interface AdopcionCardProps {
 }
 
 const estadoColor = {
-  PENDIENTE: 'bg-[#ffeade] dark:bg-[#3f2c20] text-[#6c2f00] dark:text-[#ffdbc9] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20',
+  PENDIENTE: 'bg-[#ffeade] dark:bg-[#26262e] text-[#6c2f00] dark:text-[#ffdbc9] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20',
   ACEPTADA: 'bg-green-100 dark:bg-green-950/60 text-green-800 dark:text-green-300 border border-green-300 dark:border-green-800',
   RECHAZADA: 'bg-[#ffdad6] dark:bg-[#93000a]/20 text-[#93000a] dark:text-[#ffdad6] border border-[#ba1a1a]/20',
 };
@@ -33,9 +33,9 @@ export default function AdopcionCard({ adopcion }: AdopcionCardProps) {
   const imagen = mascota.imagenes[0]?.url;
 
   return (
-    <div className="relative bg-[#fff1ea] dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-xl shadow-none p-6 flex flex-col md:flex-row gap-6 transition-all duration-300 hover:border-[#6c2f00]/30 font-body-editorial">
+    <div className="relative bg-[#fff1ea] dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-xl shadow-none p-6 flex flex-col md:flex-row gap-6 transition-all duration-300 hover:border-[#6c2f00]/30 font-body-editorial">
       {imagen && (
-        <div className="w-full md:w-40 h-40 relative rounded-lg overflow-hidden border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 bg-[#fff8f5] dark:bg-[#3f2c20] flex-shrink-0">
+        <div className="w-full md:w-40 h-40 relative rounded-lg overflow-hidden border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 bg-[#fff8f5] dark:bg-[#26262e] flex-shrink-0">
           <Image
             src={imagen}
             alt={mascota.nombre}
@@ -58,7 +58,7 @@ export default function AdopcionCard({ adopcion }: AdopcionCardProps) {
             </span>
           </div>
 
-          <p className="text-[#28180d] dark:text-[#ffede4] font-semibold text-base mb-1">{titulo}</p>
+          <p className="text-[#1c1c21] dark:text-[#ffede4] font-semibold text-base mb-1">{titulo}</p>
           <p className="text-[#54433a] dark:text-[#dac2b6] text-sm leading-relaxed mb-3">{descripcion}</p>
         </div>
 

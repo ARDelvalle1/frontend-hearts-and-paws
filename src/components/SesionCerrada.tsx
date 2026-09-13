@@ -48,7 +48,7 @@ export default function SesionCerrada() {
   const router = useRouter();
 
   return (
-    <div className="relative min-h-[calc(100vh-80px)] flex items-center justify-center p-4 sm:p-6 overflow-hidden bg-[#fff8f5] dark:bg-[#1a0f08] text-[#28180d] dark:text-[#ffede4] font-body-editorial selection:bg-[#c85a32] selection:text-white">
+    <div className="relative min-h-[calc(100vh-80px)] flex items-center justify-center p-4 sm:p-6 overflow-hidden bg-[#fff8f5] dark:bg-[#121214] text-[#1c1c21] dark:text-[#ffede4] font-body-editorial selection:bg-[#c85a32] selection:text-white">
       {/* Elementos decorativos flotantes de fondo */}
       <div
         aria-hidden="true"
@@ -84,11 +84,11 @@ export default function SesionCerrada() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 w-full max-w-lg bg-white dark:bg-[#28180d] p-8 sm:p-12 rounded-3xl shadow-2xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-center backdrop-blur-xs"
+        className="relative z-10 w-full max-w-lg bg-white dark:bg-[#1c1c21] p-8 sm:p-12 rounded-3xl shadow-2xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-center backdrop-blur-xs"
       >
         {/* Badge superior */}
         <motion.div variants={itemVariants} className="flex justify-center mb-6">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] dark:bg-[#1a0f08] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] text-xs font-semibold tracking-wide shadow-xs">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] dark:bg-[#121214] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] text-xs font-semibold tracking-wide shadow-xs">
             <span className="material-symbols-outlined text-sm text-[#c85a32]">
               verified_user
             </span>
@@ -99,7 +99,7 @@ export default function SesionCerrada() {
         {/* Icono animado */}
         <motion.div
           variants={iconContainerVariants}
-          className="mx-auto mb-6 flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-[#fff1ea] to-[#ffeade] dark:from-[#342013] dark:to-[#3f2c20] border-2 border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 shadow-inner"
+          className="mx-auto mb-6 flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-[#fff1ea] to-[#ffeade] dark:from-[#26262e] dark:to-[#26262e] border-2 border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 shadow-inner"
         >
           <motion.span
             animate={{ rotate: [0, 8, -8, 0] }}
@@ -141,7 +141,7 @@ export default function SesionCerrada() {
         {/* Recuadro informativo */}
         <motion.div
           variants={itemVariants}
-          className="mb-8 p-4 rounded-2xl bg-[#fff8f5] dark:bg-[#1f130b] border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 text-xs sm:text-sm text-[#54433a] dark:text-[#dac2b6] flex items-center justify-center gap-2"
+          className="mb-8 p-4 rounded-2xl bg-[#fff8f5] dark:bg-[#26262e] border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 text-xs sm:text-sm text-[#54433a] dark:text-[#dac2b6] flex items-center justify-center gap-2"
         >
           <span className="material-symbols-outlined text-base text-[#c85a32]">
             info
@@ -168,7 +168,7 @@ export default function SesionCerrada() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => router.push('/')}
-            className="border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 text-[#6c2f00] dark:text-[#ffdbc9] bg-[#fff8f5] dark:bg-[#1a0f08] hover:bg-[#fff1ea] dark:hover:bg-[#3f2c20] font-body-editorial font-semibold py-3.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 shadow-xs flex items-center justify-center gap-2 cursor-pointer flex-1"
+            className="border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 text-[#6c2f00] dark:text-[#ffdbc9] bg-[#fff8f5] dark:bg-[#121214] hover:bg-[#fff1ea] dark:hover:bg-[#26262e] font-body-editorial font-semibold py-3.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 shadow-xs flex items-center justify-center gap-2 cursor-pointer flex-1"
           >
             <span className="material-symbols-outlined text-lg">home</span>
             Ir al inicio

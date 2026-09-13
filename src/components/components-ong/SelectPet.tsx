@@ -35,13 +35,13 @@ const SelectPet = ({ register, errors }: Props) => {
       <div className="relative">
         <select
           {...register("petId", { required: true })}
-          className="w-full appearance-none px-4 py-3 bg-[#fff8f5] dark:bg-[#1a0f08] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#28180d] dark:text-[#ffdbc9] focus:outline-none focus:ring-2 focus:ring-[#c85a32] transition-colors cursor-pointer"
+          className="w-full appearance-none px-4 py-3 bg-[#fff8f5] dark:bg-[#121214] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#1c1c21] dark:text-[#ffdbc9] focus:outline-none focus:ring-2 focus:ring-[#c85a32] transition-colors cursor-pointer"
         >
-          <option value="" className="bg-white dark:bg-[#28180d] text-[#28180d] dark:text-[#ffdbc9]">
+          <option value="" className="bg-white dark:bg-[#1c1c21] text-[#1c1c21] dark:text-[#ffdbc9]">
             Selecciona una mascota
           </option>
           {pets.map((p) => (
-            <option key={p.id} value={p.id} className="bg-white dark:bg-[#28180d] text-[#28180d] dark:text-[#ffdbc9]">
+            <option key={p.id} value={p.id} className="bg-white dark:bg-[#1c1c21] text-[#1c1c21] dark:text-[#ffdbc9]">
               {p.nombre}
             </option>
           ))}

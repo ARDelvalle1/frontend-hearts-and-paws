@@ -137,8 +137,8 @@ const NewPet = () => {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 z-50 bg-[#28180d]/60 dark:bg-black/75 backdrop-blur-xs flex items-center justify-center pointer-events-auto p-4">
-        <div className="flex flex-col items-center gap-4 bg-white dark:bg-[#28180d] p-8 rounded-3xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 shadow-2xl max-w-sm text-center">
+      <div className="fixed inset-0 z-50 bg-[#1c1c21]/60 dark:bg-black/75 backdrop-blur-xs flex items-center justify-center pointer-events-auto p-4">
+        <div className="flex flex-col items-center gap-4 bg-white dark:bg-[#1c1c21] p-8 rounded-3xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 shadow-2xl max-w-sm text-center">
           <div className="text-[#6c2f00] dark:text-[#ffdbc9] font-serif font-bold text-lg">
             Registrando mascota...
           </div>
@@ -152,8 +152,8 @@ const NewPet = () => {
   }
 
   return (
-    <div className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex justify-center bg-[#fff8f5] dark:bg-[#1a0f08] transition-colors">
-      <div className="w-full max-w-2xl bg-white dark:bg-[#28180d] p-6 sm:p-10 rounded-3xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 shadow-xs transition-colors">
+    <div className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex justify-center bg-[#fff8f5] dark:bg-[#121214] transition-colors">
+      <div className="w-full max-w-2xl bg-white dark:bg-[#1c1c21] p-6 sm:p-10 rounded-3xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 shadow-xs transition-colors">
         <div className="mb-6">
           <Link
             href="/dashboard/ong"
@@ -187,7 +187,7 @@ const NewPet = () => {
               type="text"
               placeholder="Ej: Milo, Luna, Rocco"
               {...register("nombre", { required: true })}
-              className="w-full px-4 py-3 bg-[#fff8f5] dark:bg-[#1a0f08] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#28180d] dark:text-[#ffdbc9] placeholder:text-[#54433a]/50 dark:placeholder:text-[#dac2b6]/40 focus:outline-none focus:ring-2 focus:ring-[#c85a32] transition-colors"
+              className="w-full px-4 py-3 bg-[#fff8f5] dark:bg-[#121214] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#1c1c21] dark:text-[#ffdbc9] placeholder:text-[#54433a]/50 dark:placeholder:text-[#dac2b6]/40 focus:outline-none focus:ring-2 focus:ring-[#c85a32] transition-colors"
             />
             {errors.nombre && (
               <p className="text-red-500 text-xs mt-1.5 font-medium">Este campo es obligatorio.</p>
@@ -202,7 +202,7 @@ const NewPet = () => {
               type="number"
               placeholder="Ej: 2"
               {...register("edad", { required: true, min: 0 })}
-              className="w-full px-4 py-3 bg-[#fff8f5] dark:bg-[#1a0f08] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#28180d] dark:text-[#ffdbc9] placeholder:text-[#54433a]/50 dark:placeholder:text-[#dac2b6]/40 focus:outline-none focus:ring-2 focus:ring-[#c85a32] transition-colors"
+              className="w-full px-4 py-3 bg-[#fff8f5] dark:bg-[#121214] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#1c1c21] dark:text-[#ffdbc9] placeholder:text-[#54433a]/50 dark:placeholder:text-[#dac2b6]/40 focus:outline-none focus:ring-2 focus:ring-[#c85a32] transition-colors"
             />
             {errors.edad && (
               <p className="text-red-500 text-xs mt-1.5 font-medium">Ingresa una edad válida.</p>
@@ -216,7 +216,7 @@ const NewPet = () => {
             <textarea
               placeholder="Contanos sobre su personalidad, cuidados especiales, tamaño, historia..."
               {...register("descripcion", { required: true })}
-              className="w-full px-4 py-3 bg-[#fff8f5] dark:bg-[#1a0f08] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#28180d] dark:text-[#ffdbc9] placeholder:text-[#54433a]/50 dark:placeholder:text-[#dac2b6]/40 focus:outline-none focus:ring-2 focus:ring-[#c85a32] transition-colors"
+              className="w-full px-4 py-3 bg-[#fff8f5] dark:bg-[#121214] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#1c1c21] dark:text-[#ffdbc9] placeholder:text-[#54433a]/50 dark:placeholder:text-[#dac2b6]/40 focus:outline-none focus:ring-2 focus:ring-[#c85a32] transition-colors"
               rows={4}
             />
             {errors.descripcion && (
@@ -231,13 +231,13 @@ const NewPet = () => {
             <div className="relative">
               <select
                 {...register("tipoId", { required: true })}
-                className="w-full appearance-none px-4 py-3 bg-[#fff8f5] dark:bg-[#1a0f08] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#28180d] dark:text-[#ffdbc9] focus:outline-none focus:ring-2 focus:ring-[#c85a32] transition-colors cursor-pointer"
+                className="w-full appearance-none px-4 py-3 bg-[#fff8f5] dark:bg-[#121214] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#1c1c21] dark:text-[#ffdbc9] focus:outline-none focus:ring-2 focus:ring-[#c85a32] transition-colors cursor-pointer"
               >
-                <option value="" className="bg-white dark:bg-[#28180d] text-[#28180d] dark:text-[#ffdbc9]">
+                <option value="" className="bg-white dark:bg-[#1c1c21] text-[#1c1c21] dark:text-[#ffdbc9]">
                   Selecciona un tipo
                 </option>
                 {tipos.map((tipo) => (
-                  <option key={tipo.id} value={tipo.id} className="bg-white dark:bg-[#28180d] text-[#28180d] dark:text-[#ffdbc9]">
+                  <option key={tipo.id} value={tipo.id} className="bg-white dark:bg-[#1c1c21] text-[#1c1c21] dark:text-[#ffdbc9]">
                     {tipo.nombre}
                   </option>
                 ))}
@@ -262,7 +262,7 @@ const NewPet = () => {
               multiple
               accept="image/*"
               {...register("imagenes", { required: true })}
-              className="w-full p-2.5 bg-[#fff8f5] dark:bg-[#1a0f08] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-sm text-[#54433a] dark:text-[#dac2b6] file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-[#ffeade] file:text-[#6c2f00] dark:file:bg-[#3f2c20] dark:file:text-[#ffdbc9] hover:file:opacity-90 transition-colors cursor-pointer"
+              className="w-full p-2.5 bg-[#fff8f5] dark:bg-[#121214] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-sm text-[#54433a] dark:text-[#dac2b6] file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-[#ffeade] file:text-[#6c2f00] dark:file:bg-[#26262e] dark:file:text-[#ffdbc9] hover:file:opacity-90 transition-colors cursor-pointer"
             />
             {errors.imagenes && (
               <p className="text-red-500 text-xs mt-1.5 font-medium">

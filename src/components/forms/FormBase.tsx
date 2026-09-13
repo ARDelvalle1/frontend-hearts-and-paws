@@ -48,10 +48,10 @@ export default function FormBase<T>({
     <>
       <form
         onSubmit={onSubmit}
-        className="w-full bg-white dark:bg-[#28180d] p-8 sm:p-10 rounded-3xl shadow-2xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 relative font-body-editorial space-y-5 text-[#28180d] dark:text-[#ffede4]"
+        className="w-full bg-white dark:bg-[#1c1c21] p-8 sm:p-10 rounded-3xl shadow-2xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 relative font-body-editorial space-y-5 text-[#1c1c21] dark:text-[#ffede4]"
       >
         <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] dark:bg-[#1a0f08] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] text-xs font-semibold mb-3 mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#fff1ea] dark:bg-[#121214] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] text-xs font-semibold mb-3 mx-auto">
             <span className="material-symbols-outlined text-base">
               {iconName || "app_registration"}
             </span>
@@ -81,7 +81,7 @@ export default function FormBase<T>({
                 rows={rows}
                 className={`w-full border ${
                   errors[name] ? 'border-red-500 ring-1 ring-red-500' : 'border-[#6c2f00]/20 dark:border-[#ffdbc9]/20'
-                } bg-[#fff8f5] dark:bg-[#1a0f08] text-[#6c2f00] dark:text-[#ffdbc9] placeholder:text-[#54433a]/60 dark:placeholder:text-[#dac2b6]/50 font-body-editorial text-sm font-semibold rounded-2xl shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] dark:focus:ring-[#c85a32] transition-all resize-none px-4 py-3`}
+                } bg-[#fff8f5] dark:bg-[#121214] text-[#6c2f00] dark:text-[#ffdbc9] placeholder:text-[#54433a]/60 dark:placeholder:text-[#dac2b6]/50 font-body-editorial text-sm font-semibold rounded-2xl shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] dark:focus:ring-[#c85a32] transition-all resize-none px-4 py-3`}
               />
             ) : (
               <div className="relative">
@@ -100,7 +100,7 @@ export default function FormBase<T>({
                   disabled={isLoading}
                   className={`w-full border ${
                     errors[name] ? 'border-red-500 ring-1 ring-red-500' : 'border-[#6c2f00]/20 dark:border-[#ffdbc9]/20'
-                  } bg-[#fff8f5] dark:bg-[#1a0f08] text-[#6c2f00] dark:text-[#ffdbc9] placeholder:text-[#54433a]/60 dark:placeholder:text-[#dac2b6]/50 font-body-editorial text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] dark:focus:ring-[#c85a32] transition-all px-5 py-2.5 ${
+                  } bg-[#fff8f5] dark:bg-[#121214] text-[#6c2f00] dark:text-[#ffdbc9] placeholder:text-[#54433a]/60 dark:placeholder:text-[#dac2b6]/50 font-body-editorial text-sm font-semibold rounded-full shadow-xs focus:outline-none focus:ring-2 focus:ring-[#6c2f00] dark:focus:ring-[#c85a32] transition-all px-5 py-2.5 ${
                     name === 'contrasena' && showPasswordToggle ? 'pr-12' : ''
                   }`}
                 />
@@ -140,7 +140,7 @@ export default function FormBase<T>({
 
       {isLoading && (
         <div className="fixed inset-0 z-50 bg-white/90 dark:bg-black/80 backdrop-blur-xs flex items-center justify-center pointer-events-auto">
-          <div className="flex flex-col items-center gap-4 bg-[#fff8f5] dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 p-8 rounded-3xl shadow-2xl max-w-xs text-center font-body-editorial">
+          <div className="flex flex-col items-center gap-4 bg-[#fff8f5] dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 p-8 rounded-3xl shadow-2xl max-w-xs text-center font-body-editorial">
             <div className="w-10 h-10 border-4 border-[#c85a32] border-t-transparent rounded-full animate-spin" />
             <div>
               <p className="font-display-editorial font-bold text-lg text-[#6c2f00] dark:text-[#ffdbc9]">

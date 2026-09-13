@@ -134,8 +134,8 @@ const Navbar = ({ theme, toggleTheme }: ThemeProps) => {
       transition={{ duration: 0.4, ease: 'easeOut' }}
       className={`sticky top-0 w-full z-50 transition-all ${
         scrolled
-          ? 'bg-[#fff8f5]/95 dark:bg-[#1a0f08]/95 backdrop-blur-md shadow-xs border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/15'
-          : 'bg-[#fff8f5]/90 dark:bg-[#1a0f08]/90 backdrop-blur-md border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/15'
+          ? 'bg-[#fff8f5]/95 dark:bg-[#121214]/95 backdrop-blur-md shadow-xs border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/15'
+          : 'bg-[#fff8f5]/90 dark:bg-[#121214]/90 backdrop-blur-md border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/15'
       }`}
     >
       <div className="px-6 md:px-12 mx-auto max-w-[1280px]">
@@ -191,7 +191,7 @@ const Navbar = ({ theme, toggleTheme }: ThemeProps) => {
               <button
                 type="button"
                 onClick={toggleTheme}
-                className="font-body-editorial text-xs font-semibold border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 text-[#6c2f00] dark:text-[#ffdbc9] px-4 py-2 rounded-full hover:bg-[#ffeade] dark:hover:bg-[#3f2c20] transition-all cursor-pointer hidden sm:flex items-center gap-1.5"
+                className="font-body-editorial text-xs font-semibold border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 text-[#6c2f00] dark:text-[#ffdbc9] px-4 py-2 rounded-full hover:bg-[#ffeade] dark:hover:bg-[#26262e] transition-all cursor-pointer hidden sm:flex items-center gap-1.5"
               >
                 <span className="material-symbols-outlined text-sm">
                   {theme === 'dark' ? 'light_mode' : 'dark_mode'}
@@ -237,7 +237,7 @@ const Navbar = ({ theme, toggleTheme }: ThemeProps) => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="px-6 py-6 space-y-4 bg-[#fff8f5] dark:bg-[#1a0f08] border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 shadow-md md:hidden font-body-editorial"
+            className="px-6 py-6 space-y-4 bg-[#fff8f5] dark:bg-[#121214] border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 shadow-md md:hidden font-body-editorial"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -273,7 +273,7 @@ const Navbar = ({ theme, toggleTheme }: ThemeProps) => {
                   toggleTheme();
                   setIsOpen(false);
                 }}
-                className="w-full font-body-editorial text-xs font-semibold border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 text-[#6c2f00] dark:text-[#ffdbc9] py-2.5 rounded-full hover:bg-[#ffeade] dark:hover:bg-[#3f2c20] transition-all text-center flex items-center justify-center gap-2"
+                className="w-full font-body-editorial text-xs font-semibold border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 text-[#6c2f00] dark:text-[#ffdbc9] py-2.5 rounded-full hover:bg-[#ffeade] dark:hover:bg-[#26262e] transition-all text-center flex items-center justify-center gap-2"
               >
                 <span className="material-symbols-outlined text-sm">
                   {theme === 'dark' ? 'light_mode' : 'dark_mode'}

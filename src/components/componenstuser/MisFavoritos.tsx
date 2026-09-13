@@ -139,10 +139,10 @@ export default function MisFavoritos() {
 
 
   return (
-    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#1a0f08] text-[#28180d] dark:text-[#ffede4] font-body-editorial flex justify-center py-10 md:py-16 px-4 md:px-8">
+    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#121214] text-[#1c1c21] dark:text-[#ffede4] font-body-editorial flex justify-center py-10 md:py-16 px-4 md:px-8">
       <div className="flex flex-col md:flex-row items-start justify-center gap-6 lg:gap-8 max-w-5xl w-full">
         {/* Sidebar centrado estilo Earth & Heart */}
-        <nav className="flex flex-col p-6 bg-[#ffeade] dark:bg-[#28180d] rounded-xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 w-full md:w-64 shadow-none flex-shrink-0">
+        <nav className="flex flex-col p-6 bg-[#ffeade] dark:bg-[#1c1c21] rounded-xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 w-full md:w-64 shadow-none flex-shrink-0">
           <div className="font-display-editorial text-2xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] mb-6 flex items-center gap-2">
             <span className="material-symbols-outlined text-[#6c2f00] dark:text-[#ffdbc9]">person</span>
             <span>Perfil</span>
@@ -151,35 +151,35 @@ export default function MisFavoritos() {
           <div className="flex flex-col gap-2">
             <button
               onClick={() => router.push("/dashboard/usuario")}
-              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#3f2c20] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
+              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#26262e] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
             >
               <span className="material-symbols-outlined text-lg">home</span>
               <span>Principal</span>
             </button>
             <button
               onClick={() => router.push("/usuario/adopciones")}
-              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#3f2c20] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
+              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#26262e] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
             >
               <span className="material-symbols-outlined text-lg">pets</span>
               <span>Mis Adopciones</span>
             </button>
             <button
               onClick={() => router.push("/usuario/donaciones")}
-              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#3f2c20] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
+              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#26262e] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
             >
               <span className="material-symbols-outlined text-lg">volunteer_activism</span>
               <span>Mis Donaciones</span>
             </button>
             <button
               onClick={() => router.push("/usuario/favoritos")}
-              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold bg-[#fff1ea] dark:bg-[#3f2c20] text-[#6c2f00] dark:text-[#ffdbc9] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 transition-all duration-300 flex items-center gap-3"
+              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold bg-[#fff1ea] dark:bg-[#26262e] text-[#6c2f00] dark:text-[#ffdbc9] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 transition-all duration-300 flex items-center gap-3"
             >
               <span className="material-symbols-outlined text-lg">favorite</span>
               <span>Mis Favoritos</span>
             </button>
             <button
               onClick={() => router.push("/chat")}
-              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#3f2c20] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
+              className="w-full text-left px-4 py-3 rounded-lg text-sm font-semibold text-[#54433a] dark:text-[#dac2b6] hover:bg-[#ffe3d2] dark:hover:bg-[#26262e] hover:text-[#6c2f00] dark:hover:text-[#ffdbc9] transition-all duration-300 flex items-center gap-3"
             >
               <span className="material-symbols-outlined text-lg">chat</span>
               <span>Mensajes</span>
@@ -214,7 +214,7 @@ export default function MisFavoritos() {
           )}
 
           {!loading && !error && favoritos.length === 0 && (
-            <div className="bg-[#fff1ea] dark:bg-[#28180d] rounded-xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 p-10 text-center">
+            <div className="bg-[#fff1ea] dark:bg-[#1c1c21] rounded-xl border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 p-10 text-center">
               <span className="material-symbols-outlined text-4xl text-[#6c2f00] dark:text-[#ffdbc9] mb-3 opacity-60">favorite</span>
               <p className="font-display-editorial text-xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] mb-2">No tenés favoritos guardados aún</p>
               <p className="font-body-editorial text-sm text-[#54433a] dark:text-[#dac2b6] max-w-md mx-auto mb-6">
@@ -254,7 +254,7 @@ export default function MisFavoritos() {
                     />
                     <button
                       onClick={() => handleEliminarFavorito(fav)}
-                      className="absolute top-3 right-3 bg-white/90 dark:bg-[#28180d]/90 backdrop-blur-sm p-2 rounded-full text-[#6c2f00] dark:text-[#ffdbc9] hover:text-[#a84320] dark:hover:text-[#c85a32] hover:scale-110 transition-all shadow-sm z-20 cursor-pointer"
+                      className="absolute top-3 right-3 bg-white/90 dark:bg-[#1c1c21]/90 backdrop-blur-sm p-2 rounded-full text-[#6c2f00] dark:text-[#ffdbc9] hover:text-[#a84320] dark:hover:text-[#c85a32] hover:scale-110 transition-all shadow-sm z-20 cursor-pointer"
                       aria-label="Eliminar favorito"
                       title="Quitar de favoritos"
                     >

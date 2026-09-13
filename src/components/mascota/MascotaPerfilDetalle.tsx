@@ -125,13 +125,13 @@ export default function MascotaPerfilDetalle({ id }: { id: string }) {
   };
 
   return (
-    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#0e0906] text-[#28180d] dark:text-[#ffede4] font-body-editorial py-10 px-4 sm:px-6 md:px-12 selection:bg-[#c85a32] selection:text-white">
+    <div className="min-h-screen bg-[#fff8f5] dark:bg-[#121214] text-[#1c1c21] dark:text-[#ffede4] font-body-editorial py-10 px-4 sm:px-6 md:px-12 selection:bg-[#c85a32] selection:text-white">
       <div className="max-w-5xl mx-auto space-y-8">
         {/* Barra de navegación superior con botón Volver */}
         <div className="flex flex-wrap items-center justify-between gap-4">
           <button
             onClick={() => router.push('/adoptar/adopcion')}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-white dark:bg-[#241810] text-[#6c2f00] dark:text-[#ffdbc9] text-xs font-semibold hover:bg-[#fff1ea] dark:hover:bg-[#342013] transition-all cursor-pointer shadow-xs"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-white dark:bg-[#1c1c21] text-[#6c2f00] dark:text-[#ffdbc9] text-xs font-semibold hover:bg-[#fff1ea] dark:hover:bg-[#26262e] transition-all cursor-pointer shadow-xs"
           >
             <span className="material-symbols-outlined text-base">arrow_back</span>
             <span>Volver a adopciones</span>
@@ -140,7 +140,7 @@ export default function MascotaPerfilDetalle({ id }: { id: string }) {
           <div className="flex items-center gap-2">
             <button
               onClick={handleCopiarEnlace}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-white dark:bg-[#241810] text-[#6c2f00] dark:text-[#ffdbc9] text-xs font-semibold hover:bg-[#fff1ea] dark:hover:bg-[#342013] transition-all cursor-pointer shadow-xs"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-white dark:bg-[#1c1c21] text-[#6c2f00] dark:text-[#ffdbc9] text-xs font-semibold hover:bg-[#fff1ea] dark:hover:bg-[#26262e] transition-all cursor-pointer shadow-xs"
             >
               <span className="material-symbols-outlined text-base">
                 {compartido ? 'check' : 'share'}
@@ -152,7 +152,7 @@ export default function MascotaPerfilDetalle({ id }: { id: string }) {
 
         {/* Estado de Carga */}
         {cargando && (
-          <div className="text-center py-20 bg-white dark:bg-[#241810] rounded-3xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 shadow-md">
+          <div className="text-center py-20 bg-white dark:bg-[#1c1c21] rounded-3xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 shadow-md">
             <span className="material-symbols-outlined text-5xl text-[#c85a32] animate-spin mb-3">
               progress_activity
             </span>
@@ -182,7 +182,7 @@ export default function MascotaPerfilDetalle({ id }: { id: string }) {
         {!cargando && mascota && (
           <div className="space-y-8">
             {/* Tarjeta Principal: Galería + Ficha + ONG */}
-            <div className="p-6 sm:p-10 rounded-3xl bg-white dark:bg-[#241810] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/20 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="p-6 sm:p-10 rounded-3xl bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/20 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               {/* Galería de Fotos (5 columnas) */}
               <div className="lg:col-span-5 flex flex-col gap-4">
                 <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-[#6c2f00]/5 dark:bg-[#ffdbc9]/5 border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 shadow-sm">
@@ -226,7 +226,7 @@ export default function MascotaPerfilDetalle({ id }: { id: string }) {
               <div className="lg:col-span-7 flex flex-col justify-between h-full space-y-5">
                 <div>
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fff1ea] dark:bg-[#1a0f08] text-[#6c2f00] dark:text-[#ffdbc9] text-xs font-bold border border-[#6c2f00]/10 dark:border-[#ffdbc9]/15">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fff1ea] dark:bg-[#121214] text-[#6c2f00] dark:text-[#ffdbc9] text-xs font-bold border border-[#6c2f00]/10 dark:border-[#ffdbc9]/15">
                       <span className="material-symbols-outlined text-sm text-[#c85a32]">pets</span>
                       {mascota.tipo?.nombre || 'Mascota'}
                     </span>
@@ -242,11 +242,11 @@ export default function MascotaPerfilDetalle({ id }: { id: string }) {
 
                   {/* Badges con Datos Clave */}
                   <div className="flex flex-wrap gap-2.5 text-xs font-semibold text-[#54433a] dark:text-[#dac2b6] mb-5">
-                    <span className="px-3.5 py-1.5 rounded-full bg-[#fff8f5] dark:bg-[#170f0a] border border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 flex items-center gap-1.5">
+                    <span className="px-3.5 py-1.5 rounded-full bg-[#fff8f5] dark:bg-[#26262e] border border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 flex items-center gap-1.5">
                       <span className="material-symbols-outlined text-sm text-[#c85a32]">cake</span>
                       {mascota.edad} {mascota.edad === 1 ? 'año' : 'años'}
                     </span>
-                    <span className="px-3.5 py-1.5 rounded-full bg-[#fff8f5] dark:bg-[#170f0a] border border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 flex items-center gap-1.5">
+                    <span className="px-3.5 py-1.5 rounded-full bg-[#fff8f5] dark:bg-[#26262e] border border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 flex items-center gap-1.5">
                       <span className="material-symbols-outlined text-sm text-[#c85a32]">calendar_today</span>
                       Ingreso: {formatFecha(mascota.creada_en)}
                     </span>
@@ -254,7 +254,7 @@ export default function MascotaPerfilDetalle({ id }: { id: string }) {
 
                   {/* Tarjeta de la ONG a cargo */}
                   {mascota.organizacion && (
-                    <div className="p-4 rounded-2xl bg-[#fff8f5] dark:bg-[#170f0a] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 flex items-center justify-between gap-4 mb-5">
+                    <div className="p-4 rounded-2xl bg-[#fff8f5] dark:bg-[#26262e] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 flex items-center justify-between gap-4 mb-5">
                       <div className="flex items-center gap-3">
                         {mascota.organizacion.imagenPerfil ? (
                           <div className="relative w-12 h-12 rounded-full overflow-hidden border border-[#c85a32]/30 shrink-0">
@@ -267,7 +267,7 @@ export default function MascotaPerfilDetalle({ id }: { id: string }) {
                             />
                           </div>
                         ) : (
-                          <div className="w-12 h-12 rounded-full bg-[#ffeade] dark:bg-[#342013] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/20 flex items-center justify-center font-bold text-[#6c2f00] dark:text-[#ffdbc9] shrink-0">
+                          <div className="w-12 h-12 rounded-full bg-[#ffeade] dark:bg-[#26262e] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/20 flex items-center justify-center font-bold text-[#6c2f00] dark:text-[#ffdbc9] shrink-0">
                             {mascota.organizacion.nombre.charAt(0).toUpperCase()}
                           </div>
                         )}
@@ -333,7 +333,7 @@ export default function MascotaPerfilDetalle({ id }: { id: string }) {
 
             {/* Módulo Especial: Caso de Donación Activo (si existe) */}
             {casoDonacionActiva?.donacion && (
-              <div className="p-6 rounded-3xl bg-gradient-to-br from-[#fff1ea] to-[#ffeade] dark:from-[#241810] dark:to-[#2e1d14] border-2 border-[#c85a32]/30 dark:border-[#c85a32]/40 shadow-md">
+              <div className="p-6 rounded-3xl bg-gradient-to-br from-[#fff1ea] to-[#ffeade] dark:from-[#1c1c21] dark:to-[#1c1c21] border-2 border-[#c85a32]/30 dark:border-[#c85a32]/40 shadow-md">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-3">
                   <div className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-2xl text-[#c85a32]">
@@ -397,7 +397,7 @@ export default function MascotaPerfilDetalle({ id }: { id: string }) {
             )}
 
             {/* Timeline y Registro de Actividad */}
-            <div className="p-6 sm:p-10 rounded-3xl bg-white dark:bg-[#241810] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/20 shadow-xl space-y-6">
+            <div className="p-6 sm:p-10 rounded-3xl bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/20 shadow-xl space-y-6">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/15">
                 <div>
                   <h2 className="font-display-editorial text-2xl sm:text-3xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] flex items-center gap-2">
@@ -419,14 +419,14 @@ export default function MascotaPerfilDetalle({ id }: { id: string }) {
                       value={busquedaTimeline}
                       onChange={(e) => setBusquedaTimeline(e.target.value)}
                       placeholder="Buscar en timeline..."
-                      className="pl-8 pr-3 py-2 text-xs rounded-full border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-[#fff8f5] dark:bg-[#170f0a] text-[#28180d] dark:text-[#ffede4] placeholder-[#877369] focus:outline-none focus:ring-2 focus:ring-[#c85a32]"
+                      className="pl-8 pr-3 py-2 text-xs rounded-full border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 bg-[#fff8f5] dark:bg-[#26262e] text-[#1c1c21] dark:text-[#ffede4] placeholder-[#877369] focus:outline-none focus:ring-2 focus:ring-[#c85a32]"
                     />
                     <span className="material-symbols-outlined absolute left-2.5 top-2.5 text-xs text-[#877369]">
                       search
                     </span>
                   </div>
 
-                  <div className="flex items-center bg-[#fff8f5] dark:bg-[#170f0a] p-1 rounded-full border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-xs font-semibold">
+                  <div className="flex items-center bg-[#fff8f5] dark:bg-[#26262e] p-1 rounded-full border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-xs font-semibold">
                     <button
                       onClick={() => setFiltroTipo('todos')}
                       className={`px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
@@ -464,7 +464,7 @@ export default function MascotaPerfilDetalle({ id }: { id: string }) {
               {/* Eventos en Línea de Tiempo */}
               <div className="relative pl-6 sm:pl-8 space-y-6 before:absolute before:left-2.5 sm:before:left-3.5 before:top-3 before:bottom-3 before:w-0.5 before:bg-[#6c2f00]/15 dark:before:bg-[#ffdbc9]/20">
                 {casosTimeline.length === 0 ? (
-                  <div className="p-6 rounded-2xl bg-[#fff8f5] dark:bg-[#170f0a] border border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 text-center text-xs sm:text-sm text-[#54433a] dark:text-[#dac2b6]">
+                  <div className="p-6 rounded-2xl bg-[#fff8f5] dark:bg-[#26262e] border border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 text-center text-xs sm:text-sm text-[#54433a] dark:text-[#dac2b6]">
                     No se encontraron eventos en el timeline con los filtros seleccionados.
                   </div>
                 ) : (
@@ -478,10 +478,10 @@ export default function MascotaPerfilDetalle({ id }: { id: string }) {
                         <div
                           className={`absolute -left-6 sm:-left-8 top-1 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-transform group-hover:scale-110 ${
                             esActiva
-                              ? 'bg-[#c85a32] border-[#fff8f5] dark:border-[#241810] text-white shadow-xs'
+                              ? 'bg-[#c85a32] border-[#fff8f5] dark:border-[#1c1c21] text-white shadow-xs'
                               : esDonacion
-                              ? 'bg-amber-600 border-[#fff8f5] dark:border-[#241810] text-white'
-                              : 'bg-emerald-600 border-[#fff8f5] dark:border-[#241810] text-white'
+                              ? 'bg-amber-600 border-[#fff8f5] dark:border-[#1c1c21] text-white'
+                              : 'bg-emerald-600 border-[#fff8f5] dark:border-[#1c1c21] text-white'
                           }`}
                         >
                           <span className="material-symbols-outlined text-[11px]">
@@ -493,8 +493,8 @@ export default function MascotaPerfilDetalle({ id }: { id: string }) {
                         <div
                           className={`p-5 rounded-2xl border transition-all ${
                             esActiva
-                              ? 'bg-[#fff8f5] dark:bg-[#2e1d14] border-[#c85a32]/50 shadow-xs'
-                              : 'bg-[#fff8f5] dark:bg-[#170f0a] border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 hover:border-[#6c2f00]/25'
+                              ? 'bg-[#fff8f5] dark:bg-[#1c1c21] border-[#c85a32]/50 shadow-xs'
+                              : 'bg-[#fff8f5] dark:bg-[#26262e] border-[#6c2f00]/10 dark:border-[#ffdbc9]/15 hover:border-[#6c2f00]/25'
                           }`}
                         >
                           <div className="flex flex-wrap items-center justify-between gap-2 mb-2">

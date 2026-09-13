@@ -36,7 +36,7 @@ export default function DonationsOng() {
 
   if (loading) {
     return (
-      <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-12 text-center shadow-xs font-body-editorial">
+      <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-12 text-center shadow-xs font-body-editorial">
         <div className="w-10 h-10 border-4 border-[#c85a32] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
         <p className="font-display-editorial text-lg text-[#6c2f00] dark:text-[#ffdbc9] font-bold">Cargando historial de donaciones...</p>
       </div>
@@ -45,7 +45,7 @@ export default function DonationsOng() {
 
   if (error) {
     return (
-      <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-12 text-center shadow-xs font-body-editorial">
+      <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-12 text-center shadow-xs font-body-editorial">
         <span className="material-symbols-outlined text-5xl text-[#c85a32] mb-3">error</span>
         <p className="text-sm text-red-500 font-semibold">{error}</p>
       </div>
@@ -54,7 +54,7 @@ export default function DonationsOng() {
 
   if (!ong) {
     return (
-      <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-12 text-center shadow-xs font-body-editorial">
+      <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-12 text-center shadow-xs font-body-editorial">
         <span className="material-symbols-outlined text-5xl text-[#6c2f00]/40 dark:text-[#ffdbc9]/40 mb-3">domain</span>
         <h3 className="font-display-editorial text-xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] mb-2">No se encontró la organización</h3>
         <p className="text-sm text-[#54433a] dark:text-[#dac2b6]">Inicia sesión para visualizar las donaciones recibidas.</p>
@@ -66,10 +66,10 @@ export default function DonationsOng() {
   const totalARS = totalUSD * TASA_CAMBIO;
 
   return (
-    <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-6 sm:p-8 shadow-xs font-body-editorial transition-colors">
+    <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-6 sm:p-8 shadow-xs font-body-editorial transition-colors">
       {/* Encabezado */}
       <div className="mb-6 pb-6 border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#fff1ea] dark:bg-[#3f2c20] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] text-xs font-semibold mb-3">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#fff1ea] dark:bg-[#26262e] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] text-xs font-semibold mb-3">
           <span className="material-symbols-outlined text-base text-[#c85a32]">volunteer_activism</span>
           Aportes Recibidos
         </div>
@@ -84,7 +84,7 @@ export default function DonationsOng() {
       {/* Resumen Métrico */}
       {donaciones.length > 0 && (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-          <div className="p-4 bg-[#fff8f5] dark:bg-[#1a0f08] rounded-2xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
+          <div className="p-4 bg-[#fff8f5] dark:bg-[#121214] rounded-2xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
             <p className="text-xs uppercase font-bold text-[#54433a] dark:text-[#dac2b6] flex items-center gap-1.5 mb-1">
               <span className="material-symbols-outlined text-base text-[#6c2f00] dark:text-[#ffdbc9]">monetization_on</span>
               Total Recaudado
@@ -97,7 +97,7 @@ export default function DonationsOng() {
             </p>
           </div>
 
-          <div className="p-4 bg-[#fff8f5] dark:bg-[#1a0f08] rounded-2xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
+          <div className="p-4 bg-[#fff8f5] dark:bg-[#121214] rounded-2xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
             <p className="text-xs uppercase font-bold text-[#54433a] dark:text-[#dac2b6] flex items-center gap-1.5 mb-1">
               <span className="material-symbols-outlined text-base text-[#6c2f00] dark:text-[#ffdbc9]">receipt_long</span>
               Cantidad de Aportes
@@ -114,7 +114,7 @@ export default function DonationsOng() {
 
       {/* Lista de Donaciones */}
       {donaciones.length === 0 ? (
-        <div className="p-12 text-center bg-[#fff8f5] dark:bg-[#1a0f08] rounded-2xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
+        <div className="p-12 text-center bg-[#fff8f5] dark:bg-[#121214] rounded-2xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
           <span className="material-symbols-outlined text-5xl text-[#6c2f00]/30 dark:text-[#ffdbc9]/30 mb-3">inbox</span>
           <h3 className="font-display-editorial text-lg font-bold text-[#6c2f00] dark:text-[#ffdbc9] mb-1">
             No hay donaciones registradas aún
@@ -161,7 +161,7 @@ export default function DonationsOng() {
             return (
               <div
                 key={donacion.id}
-                className="bg-[#fff8f5] dark:bg-[#1a0f08] border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 rounded-2xl p-5 shadow-xs hover:border-[#6c2f00]/25 dark:hover:border-[#ffdbc9]/25 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                className="bg-[#fff8f5] dark:bg-[#121214] border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 rounded-2xl p-5 shadow-xs hover:border-[#6c2f00]/25 dark:hover:border-[#ffdbc9]/25 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
               >
                 <div className="space-y-1.5 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap">

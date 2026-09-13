@@ -25,7 +25,7 @@ const CaseForm = ({ register, errors, watch }: Props) => {
           type="text"
           placeholder="Ej: Ayudemos a Toby con su tratamiento"
           {...register("title", { required: true })}
-          className="w-full px-4 py-3 bg-[#fff8f5] dark:bg-[#1a0f08] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#28180d] dark:text-[#ffdbc9] placeholder:text-[#54433a]/50 dark:placeholder:text-[#dac2b6]/40 focus:outline-none focus:ring-2 focus:ring-[#c85a32] transition-colors"
+          className="w-full px-4 py-3 bg-[#fff8f5] dark:bg-[#121214] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#1c1c21] dark:text-[#ffdbc9] placeholder:text-[#54433a]/50 dark:placeholder:text-[#dac2b6]/40 focus:outline-none focus:ring-2 focus:ring-[#c85a32] transition-colors"
         />
         {errors.title && (
           <p className="text-red-500 text-xs mt-1.5 font-medium">
@@ -41,7 +41,7 @@ const CaseForm = ({ register, errors, watch }: Props) => {
         <textarea
           placeholder="Explicá la situación actual de la mascota y por qué necesita un hogar o ayuda económica..."
           {...register("description", { required: true })}
-          className="w-full px-4 py-3 bg-[#fff8f5] dark:bg-[#1a0f08] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#28180d] dark:text-[#ffdbc9] placeholder:text-[#54433a]/50 dark:placeholder:text-[#dac2b6]/40 focus:outline-none focus:ring-2 focus:ring-[#c85a32] transition-colors"
+          className="w-full px-4 py-3 bg-[#fff8f5] dark:bg-[#121214] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#1c1c21] dark:text-[#ffdbc9] placeholder:text-[#54433a]/50 dark:placeholder:text-[#dac2b6]/40 focus:outline-none focus:ring-2 focus:ring-[#c85a32] transition-colors"
           rows={4}
         />
         {errors.description && (
@@ -58,15 +58,15 @@ const CaseForm = ({ register, errors, watch }: Props) => {
         <div className="relative">
           <select
             {...register("type", { required: true })}
-            className="w-full appearance-none px-4 py-3 bg-[#fff8f5] dark:bg-[#1a0f08] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#28180d] dark:text-[#ffdbc9] focus:outline-none focus:ring-2 focus:ring-[#c85a32] transition-colors cursor-pointer"
+            className="w-full appearance-none px-4 py-3 bg-[#fff8f5] dark:bg-[#121214] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#1c1c21] dark:text-[#ffdbc9] focus:outline-none focus:ring-2 focus:ring-[#c85a32] transition-colors cursor-pointer"
           >
-            <option value="" className="bg-white dark:bg-[#28180d] text-[#28180d] dark:text-[#ffdbc9]">
+            <option value="" className="bg-white dark:bg-[#1c1c21] text-[#1c1c21] dark:text-[#ffdbc9]">
               Selecciona una modalidad
             </option>
-            <option value="ADOPCION" className="bg-white dark:bg-[#28180d] text-[#28180d] dark:text-[#ffdbc9]">
+            <option value="ADOPCION" className="bg-white dark:bg-[#1c1c21] text-[#1c1c21] dark:text-[#ffdbc9]">
               Adopción
             </option>
-            <option value="DONACION" className="bg-white dark:bg-[#28180d] text-[#28180d] dark:text-[#ffdbc9]">
+            <option value="DONACION" className="bg-white dark:bg-[#1c1c21] text-[#1c1c21] dark:text-[#ffdbc9]">
               Donación
             </option>
           </select>
@@ -86,14 +86,14 @@ const CaseForm = ({ register, errors, watch }: Props) => {
       <SelectPet register={register} errors={errors} />
 
       {type === "DONACION" && (
-        <div className="p-4 rounded-2xl bg-[#ffeade]/40 dark:bg-[#3f2c20]/40 border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15">
+        <div className="p-4 rounded-2xl bg-[#ffeade]/40 dark:bg-[#26262e]/40 border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15">
           <label className="block mb-2 text-xs font-bold uppercase tracking-wider text-[#6c2f00] dark:text-[#ffdbc9]">
             Meta Económica de Donación (ARS / USD)
           </label>
           <input
             type="number"
             {...register("donationGoal", { required: true, min: 1 })}
-            className="w-full px-4 py-3 bg-white dark:bg-[#1a0f08] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#28180d] dark:text-[#ffdbc9] placeholder:text-[#54433a]/50 dark:placeholder:text-[#dac2b6]/40 focus:outline-none focus:ring-2 focus:ring-[#c85a32] transition-colors"
+            className="w-full px-4 py-3 bg-white dark:bg-[#121214] border border-[#6c2f00]/20 dark:border-[#ffdbc9]/20 rounded-xl text-[#1c1c21] dark:text-[#ffdbc9] placeholder:text-[#54433a]/50 dark:placeholder:text-[#dac2b6]/40 focus:outline-none focus:ring-2 focus:ring-[#c85a32] transition-colors"
             placeholder="Ej: 50000"
           />
           {errors.donationGoal && (

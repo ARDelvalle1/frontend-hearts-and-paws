@@ -30,7 +30,7 @@
   --earth-outline: #877369;
   --earth-outline-variant: #dac2b6;
   --earth-surface-tint: #934b19;
-  --earth-inverse-surface: #3f2c20;
+  --earth-inverse-surface: #26262e;
 }
 
 html.light {
@@ -44,25 +44,25 @@ html.light {
 }
 
 html.dark {
-  --background: #1a0f08;
+  --background: #121214;
   --foreground: #ffede4;
-  --card: #28180d;
-  --input-background: #28180d;
+  --card: #1c1c21;
+  --input-background: #1c1c21;
   --input-border: rgba(255, 219, 201, 0.2);
   --input-placeholder: rgba(218, 194, 182, 0.6);
-  --surface: #28180d;
+  --surface: #1c1c21;
 
   /* Sistema de diseño Earth & Heart (Modo Oscuro) */
-  --earth-surface: #1a0f08;
-  --earth-surface-dim: #120a05;
-  --earth-surface-bright: #28180d;
-  --earth-surface-container: #28180d;
-  --earth-surface-container-low: #1f130b;
-  --earth-surface-container-high: #342013;
-  --earth-surface-container-highest: #3f2c20;
+  --earth-surface: #121214;
+  --earth-surface-dim: #0d0d0f;
+  --earth-surface-bright: #1c1c21;
+  --earth-surface-container: #1c1c21;
+  --earth-surface-container-low: #26262e;
+  --earth-surface-container-high: #26262e;
+  --earth-surface-container-highest: #26262e;
   --earth-primary: #ffdbc9;
   --earth-primary-container: #6c2f00;
-  --earth-on-primary: #1a0f08;
+  --earth-on-primary: #121214;
   --earth-secondary: #c85a32;
   --earth-secondary-container: #c85a32;
   --earth-on-secondary-container: #ffffff;

@@ -98,7 +98,7 @@ export default function AdoptionsOng() {
 
   if (cargando) {
     return (
-      <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-12 text-center shadow-xs font-body-editorial">
+      <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-12 text-center shadow-xs font-body-editorial">
         <div className="w-10 h-10 border-4 border-[#c85a32] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
         <p className="font-display-editorial text-lg text-[#6c2f00] dark:text-[#ffdbc9] font-bold">Cargando solicitudes de adopción...</p>
       </div>
@@ -108,10 +108,10 @@ export default function AdoptionsOng() {
   const totalSolicitudes = data.reduce((acc, curr) => acc + (curr.solicitudes?.length || 0), 0);
 
   return (
-    <div className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-6 sm:p-8 shadow-xs font-body-editorial transition-colors">
+    <div className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-3xl p-6 sm:p-8 shadow-xs font-body-editorial transition-colors">
       {/* Encabezado */}
       <div className="mb-6 pb-6 border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#fff1ea] dark:bg-[#3f2c20] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] text-xs font-semibold mb-3">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#fff1ea] dark:bg-[#26262e] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-[#6c2f00] dark:text-[#ffdbc9] text-xs font-semibold mb-3">
           <span className="material-symbols-outlined text-base text-[#c85a32]">assignment</span>
           Gestión de Adopciones
         </div>
@@ -125,7 +125,7 @@ export default function AdoptionsOng() {
 
       {/* Lista de Mascotas con Solicitudes */}
       {data.length === 0 || totalSolicitudes === 0 ? (
-        <div className="p-12 text-center bg-[#fff8f5] dark:bg-[#1a0f08] rounded-2xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
+        <div className="p-12 text-center bg-[#fff8f5] dark:bg-[#121214] rounded-2xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
           <span className="material-symbols-outlined text-5xl text-[#6c2f00]/30 dark:text-[#ffdbc9]/30 mb-3">pets</span>
           <h3 className="font-display-editorial text-lg font-bold text-[#6c2f00] dark:text-[#ffdbc9] mb-1">
             No tienes solicitudes de adopción aún
@@ -146,8 +146,8 @@ export default function AdoptionsOng() {
                   onClick={() => toggleExpandir(mascota.id)}
                   className={`w-full flex items-center justify-between gap-4 p-4 rounded-2xl border transition-all cursor-pointer text-left ${
                     estaExpandida
-                      ? "bg-[#fff1ea] dark:bg-[#3f2c20] border-[#6c2f00]/30 dark:border-[#ffdbc9]/30 shadow-xs"
-                      : "bg-[#fff8f5] dark:bg-[#1a0f08] border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 hover:border-[#6c2f00]/30 dark:hover:border-[#ffdbc9]/30"
+                      ? "bg-[#fff1ea] dark:bg-[#26262e] border-[#6c2f00]/30 dark:border-[#ffdbc9]/30 shadow-xs"
+                      : "bg-[#fff8f5] dark:bg-[#121214] border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 hover:border-[#6c2f00]/30 dark:hover:border-[#ffdbc9]/30"
                   }`}
                 >
                   <div className="flex items-center gap-4 min-w-0">
@@ -160,7 +160,7 @@ export default function AdoptionsOng() {
                       <h2 className="font-display-editorial text-xl font-bold text-[#6c2f00] dark:text-[#ffdbc9] truncate">
                         {mascota.nombre}
                       </h2>
-                      <span className="inline-flex items-center gap-1 bg-white dark:bg-[#28180d] text-[#6c2f00] dark:text-[#ffdbc9] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-xs font-semibold px-2.5 py-0.5 rounded-full mt-1">
+                      <span className="inline-flex items-center gap-1 bg-white dark:bg-[#1c1c21] text-[#6c2f00] dark:text-[#ffdbc9] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 text-xs font-semibold px-2.5 py-0.5 rounded-full mt-1">
                         <span className="material-symbols-outlined text-xs text-[#c85a32]">mail</span>
                         {solicitudes.length} {solicitudes.length === 1 ? "solicitud" : "solicitudes"}
                       </span>
@@ -178,7 +178,7 @@ export default function AdoptionsOng() {
 
                 {/* Contenido Desplegable con Solicitudes */}
                 {estaExpandida && (
-                  <div className="mt-3 p-4 sm:p-6 bg-[#fff8f5]/60 dark:bg-[#1a0f08]/60 border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 rounded-2xl space-y-4">
+                  <div className="mt-3 p-4 sm:p-6 bg-[#fff8f5]/60 dark:bg-[#121214]/60 border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10 rounded-2xl space-y-4">
                     {solicitudes.length > 0 ? (
                       solicitudes.map((sol) => {
                         const estadoConfig: Record<string, { label: string; icon: string; classes: string }> = {
@@ -208,7 +208,7 @@ export default function AdoptionsOng() {
                         return (
                           <div
                             key={sol.id}
-                            className="bg-white dark:bg-[#28180d] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl p-5 shadow-xs space-y-4"
+                            className="bg-white dark:bg-[#1c1c21] border border-[#6c2f00]/15 dark:border-[#ffdbc9]/15 rounded-2xl p-5 shadow-xs space-y-4"
                           >
                             {/* Header de la solicitud */}
                             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
@@ -228,7 +228,7 @@ export default function AdoptionsOng() {
                             </div>
 
                             {/* Cuestionario familiar */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-[#54433a] dark:text-[#dac2b6] bg-[#fff8f5] dark:bg-[#1a0f08] p-4 rounded-xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-[#54433a] dark:text-[#dac2b6] bg-[#fff8f5] dark:bg-[#121214] p-4 rounded-xl border border-[#6c2f00]/10 dark:border-[#ffdbc9]/10">
                               <p>
                                 <strong className="text-[#6c2f00] dark:text-[#ffdbc9]">Email:</strong> {sol.usuario.email}
                               </p>
