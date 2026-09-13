@@ -10,20 +10,22 @@ export default function OngPerfilTabs({ ongId }: { ongId: string }) {
   const [tab, setTab] = useState<Tab>('publicaciones')
 
   const claseTab = (activo: boolean) =>
-    `px-5 py-2 rounded-full text-sm font-semibold transition ${
+    `px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 flex items-center gap-2 cursor-pointer ${
       activo
-        ? 'bg-[#FA8072] text-white shadow'
-        : 'bg-white dark:bg-zinc-900 text-[#FA8072] border border-[#FA8072] hover:bg-[#ffece8]'
+        ? 'bg-[#c85a32] hover:bg-[#a84320] text-white shadow-xs'
+        : 'bg-white dark:bg-[#1c1c21] text-[#6c2f00] dark:text-[#ffdbc9] border border-[#6c2f00]/20 dark:border-[#c85a32]/30 hover:bg-[#ffeade] dark:hover:bg-[#26262e]'
     }`
 
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex gap-3">
+    <div className="flex flex-col gap-6 font-body-editorial">
+      <div className="flex items-center gap-3">
         <button className={claseTab(tab === 'publicaciones')} onClick={() => setTab('publicaciones')}>
-          Publicaciones
+          <span className="material-symbols-outlined text-lg">feed</span>
+          <span>Publicaciones</span>
         </button>
         <button className={claseTab(tab === 'mascotas')} onClick={() => setTab('mascotas')}>
-          Mascotas
+          <span className="material-symbols-outlined text-lg">pets</span>
+          <span>Mascotas</span>
         </button>
       </div>
 
